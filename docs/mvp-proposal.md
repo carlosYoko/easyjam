@@ -1,209 +1,113 @@
-# EasyJam Guitar Practice MVP — Propuesta revisada
+# M001 — MVP aprobado: biblioteca y práctica de pentagrama + tablatura
 
-**Estado:** propuesta documental aprobada y formalizada como milestone nativo M001 en modo manual. Contexto/roadmap y planes de S01 creados; ninguna tarea ejecutada. S01 requiere autorización explícita antes de T01.
-**Actualización:** 18 de octubre de 2026.
-**Fuente:** aclaraciones explícitas del usuario durante la discusión del MVP.
-**Referencias:** [producto](product.md), [constitución](constitution.md), [ADR-001](adr/ADR-001.md), [desarrollo](development.md).
+**Estado:** visión, dirección arquitectónica ADR-002 y roadmap S06–S11 aprobados por D013. Autorizadas formalización/planificación S06 y commits documentales. Código pendiente de revisión de sus tareas; sin auto, cierre, merge o push.
+**Fecha:** 18 de octubre de 2026.
+**Fuente de verdad:** [contexto SDD](../.sdd/milestones/M001/M001-CONTEXT.md), [requisitos](../.sdd/REQUIREMENTS.md) y [roadmap aprobado SDD](../.sdd/milestones/M001/M001-ROADMAP.md). [Producto](product.md) y [ADR-002](adr/ADR-002.md) explican experiencia/diseño.
 
-## 1. Resultado y público objetivo
+## 1. Experiencia confirmada
 
-Un guitarrista principiante o intermedio que conoce mínimamente las quintas puede acompañar una canción completa de principio a fin, siguiendo una guía rítmica sencilla y musicalmente coherente sincronizada con un vídeo de YouTube visible.
+Biblioteca simple → añadir URL → validar fuente autorizada correspondiente al vídeo → análisis real asíncrono → preparar arreglo de quintas/posiciones globales → guardar original/arreglo/alineación → Lista → pentagrama Y tablatura → Play en YouTube visible → cursor/scroll sincronizados → cerrar/reabrir sin analizar.
 
-La filosofía es: «No necesitas tocar una canción exactamente como el artista original para disfrutar tocándola de principio a fin».
+Estados visibles exactos: **Pendiente, Analizando, Preparando arreglo, Lista, Error**. Cerrar/navegar/recargar navegador no cancela trabajo; volver consulta estado durable. Apagar backend/equipo sí puede interrumpirlo y exige reconciliación/checkpoint; no prometer procesamiento sin ejecutor activo.
 
-El MVP ofrece un único arreglo de dificultad **fácil**. No adapta dinámicamente la dificultad al usuario. La visión de accesibilidad para cualquier nivel sigue siendo una dirección futura, no una garantía del MVP.
+Notación del arreglo simplificado, no original complejo ni cuatro tarjetas. Visor ocupa área principal; vídeo lateral/superior visible y conforme. Compases/notas/quintas/duraciones/rests/cuerdas/trastes, cursor, scroll y sección; navegación por compás/sección. Tiempo observado gobierna: pausa/buffering congelan avance, seek recoloca solo tras observación. Anclas corregibles persistidas, sin reanalizar para ajustar desfase.
 
-## 2. Decisiones de producto confirmadas
+Calidad primero, análisis puede superar ampliamente duración. Evaluar notas/acordes relevantes para rítmica, cambios, beats/compases/duraciones, silencios/secciones/alineación y tocabilidad. No exactitud de toda la mezcla ni deadline musical arbitrario. Límites de red/recursos/cuelgue justificados, sin porcentajes/ETA inventados.
 
-### Imprescindible
+## 2. Aprobado frente a hipótesis
 
-- Practicar una canción completa, incluyendo estructura, cambios armónicos, ritmo y silencios.
-- Mostrar secciones musicales y qué tocar ahora y a continuación.
-- Representar el acompañamiento de guitarra rítmica mediante power chords.
-- Seleccionar posiciones considerando la progresión completa, no cada acorde aislado.
-- Sincronizar la guía musical con el tiempo real del vídeo.
-- Navegar entre secciones.
-- Repetir una sección completa cuando las capacidades reales de YouTube lo permitan de forma útil para practicar.
-- Usar arreglos de prueba con derechos de uso resueltos y procedencia documentada.
-- Aportar evidencia con un vídeo real y permitido antes de considerar completado el MVP.
-
-### Simplificación musical
-
-Simplificar no significa sustituir indiscriminadamente todo por quintas. El arreglo debe conservar un acompañamiento coherente con la armonía, estructura, ritmo y silencios de la canción. Se identifica como arreglo simplificado, no como transcripción fiel.
-
-Si la identidad de una canción depende de riffs que no pueden simplificarse adecuadamente con quintas, se documentará esa limitación y podrá posponerse su incorporación. El MVP no genera riffs ni solos automáticamente.
-
-La comodidad se evalúa sobre la progresión completa. Un mínimo matemático solo lo es respecto al coste declarado; no demuestra por sí solo comodidad para un guitarrista.
-
-### Contenido y validación
-
-Se empieza con **una canción completa**, no solo un fragmento. Esta demuestra el recorrido técnico y funcional. Antes de declarar validado el producto con usuarios, se probarán varias canciones de estilos diferentes. No se fijan todavía cantidades, porcentajes ni metas estadísticas.
-
-La primera experiencia musical usa una canción completa, con varias secciones y suficiente variedad armónica. No necesita catálogo ni campo para pegar URLs. Como excepción técnica previa, S01 usará inicialmente el vídeo oficial de ejemplo `M7lc1UVf-VE`, condicionado a reproducción integrada efectiva, con secuencia ficticia identificada como prueba y no como transcripción. Su objetivo es Chrome/Chromium de escritorio; no acredita coherencia con la música del vídeo. La canción y arreglo reales con derechos resueltos se seleccionarán en S02.
-
-### Derechos y plataformas
-
-El cumplimiento legal y de las condiciones de YouTube es obligatorio, no una prioridad intercambiable por experiencia o funcionalidad. La disponibilidad de un vídeo no concede autorización sobre el arreglo musical.
-
-Se usará el reproductor oficial visible. No se descargará ni extraerá audio incumpliendo sus políticas. Las condiciones vigentes se comprobarán antes de la integración; este documento no acredita una revisión jurídica o técnica del proveedor.
-
-### Fuera del primer MVP
-
-- Generación automática desde cualquier URL y reconocimiento de acordes mediante IA.
-- Varias dificultades o adaptación individual.
-- Pistas de bajo/solista, modo banda o sincronización entre dispositivos.
-- Riffs y solos generados automáticamente.
-- Editor A/B arbitrario, metrónomo y cuenta atrás.
-- Cambios de tempo si la canción elegida no los requiere.
-- Autenticación, cuentas y funcionalidades sociales.
-
-### Restricciones musicales confirmadas
-
-- Guitarra de seis cuerdas, afinación estándar E A D G B E (grave a aguda).
-- Quintas de dos notas como forma básica; alternativas solo cuando aporten comodidad y con política explícita y pruebas antes de incorporarlas.
-- Rango inicial inclusivo de trastes 0–12; la configuración para el usuario queda fuera del MVP.
-- Optimización sobre la progresión completa y resolución determinista de empates.
-- Conservación de tiempos, patrones rítmicos y silencios.
-- Acordes especiales o ambiguos sin simplificación fiable se señalan para revisión; no se transforman arbitrariamente.
-
-Afinaciones alternativas, preferencias avanzadas y generación asistida quedan para evolución posterior.
-
-## 3. Arquitectura: límites, no ratificación
-
-Se busca una arquitectura modular, desacoplada y comprobable, con reglas de negocio testeables, KISS, YAGNI y reutilización de bibliotecas. Debe poder evolucionar hacia varios arreglos y pistas sin implementar ahora esa complejidad.
-
-La propuesta principal es Vue 3 + Vite + TypeScript, con Clean Architecture ligera y Ports & Adapters únicamente donde aporten valor, Vitest para unitarias y Playwright para E2E. Esto no ratifica ADR-001 en bloque. Tonal.js, alphaTab, contratos concretos de reproductor, representación temporal, algoritmo y pesos ergonómicos siguen abiertos. No se aceptan dependencias ni APIs por aparecer en un boceto. No se crean carpetas, capas, repositorios genéricos o infraestructura anticipada.
-
-El modelo temporal debe representar estructura musical (compases, pulsos y duraciones) y su correspondencia con el tiempo del reproductor, sin acoplar eventos a la API de YouTube. S01 medirá precisión, retraso de seek y retorno de sección en entornos identificados; con esos resultados se propondrán criterios cuantificables para revisión antes de S04. No se fijan tolerancias sin evidencia.
-
-No se introduce backend, base de datos o SSR en esta propuesta: no hay una necesidad demostrada del recorrido inicial. La arquitectura concreta se someterá a aprobación con evidencia.
-
-## 4. Riesgos y puertas de decisión tempranas
-
-| Riesgo | Evidencia necesaria | Momento / consecuencia |
+| Tema | Requisito confirmado | Hipótesis o decisión técnica pendiente |
 |---|---|---|
-| Acceso al tiempo y restricciones de YouTube | Vídeo real: reproducción visible, lectura de tiempo, pausa, seek y errores; registrar entorno y restricciones observadas | S01; si no permite la experiencia, detener la inversión dependiente y revisar la propuesta |
-| Sincronía útil y recuperación tras saltos | Medir desfase y recuperación en reproducción, pausa, buffering y seek; contrastar utilidad musical | S01 y reevaluación S04/S05; no prometer precisión ni umbral sin medidas y aprobación |
-| Repetición de sección | Retorno al inicio desde el final, varios ciclos, pausa, desactivación y saltos; documentar retrasos y comportamiento real | S01; si no es viable, presentar evidencia y solicitar decisión, no declarar el requisito cumplido ni eliminarlo silenciosamente |
-| Disponibilidad y derechos del material | Procedencia/autorización del arreglo y vídeo permitido para inserción | Antes de pruebas con contenido; sin material válido, la prueba real está bloqueada |
-| Pérdida de coherencia al simplificar | Revisión del arreglo completo: armonía, ritmo, silencios y partes reconocibles | Selección inicial y S02/S03; posponer canción inadecuada, no inventar riffs |
-| Coste ergonómico insuficiente | Casos musicales, alternativas válidas, ejemplo donde greedy pierde y evaluación tocando | S03; revisar coste antes de ampliar el motor |
-| Renderizador excesivo o incompatible | Evaluar API, licencia, representación rítmica, silencios y sincronización con el reloj externo | Antes de comprometer S04; alphaTab no es obligatorio |
-| Modelo temporal ambiguo | Definir unidades, límites, desfase y fuente autoritativa con la canción elegida | S02/S04; no imponer PPQ, anclas o cambios de tempo sin necesidad |
+| Visor | Pentagrama+TAB reales, arreglo simplificado, cursor/scroll/navegación, mayoría del área | alphaTab candidato prioritario; versión/licencia/assets/adaptación/modelo/interacción/accesibilidad y buffering por probar. |
+| Análisis | Previo/asíncrono, calidad sobre tiempo, rítmica útil | Motor/pipeline, calidad alcanzable, recursos, corrección necesaria y umbrales; no un servicio ya seleccionado. |
+| Persistencia | Vue 3/TS, backend local mínimo, SQLite, original/arreglo reutilizables, identidad/concurrencia segura aprobados | Driver/modelo físico/ejecutor concretos por validar; siete tablas no obligatorias, escoger mínimo suficiente. |
+| Tiempo | YouTube oficial visible manda; anclas corregibles | Cadencia, interpolación interna alphaTab, unidades/ocurrencias, método mínimo de corrección y tolerancias medidas. |
+| Fuente | URL sola como objetivo; audio independiente autorizado y misma grabación | Fuente/acuerdo/resolutor y cobertura no acreditados; cambios a subida/importación requieren aprobación. |
+| Operación | Trabajo independiente de navegador, estados claros, reinicio/retry sin corrupción/duplicación | Ejecutor administrado y claim/checkpoint/fencing/recuperación; no añadir servicios distribuidos. |
 
-La [investigación documental realizada](../.sdd/milestones/M001/M001-RESEARCH.md) contrasta documentación oficial y alternativas. No se afirma haber probado en ejecución YouTube, Tonal.js o alphaTab.
+## 3. Primera puerta: audio permitido y calidad demostrable
 
-## 5. Vertical slices revisadas — candidatas
+YouTube Data API aporta metadatos e IFrame reproducción/tiempo, no audio documentado para analizar. III.E.1 prohíbe descargar/importar/cachear audiovisual sin aprobación escrita previa de YouTube; III.D.7 prohíbe APIs no documentadas sin permiso. Insertabilidad, derechos musicales y autorización de acceso a plataforma son distintos. Investigación técnica/contractual, no dictamen jurídico.
 
-Orden y responsabilidades aprobados y formalizados en el [roadmap nativo M001](../.sdd/milestones/M001/M001-ROADMAP.md). Esta propuesta conserva la justificación de producto; las dependencias, contratos y tareas operativos se mantienen en los artefactos nativos. Solo S01 tiene tareas.
+| Alternativa | URL sola | Impacto / decisión |
+|---|---|---|
+| Fuente independiente licenciada con mapping YouTube ID→grabación | Sí para su cobertura | Verificar permiso de análisis/resultados/retención, proveedor/coste y misma edición. No hay proveedor/acuerdo probado. |
+| Audio original propio/permitido asociado previamente a ID | Sí para ese repertorio | Prueba legítima y acotada sin extraer YouTube; no cualquier URL. No sustituye análisis por partitura preparada. |
+| URL + archivo autorizado del usuario | No | D013 lo permite únicamente para experimento S06; no añadir subida en producto, ni acreditar URL única. Registrar procedencia, grabación y limitación. |
+| Partitura autorizada importada | No acredita transcripción real | Puede evaluar renderer, no completar el recorrido solicitado ni sustituir generación sin redefinir alcance. |
+| Permisos específicos de plataforma/contenido | Solo si concedidos realmente | No presumir acuerdos ni convertir herramienta de descarga en autorización. |
 
-**Límites de responsabilidad:** S01 prueba viabilidad real con guía mínima, sin construir el reproductor completo; S02 es responsable del arreglo completo y su validación, no del optimizador; S03 implementa simplificación/optimización, no el proveedor; S04 integra las capacidades anteriores en la práctica completa; S05 solo verifica y corrige defectos de integración, sin nuevas funcionalidades significativas. Todas incluyen pruebas pertinentes y decisiones documentadas. Los commits serán atómicos, verificados y trazables a la slice cuando exista su ID nativo.
+Recomendación: comprobar primero fuente independiente/propia con mapping para una canción completa. Sin fuente, Pendiente con motivo y bloqueo de análisis; no es MVP completado. Presentar alternativas antes de alterar alcance. No contactar terceros/contratar servicios sin autorización.
 
-| Slice | Capacidad demostrable | Riesgo | Depende de |
-|---|---|---|---|
-| S01 | Seguir una guía mínima con YouTube real y probar navegación/repetición | Alto | — |
-| S02 | Abrir la canción completa autorizada y explorar su guía rítmica y secciones | Medio | S01 |
-| S03 | Tocar el arreglo en quintas con posiciones optimizadas globalmente | Alto | S02 |
-| S04 | Practicar el arreglo completo con tablatura y controles sincronizados | Alto | S01, S02, S03 |
-| S05 | Completar el recorrido integrado y documentar evidencia y límites del MVP | Medio | S04 |
+## 4. Evaluación técnica pendiente
 
-### S01 — Prueba vertical mínima con YouTube real
+### Motor y calidad
 
-**Demo:** un vídeo real permitido y visible acompaña una guía pequeña de acordes previamente preparados; el usuario reproduce, pausa y salta a una sección. Se prueba la repetición de una sección completa.
+Comparar candidatos existentes de armonía (Chordino/NNLS Chroma), beats/segmentos (QM Vamp), notas (Basic Pitch, limitación documentada de instrumento individual) como componentes posibles, no selección automática ni solución integrada acreditada.
 
-**Aceptación verificable:**
+Referencia autorizada revisada, canción completa y casos límite: armonía/cambios, notas relevantes/octava, métrica/downbeats/duración, silencios vs desconocido, estructura y alineación. Reportar métricas por dimensión y utilidad del arreglo tocado, no una cifra agregada que oculte errores. Proponer umbrales tras medir y acordarlos antes de go/no-go.
 
-- Se usa el reproductor oficial y se obtiene su tiempo de reproducción; la guía selecciona el acorde correspondiente a ese tiempo.
-- Pausar detiene el avance de la guía; tras un salto, esta refleja el tiempo realmente alcanzado, no el solicitado sin confirmar.
-- Seleccionar una sección navega a su inicio; se documentan precisión y retraso observados.
-- Se prueban varios ciclos de repetición, su desactivación y la pausa durante un ciclo. Se registran límites y resultado de viabilidad, sin prometer bucles sin huecos.
-- Se registra el comportamiento ante buffering y vídeo no disponible/no insertable; los fallos no generan una guía ficticia.
-- Existe un informe reproducible con vídeo, procedencia del material, navegador/dispositivo, pasos, medidas, limitaciones y conclusión sobre continuar.
+Preprocesamiento/multipaso: línea base, hipótesis, mismo material/hardware/versión/configuración, cambio aislado, mejora/degradación medida y coste. Considerar remuestreo/normalización compatibles, separación armónico-percusiva/fuentes o contexto/múltiples pasadas si ayudan; ninguna técnica adoptada. Artefactos/latencias de separación pueden empeorar notas/silencios/alineación; preservar procedencia y mapeo. Calidad prima sobre velocidad, sin obligación de optimizar latencia.
 
-**Límite:** guía mínima y controles imprescindibles, sin catálogo, motor de optimización ni reproductor completo. La canción final completa no es exigible en esta prueba pequeña. La base ejecutable y las comprobaciones mínimas se crean dentro de esta capacidad, no en una slice de infraestructura separada.
+### Modelo y alphaTab
 
-**Puerta:** revisar evidencia y resolver restricciones antes de invertir en funcionalidades complejas. Si el resultado exige cambiar alcance o arquitectura, se solicita aprobación.
+Modelo neutral versionado: compás/métrica/anacrusa si procede, eje musical exacto, tempo, eventos/notas/quintas/rests/duraciones/ligaduras, alturas/octavas y transposición de guitarra, afinación/cuerda/traste, secciones y anclas/ocurrencias. Pentagrama y TAB deben representar las mismas posiciones/eventos del arreglo. No guardar objetos alphaTab como única fuente ni asumir que MIDI resuelve notación/compases/digitación.
 
-### S02 — Canción completa y guía musical válida
+Priorizar alphaTab por capacidades documentadas de notación simultánea, cursor/scroll/interacción y medios externos. Validar con piloto legítimo antes del backend completo: conversión, units/ocurrencias/anclas, YouTube real, pausa/buffering, seek sin optimismo/loops de callbacks, scroll/foco y visibilidad del iframe. Conservar PlayerPort; no segundo reloj/sintetizador audible ni copiar literalmente ejemplos con variables inconsistentes. No renderer propio sin justificar insuficiencia de bibliotecas maduras y pedir decisión.
 
-**Demo:** abrir un arreglo autorizado completo, ver sus secciones y recorrer acordes, patrones rítmicos y silencios, todavía sin prometer la tablatura final integrada.
+## 5. Trabajo válido y límites preservados
 
-**Aceptación verificable:**
+T01 01c0c7d y T02 1b4690d en milestone/M001: Vue/Vite/TS, lockfile/pnpm/Node, PlayerPort, adaptador oficial, reloj observado, navegación y selección [inicio,fin), 65 tests y evidencia real. Guía ficticia técnica, no transcripción real ni modelo definitivo. Error 5 intermitente de causa desconocida aceptado en D010; no resuelto.
 
-- Una canción completa tiene procedencia y autorización registradas, dificultad fácil y afinación explícita.
-- Todas sus secciones y eventos se ubican sobre una línea temporal coherente; las partes sin acompañamiento se representan como silencios.
-- El usuario puede seleccionar una sección y consultar su contenido y posición en la canción.
-- Datos inválidos o incompletos muestran un error útil, sin presentar una interpretación parcial como válida.
-- La revisión musical registra por qué el acompañamiento conserva coherencia y qué elementos del original no reproduce.
-- Las validaciones cubren duraciones, referencias, límites temporales y datos musicales necesarios. Los cambios de tempo solo se incorporan si el material los necesita.
+S01 NO completa, T03/T04 no ejecutadas. S02–S05 previas suspendidas. Preservar planes/IDs/resúmenes/commits sin cierres ficticios. D013 reemplaza su presencia en la cola operativa por S06–S11 y conserva el roadmap anterior en M001-ROADMAP-HISTORY.md. Ninguna autorización de auto/código. Sin usuarios/pagos/estadísticas/favoritos, microservicios/infraestructura distribuida o editor musical completo.
 
-### S03 — Quintas y comodidad global
+## 6. Roadmap aprobado S06–S11
 
-**Demo:** visualizar y tocar la secuencia de quintas seleccionada para la canción, con cuerda/traste y alternativas verificables.
+D013 aprueba la secuencia; solo S06 se descompone ahora y espera revisión antes de ejecutar. S07–S11 se planificarán/autorizarán al llegar a sus puertas de evidencia.
 
-**Aceptación verificable:**
+| Slice | Dependencias | Demostración / puerta |
+|---|---|---|
+| **S06 — Fuente permitida y análisis orientado a calidad** · alto | Material/método y ejecución explícitamente aprobados; evidencia T01/T02 reutilizada | URL cubierta o archivo independiente autorizado de prueba→fuente verificada→transcripción real completa; distinguir esta segunda ruta de URL única todavía abierta; informe de calidad/ambigüedades/anclas/recursos y comparación de pipeline justificada. No deadline musical arbitrario. Si no sirve o no hay derechos, bloquear y decidir antes de construir biblioteca. |
+| **S07 — Pentagrama+TAB y sincronización alphaTab viable** · alto | S06; base T01/T02 | Piloto legítimo/revisado convertido a notación simultánea, duraciones/rests/compases/trastes, cursor+scroll+sección; YouTube visible real y navegación por compás, pausa/buffering/seek/anclas. Prueba de renderer/modelo, no biblioteca ni optimizador global terminados. Elegir/rechazar alphaTab con evidencia; no reemplazar por tarjetas. |
+| **S08 — Biblioteca y trabajos durables independientes del navegador** · alto | S06 y S07 aprobadas por evidencia | Vacío→URL→una canción/trabajo persistido→análisis real→checkpoint original. Cerrar navegador y volver conserva/continúa trabajo con backend activo; reiniciar backend reconcilia. Carreras/claim/retry y fases claras. Sin arreglo final aún, NO declarar Lista. Backend/SQLite se entregan dentro de este recorrido, no infraestructura aislada. |
+| **S09 — Arreglo notacional tocable y guardado** · alto | S08 y contrato notacional S07 | Derivar quintas, ritmo/rests/secciones y posiciones globales; validar notación/sync, publicar original+arreglo+anclas compatibles, estado Lista. Regenerar receta sin analizador y sin perder arreglo previo ante fallo; preview musical, no solo nombres de acordes. |
+| **S10 — Práctica completa desde biblioteca** · alto | S09 y renderer/tiempo S07 | Seleccionar lista→visor principal pentagrama+TAB del arreglo→Play oficial→cursor/scroll→compás/sección→fin/repetición condicionada; ajuste mínimo/anclas persistidas sin análisis, pausa/buffering/seek/fallos/limpieza/accesibilidad. Integra trabajo válido, no ejecuta planes T03/T04 obsoletos. |
+| **S11 — Aceptación integrada y recuperación** · medio | S10 | Los 14 pasos de producto con canción completa autorizada, salida del navegador durante análisis, reinicio/reapertura sin analizar, concurrencia, checkpoints/rollback/cancelación/retry y fallos SQL/proveedor. Solo regresiones/correcciones, ninguna función nueva. |
 
-- C→C5 y Am→A5 conservan inicio/duración; símbolos especiales o ambiguos siguen una política explícita, no una sustitución silenciosa.
-- Las posiciones respetan afinación, rango aprobado y notas de la quinta; posiciones imposibles producen errores específicos.
-- La selección considera la progresión completa y es determinista ante empates.
-- Tests comparan el resultado con enumeración exhaustiva en secuencias pequeñas e incluyen un caso donde la selección greedy es peor.
-- Se comprueba tocando la secuencia y se documentan límites del coste ergonómico. Se decide explícitamente cómo tratar inicio/final y transiciones al repetir una sección.
+Puertas: aprobación de propuesta ≠ autorización general de código. Planificación manual, una tarea por autorización. Go/no-go con evidencia de fuente/calidad tras S06 y renderer/sync tras S07. Si una prueba invalida el plan, presentar decisión; no seguir dependencias con fixtures. No `/sdd auto`.
 
-### S04 — Práctica completa sincronizada
+### Cobertura aprobada para planificación, no validación
 
-**Demo:** seguir la canción completa mediante tablatura sencilla, ritmo, silencios y secciones, con el vídeo real visible y controles de navegación y repetición de sección según la viabilidad aceptada.
+- S06: R017/R012; apoyo R002/R003/R013.
+- S07: R002/R006/R013; apoyo R001/R011/R012.
+- S08: R018/R010; apoyo R003/R008/R012/R017.
+- S09: R003/R004/R005; apoyo R013/R018.
+- S10: R001/R006/R007/R008/R011; apoyo R002/R003–R005/R012/R013/R018.
+- S11: R009 y aceptación de todos los activos.
 
-**Aceptación verificable:**
+R014–R016 diferidos; R019/R020 excluyen fuentes no permitidas/cuentas/infraestructura innecesaria, no los mecanismos justificados. Ningún requisito se valida globalmente por documentación, piloto o base S01.
 
-- El renderizador muestra las posiciones decididas por el motor sin recalcular decisiones musicales.
-- Reproducir, pausar, reanudar y buscar mantienen sección/evento alineados con el reloj del proveedor; durante silencios no se indica rasguear.
-- Saltos repetidos y fin de canción actualizan correctamente guía y controles.
-- La repetición se verifica con el arreglo real, incluye desactivación y expone los límites aceptados; una inviabilidad pendiente bloquea esta aceptación.
-- Buffering y errores conservan el arreglo y presentan el estado real del reproductor.
-- Contratos y recorridos críticos tienen pruebas deterministas con dobles; se repite la medición real de S01 con el renderizador elegido.
-- Se comprueban teclado, foco visible, legibilidad e indicadores no basados solo en color.
+## 7. Pruebas y aceptación
 
-### S05 — Aceptación integrada del MVP técnico/funcional
+| Área | Evidencia exigida |
+|---|---|
+| Calidad | Referencia legítima, canción completa, métricas por armonía/notas rítmicas/cambios/tiempo/métrica/rests/secciones/alineación, revisión de tocabilidad y umbrales acordados; baseline vs técnica con mejora medible. |
+| Notación | Pentagrama+TAB iguales al arreglo guardado, compases/duraciones/rests/ligaduras/transposición/cuerdas/trastes; navegación/scroll/cursor reales, sin avance en pausa/buffering. |
+| Asíncrono | Crear trabajo y terminar respuesta; cerrar navegador mientras analiza con ejecutor activo, esperar desde otro cliente/prueba de backend y volver a resultado/estado guardado; polling no es ejecutor. |
+| SQLite/reinicio | Fichero real, nuevo proceso/conexión/navegador mismo path conserva IDs/versiones/estados, contador del analizador sin incremento al practicar/regenerar. No memoria/localStorage como sustituto. |
+| Deduplicación | Variantes URL y peticiones simultáneas desde varias conexiones/procesos → una canción y un trabajo activo; dos claimers, un ganador. |
+| Atomicidad/recuperación | Fallos entre escrituras y commit → rollback/no Lista parcial; original guardado permite retry de arreglo sin audio; crash/ejecutor antiguo/fencing/SQLite_BUSY/disco lleno y resultado remoto incierto sin duplicación ciega. |
+| Tiempo | Mismo corte/grabación, anclas/unidades/ocurrencias, corrección guardada/reabierta sin análisis, seek externo/desdel visor, pausa/buffering/fin/repetición medida; referencia audible independiente del mismo getCurrentTime. |
+| UI/seguridad | Cinco estados y motivos reales, miniatura ausente/TTL, URL inválida/host engañoso/fuente sin permiso, errores seguros, teclado/foco, vídeo visible con tamaño/controles conformes, secretos fuera del browser/logs. |
 
-**Demo:** abrir el arreglo, reproducir de principio a fin, seguir ritmo/secciones, navegar, repetir y finalizar, sin perder contexto tras un fallo recuperable.
+Dobles para tests deterministas y piloto identificado no acreditan aceptación final. S11 exige audio/análisis/DB/reinicio/reproducción reales. No presentar 50/200 ms de polling como SLA ni fijar precisión sin medir.
 
-**Aceptación verificable:**
+## 8. Decisiones pendientes y riesgos
 
-- El recorrido completo se ejerce con vídeo real permitido y canción completa autorizada, no solo con mocks o fragmentos.
-- Se revisan las medidas contra los criterios de sincronización acordados a partir de S01 y se documentan los entornos soportados.
-- Las pruebas deterministas, comprobación de tipos, lint y build pasan; las comprobaciones externas no se exigen en cada ejecución de CI.
-- Se verifican limpieza al salir/reabrir, errores recuperables, navegación por teclado y continuidad de la sesión.
-- Se publican limitaciones del arreglo y del reproductor, procedencia y pasos de reproducción de la evidencia.
-- No se declara validación del producto con usuarios: requiere posteriormente varias canciones de estilos diferentes y observación real, sin cifras prefijadas.
+1. Fuente/mapping y permisos, cobertura compatible con URL sola; sin ello, bloqueo o alternativa aprobada.
+2. Motor/pipeline, calidad aceptable y cuánto necesita revisión; preprocesamiento/multipaso solo por evidencia, costes/recursos sin sacrificar calidad arbitrariamente.
+3. Modelo exacto y serialización, transposición/métrica/duraciones/ocurrencias y adaptador alphaTab; licencia/versión/assets/accesibilidad.
+4. Sincronización real: interpolación interna, buffering/seek/keyframes, correcciones mínimas y tolerancias; error 5 sigue abierto.
+5. Backend/driver/ejecutor local propuestos, trabajos durables, recuperación de crash/coste remoto incierto y path/backup SQLite; no exponer servicio sin autenticación a Internet.
 
-## 6. Boundary map candidato
-
-- **S01 → S02/S04:** evidencia del proveedor, comportamiento de tiempo/estados/seek/repetición y guía mínima ejecutable. No constituye una API definitiva ni obliga a conservar el prototipo.
-- **S02 → S03/S04:** arreglo completo validado, secciones, eventos rítmicos/silencios, afinación y procedencia; semántica temporal definida para el material.
-- **S03 → S04:** eventos convertidos y posiciones seleccionadas; restricciones y coste reproducibles, errores musicales explícitos.
-- **S01–S04 → S05:** aplicación ensamblada, pruebas deterministas, material autorizado y medidas reales para revalidar el recorrido completo.
-
-Los nombres de archivos, funciones y contratos se fijarán al planificar; no se presentan como código existente.
-
-## 7. Decisiones pendientes de aprobación
-
-1. Plan/criterios y preparación de S01 aprobados; ejecutar T01 requiere la siguiente autorización explícita tras su previsualización nativa.
-2. Seleccionar en S02 canción/arreglo/vídeo reales con derechos y embebibilidad comprobados; S01 tiene fijado el ejemplo técnico oficial, cuyo funcionamiento integrado aún debe verificarse. Afinación estándar y trastes 0–12 ya están confirmados.
-3. Base de S01 aprobada: Vue 3/Vite/TypeScript estricto/Vitest/Playwright, pnpm y Node LTS compatible. Versiones estables exactas se seleccionan/documentan en T01; bibliotecas/renderizador y sus licencias siguen pendientes. ADR-001 no aceptado en bloque.
-4. Definir política de acordes especiales, formas de quintas, octavas, restricciones y criterio ergonómico. La programación dinámica es candidata, no decisión ratificada.
-5. Acordar semántica temporal, desfases y contrato de reproducción con evidencia; no adoptar automáticamente ticks, PPQ=960 ni anclas del boceto.
-6. Chrome/Chromium escritorio fijado para S01; otros navegadores/móviles posteriores sin impedir su incorporación. Acordar tolerancia de sincronización y retorno aceptable a partir de medidas S01. Si repetir no es viable, el usuario decide cómo revisar el alcance.
-7. Definir después una entrada por URL o catálogo si se requiere; no son parte del MVP aprobado.
-8. Definir después la validación con usuarios y diversidad de canciones; no confundir cierre técnico con producto validado.
-9. Ratificar separadamente constitución y arquitectura, y sincronizar documentos canónicos antes de ejecutar.
-
-## 8. Fuentes documentales y siguiente paso
-
-- `product.md` expresa el alcance de producto; esta propuesta concentra secuencia, límites y aceptación por slice, sin constituir un plan nativo.
-- `constitution.md` mantiene su estado de propuesta; derechos y políticas se formulan como condición obligatoria.
-- `ADR-001.md` conserva el estado propuesto y remite aquí para la secuencia y restricciones actuales; sus bocetos no son contratos aceptados.
-- `development.md` define calidad y Git; A/B arbitrario y cambios de tempo no se convierten en requisitos por aparecer en ejemplos de pruebas.
-
-**Siguiente paso exacto:** previsualizar T01 con el mecanismo nativo `/sdd next --dry-run` y esperar la siguiente autorización explícita de ejecución. Plan/criterios, base técnica y preparación están aprobados; no se autoriza ejecutar todavía. Después de esa nueva autorización, `/sdd next` ejecutará una sola unidad en modo paso a paso. No iniciar `/sdd auto`.
-
-M001 fue generado mediante `sdd_milestone_generate_id`. Contexto, roadmap, contrato y planes usan las plantillas instaladas; decisiones e investigación se registran con herramientas nativas. No se han creado a mano STATE, DB, runtime ni marcadores de ejecución. Investigación documental y propuestas numéricas pendientes de medidas no son evidencia de funcionamiento real.
+**Siguiente autorización:** revisar S06-PLAN.md y T01–T06 antes de ejecutar S06/T01. D013 ya aprueba producto/dirección/roadmap, no código ni siete tablas obligatorias. Una unidad cada vez, comprobación al cierre y decisión go/no-go antes de S07. Sin auto ni push.

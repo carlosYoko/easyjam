@@ -1,15 +1,15 @@
 # EasyJam — Constitución del proyecto
 
-**Versión:** 0.1.1  
+**Versión:** 0.3.1  
 **Estado:** propuesta para ratificación  
 **Fecha:** 18 de octubre de 2026  
 **Propósito:** establecer reglas de ingeniería y producto que prevalecen sobre decisiones locales de implementación.
 
-> Documento canónico en `docs/constitution.md`. El proyecto utiliza el flujo nativo de SDD Pi. Mientras no se ratifique, todas las decisiones se consideran propuestas.
+> Documento canónico en `docs/constitution.md`. El proyecto utiliza el flujo nativo de SDD Pi. La constitución no está ratificada globalmente; esto no invalida aprobaciones específicas de producto/stack registradas. D013 aprueba producto, Vue3/TS/backend local mínimo/SQLite, dirección ADR-002 y roadmap S06–S11; siete tablas no obligatorias, mínimo suficiente con KISS/SOLID/YAGNI. Solo formalización/planificación S06, no código. Esto no ratifica globalmente esta constitución ni adopta motor/renderer concretos, y conserva la base S01 válida.
 
 ## 1. Misión y prioridades
 
-EasyJam permite que una persona toque una canción completa, desde la introducción hasta el final, siguiendo un arreglo **simplificado, rítmico y sincronizado** con una fuente de reproducción autorizada. La primera experiencia se centra en guitarra rítmica y acordes de quinta; el modelo debe admitir en el futuro guitarra solista, bajo y práctica en grupo.
+EasyJam permite añadir canciones a una biblioteca personal, prepararlas mediante análisis real autorizado y conservar transcripción original y arreglo simplificado para practicarlas de principio a fin sin repetir análisis. La práctica muestra **pentagrama y tablatura del mismo arreglo simplificado**, con compases, duraciones, silencios, cursor, desplazamiento automático y navegación por compás/sección, sincronizados con YouTube oficial visible. D012 hace ambos sistemas de notación obligatorios; no se sustituyen por tarjetas. Calidad de guitarra rítmica antes que velocidad: se permite procesamiento mayor que duración, sin deadline musical arbitrario; trabajo durable independiente del navegador con límites operativos justificados, no tiempo real. La primera experiencia se centra en guitarra rítmica y acordes de quinta; otros instrumentos y práctica en grupo son evolución diferida, no abstracciones obligatorias del MVP.
 
 **Condición obligatoria:** cumplimiento de derechos y plataformas; ninguna facilidad técnica, tocabilidad o experiencia justifica extraer audio ni redistribuir arreglos sin autorización.
 
@@ -35,13 +35,14 @@ Orden de prioridades dentro de las opciones que cumplen esa condición:
 - `domain` **NO DEBE** importar Vue, Pinia, YouTube, alphaTab, servicios HTTP ni acceso a almacenamiento.
 - Las reglas musicales **DEBEN** expresarse preferentemente como funciones puras y estructuras TypeScript inmutables.
 - Los adaptadores integran librerías externas; las dependencias de infraestructura apuntan hacia contratos del núcleo.
-- Las unidades fundamentales del modelo son **Song, Arrangement, Section, Track, MusicalEvent, Fingering** y un mapa de tempo/sincronización; no componentes visuales.
-- El arreglo debe permitir varias pistas y niveles de dificultad aunque el MVP muestre únicamente la rítmica.
+- Las unidades se distinguen por responsabilidad: identidad de canción, transcripción original, arreglo derivado, eventos/secciones/digitaciones y alineación con una grabación. El detalle se valida con entradas reales; no lo decide la UI ni una tabla SQL.
+- Conservar el resultado original y versionar recetas de arreglo permite regenerar sin reanalizar audio. No exigir multitrack o dificultades futuras hasta existir necesidad.
 
 ### III. Reutilizar antes de desarrollar
 
 - Antes de construir utilidades de teoría musical o renderizado, **DEBE** evaluarse una librería existente y documentarse el resultado.
-- Se propondrá Tonal.js para notas/acordes y se evaluará alphaTab para tablaturas, **sin dar su idoneidad por demostrada** antes de un prototipo técnico.
+- Evaluar alphaTab prioritariamente para pentagrama+TAB/cursor/scroll/medios externos, sin adoptar hasta demostrar modelo/sync/pausa/buffering/seek y licencia/accesibilidad. No desarrollar renderer propio si biblioteca madura satisface requisitos. Tonal.js sigue candidato de teoría, no selección.
+- Motores/preprocesamiento/multipaso se comparan con referencia legítima y baseline, mejora/degradación medible y coste/recursos; no reconstrucción exacta de todos los instrumentos obligatoria ni herramientas extra por intuición.
 - La lógica específica propia se limita en principio a **transformación de arreglos, generación de posiciones y selección ergonómica** que las librerías no cubran adecuadamente.
 - No se crearán interfaces, patrones o capas sin al menos un caso de uso concreto o una frontera externa que justifique su existencia.
 
@@ -64,7 +65,8 @@ Orden de prioridades dentro de las opciones que cumplen esa condición:
 
 - Las reglas de dominio nuevas se desarrollan con **TDD o pruebas preparadas junto a la especificación**, usando casos límite y pruebas de regresión.
 - La aplicación tendrá pruebas unitarias (dominio), de contrato (adaptadores) y end-to-end de los recorridos críticos; se pueden usar relojes/reproductores simulados.
-- Cada cambio que afecte a la experiencia principal debe verificar el recorrido **abrir arreglo → reproducir → seguir sección/acordes → saltar → terminar**.
+- Cada cambio que afecte a la experiencia principal debe verificar el tramo correspondiente de **añadir URL cubierta → analizar realmente → guardar → biblioteca → practicar → reiniciar → reabrir sin análisis**; comprobar navegación, pausa y fallos cuando proceda.
+- Persistencia y trabajos requieren SQLite real en fichero, constraints/transacciones, pruebas concurrentes y de proceso nuevo; dobles o bases en memoria no sustituyen durabilidad. Reintentos acotados y resultados válidos conservados.
 - TypeScript en modo estricto y validación de datos en los límites del sistema son obligatorios.
 - Controles operables con teclado, focos visibles, etiquetas accesibles, contrastes legibles y señalización no exclusivamente cromática.
 
@@ -77,8 +79,8 @@ Orden de prioridades dentro de las opciones que cumplen esa condición:
 
 ### VIII. Complejidad proporcional
 
-- **No** microservicios, CQRS, Event Sourcing, colas ni backend hasta que un caso de uso y sus requisitos los justifiquen.
-- Primero un monolito frontend modular; separar servicios de red y persistencia solo cuando aparezcan necesidades reales.
+- **No** microservicios, CQRS, Event Sourcing ni colas externas sin requisito demostrado.
+- D013 aprueba backend local mínimo y SQLite como dirección ADR-002, modelo más simple suficiente sin siete tablas obligatorias. Framework/driver/ejecutor se ajustan por evidencia; no desplegar servicios públicos sin nueva decisión ni añadir capas/colas por previsión.
 - No se extraen paquetes compartidos por previsión: únicamente cuando exista al menos un segundo consumidor real o un problema de límites comprobado.
 
 ## 3. Estándares de entrega
@@ -125,6 +127,12 @@ Se usa SemVer documental: **MAJOR** si se elimina o contradice un principio; **M
 4. Definir la validación con usuarios sin cantidades ni porcentajes prefijados. El alcance confirmado se recoge en `product.md`; la secuencia candidata y sus puertas de aceptación, en `mvp-proposal.md`.
 
 ### Registro documental
+
+- 0.3.1 — 18 de octubre de 2026: D013 aprueba producto/dirección ADR-002/roadmap y permite archivo autorizado solo para S06. Siete tablas no obligatorias, simplificación con pruebas; constitución sigue sin ratificación global y ninguna tarea de código se autoriza por esta nota.
+
+- 0.3.0 — 18 de octubre de 2026: propuesta alineada con D012: pentagrama+TAB obligatorios del arreglo, alphaTab prioritario, calidad sobre velocidad y análisis durable independiente del navegador. Requisitos de experiencia confirmados, no ratificación global ni elección del diseño técnico; Vue3/TS/SQLite base propuesta del MVP revisado, preservando S01 existente.
+
+- 0.2.0 — 18 de octubre de 2026: propuesta alineada con D011: biblioteca, original/arreglo separados, SQLite/backend mínimo justificados, pruebas de reinicio y análisis previo. Se retiran obligaciones anticipadas de multitrack. Producto confirmado por el usuario; estas reglas transversales y ADR-002 no quedan ratificados globalmente por ello.
 
 - 0.1.1 — 18 de octubre de 2026: aclaración autorizada por el usuario de derechos y políticas como condición obligatoria y eliminación de metas cuantitativas no acordadas. No implica ratificación global de esta constitución.
 
