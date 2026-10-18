@@ -1,0 +1,13 @@
+# Decisions Register
+
+<!-- Append-only. Never edit or remove existing rows.
+     To reverse a decision, add a new row that supersedes it.
+     Read this file at the start of any planning or research phase. -->
+
+| # | When | Scope | Decision | Choice | Rationale | Revisable? | Made By |
+|---|------|-------|----------|--------|-----------|------------|---------|
+| D001 | M001 | scope | Secuencia y responsabilidades del MVP | M001 con S01 proveedor real/guía mínima, S02 arreglo completo, S03 quintas/optimización, S04 integración y S05 aceptación sin nuevas funciones; solo S01 descompuesta. | Validar riesgo externo antes de invertir en funcionalidades complejas y evitar duplicación entre slices. | Sí — evidencia técnica o cambio de alcance aprobado | human |
+| D002 | M001 | data | Restricciones musicales del MVP | Seis cuerdas, E A D G B E, trastes inclusivos 0–12, dificultad fácil, quintas de dos notas básicas; alternativas justificadas; progresión completa y empates deterministas; conservar tiempos/ritmo/silencios y revisar ambigüedades. | Tocabilidad y coherencia musical sin implementar niveles o afinaciones futuras. | Sí — ampliación explícita posterior | human |
+| D003 | M001 | scope | Contenido inicial y repetición | Una canción completa autorizada con varias secciones y variedad armónica; S01 usa vídeo fijo permitido y guía pequeña. Sin catálogo/URL arbitraria. Repetición de sección condicionada a evidencia real, sin prometer gapless. | Probar recorrido completo sin confundir preparación de contenido con generación automática ni embebibilidad con derechos. | Sí — viabilidad real o repertorio aprobado | human |
+| D004 | M001/S01 | convention | Puerta de ejecución y estado de arquitectura | Formalizar y planificar solo S01; no ejecutar T01 sin aprobación explícita; no auto, push, S02 ni cierre. Vue/Vite/TypeScript, Vitest/Playwright como propuesta principal; ADR/renderer/algoritmo/modelo temporal no ratificados. | El usuario requiere revisar el plan definitivo y autorizar S01 antes de cualquier código de producto. | No — requiere nueva autorización explícita | human |
+| D005 | M001/S01 | observability | Evidencia y cumplimiento de integración | Pruebas deterministas separadas de evidencia real obligatoria. Medir en S01 y proponer criterios cuantificables con método/incertidumbre; revisión del usuario antes de S04. Revisar privacidad/Referer/visibilidad y tratamiento del vídeo antes de cargar YouTube. | Documentación confirma límites de seek, autoplay y requisitos de cliente; el usuario confirmó R012 tras investigación. Mocks y frecuencia de polling no prueban precisión audible. | Sí — cambios de políticas o evidencia aprobada | collaborative |
