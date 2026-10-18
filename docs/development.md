@@ -43,7 +43,7 @@ Afinaciones adicionales (p. ej. Drop D) no se incorporan por preparar casos lím
 
 Una sola cadena reproducible, con versión Node LTS compatible fijada y lockfile del gestor elegido: instalación congelada → lint → typecheck estricto → tests unitarios/integración → build → E2E crítico con reproductor falso. Proponer scripts `lint`, `typecheck`, `test` (no watch), `build` y `test:e2e`.
 
-ESLint y un único criterio de formateo consistente, sin herramientas redundantes. Elegir versiones y gestor en S01 tras aprobar ADR-001. Añadir entonces comandos reales a `verification_commands` de SDD; `pre_merge_check: true` por sí solo no demuestra que se hayan ejecutado tests inexistentes.
+ESLint y un único criterio de formateo consistente, sin herramientas redundantes. Base aprobada para S01: Vue 3, Vite, TypeScript estricto, Vitest y Playwright, con pnpm y Node LTS compatible; no requiere ratificar todo ADR-001. En T01, tras nueva autorización, seleccionar/documentar versiones estables exactas y `packageManager`, conservar `pnpm-lock.yaml` y verificar instalación con `pnpm install --frozen-lockfile`. No instalar ni crear lockfiles durante la previsualización. Añadir entonces comandos reales a `verification_commands` de SDD; `pre_merge_check: true` por sí solo no demuestra que se hayan ejecutado tests inexistentes.
 
 CI sin secretos ni servicios de pago. Antes de conectar un proveedor CI, confirmar remoto/plataforma y presupuesto de minutos; no asumir gratuidad. Los checks locales serán los mismos que en CI. Los fallos deterministas bloquearán integración. Una comprobación externa de YouTube será independiente y no bloqueará por fallos de red ajenos.
 

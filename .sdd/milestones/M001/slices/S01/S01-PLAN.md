@@ -3,7 +3,9 @@
 **Goal:** Resolver pronto la viabilidad real de YouTube mediante una guía mínima de acordes y secciones, sin construir un reproductor completo ni fijar el renderer final.
 **Demo:** Desde una página local, cargar deliberadamente un vídeo fijo permitido, reproducir/pausar, seguir la guía basada en su reloj, saltar y activar/desactivar repetición de sección; consultar diagnóstico y medidas reales.
 
-**Execution gate:** Plan aprobado para revisión documental, NO para ejecución. Antes de T01 solicitar aprobación explícita, incluida base técnica y material. No auto, no S02, no milestone completion.
+**Execution gate:** Plan/criterios y base ejecutable de S01 aprobados; preparación autorizada, ejecución NO autorizada todavía (D006–D008). Mostrar previsualización nativa y esperar la siguiente autorización explícita para T01. Después, una tarea cada vez; no auto, no S02, no milestone completion.
+
+**Approved test setup:** vídeo inicial oficial `M7lc1UVf-VE`, condicionado a funcionamiento integrado; guía ficticia rotulada como prueba técnica, no transcripción musical. Chrome/Chromium escritorio como objetivo de S01; no compatibilidad multidispositivo completa. Vue 3/Vite/TypeScript estricto/Vitest/Playwright, pnpm y Node LTS compatible aprobados; versiones estables exactas se seleccionan/documentan en T01. La canción y arreglo reales autorizados corresponden a S02.
 
 ## Must-Haves
 
@@ -19,17 +21,17 @@
 
 - This slice proves: contract and live integration of a minimal guide, not final assembly of the full arrangement.
 - Real runtime required: yes, YouTube real desde HTTP local con vídeo permitido.
-- Human/UAT required: evaluación de desfase audible y utilidad musical; el agente realiza comprobaciones accesibles. Hardware no disponible queda explícitamente no probado.
+- Human/UAT required: evaluación perceptiva de alineación temporal cuando exista referencia independiente accesible; la guía ficticia no permite acreditar utilidad musical ni correspondencia armónica con el audio. El agente realiza comprobaciones accesibles en escritorio Chrome/Chromium. Otros navegadores y hardware móvil quedan fuera de la validación de S01.
 
 ## Verification
 
 Comandos planificados: no existen todavía; T01 debe crearlos antes de usarlos como evidencia.
 
-- `npm run lint`, `npm run typecheck`, `npm run test -- --run`, `npm run build`, `npm run test:e2e`.
+- `pnpm run lint`, `pnpm run typecheck`, `pnpm run test --run`, `pnpm run build`, `pnpm run test:e2e`.
 - `tests/unit/player-contract.test.ts`: readiness, estados, comandos, errores y destrucción con dobles tipados.
 - `tests/unit/guide-session.test.ts`: selección [inicio, fin), silencio, pausa, seek observado, retorno único por ciclo, desactivar bucle y limpieza con reloj virtual.
 - `tests/e2e/s01-guide.spec.ts`: flujo determinista con proveedor falso, etiquetas/teclado, pausa, saltos, repetición y error visible. No conexión real a YouTube en suite CI.
-- `tests/e2e/s01-youtube.smoke.spec.ts`: comprobación opt-in con proveedor real, separada mediante `npm run test:youtube`; una caída externa no invalida cada CI, pero no acredita integración real.
+- `tests/e2e/s01-youtube.smoke.spec.ts`: comprobación opt-in con proveedor real, separada mediante `pnpm run test:youtube`; una caída externa no invalida cada CI, pero no acredita integración real.
 - `docs/validation/S01-youtube.md`: evidencia real de play/pause/seek/repetición/buffering/reapertura, matriz de entornos, resultados y propuesta de umbrales con incertidumbre. No marcar S01 completa si falta esta evidencia o la viabilidad sigue sin resolver.
 
 ## Observability / Diagnostics
@@ -51,40 +53,40 @@ Comandos planificados: no existen todavía; T01 debe crearlos antes de usarlos c
   - Why: comprobar la reproducción externa antes de construir guía/motor.
   - Files: `package.json`, `src/main.ts`, `src/App.vue`, `src/application/player-port.ts`, `src/infrastructure/youtube-player.ts`, `tests/unit/player-contract.test.ts`, `docs/validation/S01-material.md`
   - Do: previa aprobación, fijar base/gestor/versiones, scripts y tests; documentar permisos/privacidad/vídeo; integrar iframe visible y play/pause/tiempo con límites pequeños. No catálogo/renderizador/optimizador.
-  - Verify: `npm run lint && npm run typecheck && npm run test -- --run && npm run build`; reproducción real y estado/tiempo observados.
+  - Verify: `pnpm run lint && pnpm run typecheck && pnpm run test --run && pnpm run build`; reproducción real y estado/tiempo observados.
   - Done when: vídeo permitido realmente reproduce/pausa, reloj consultable y contrato testeado; si falta material, bloqueado sin fixture inventado.
   - Depends on: none; autorización explícita y material/condiciones de carga resueltos.
 - [ ] **T02: Conectar guía mínima al reloj observado y navegar secciones** `est:45m`
   - Why: probar la sincronización y seek a través del camino real sin esperar al arreglo completo.
   - Files: `src/application/guide-session.ts`, `src/fixtures/minimal-guide.ts`, `src/App.vue`, `tests/unit/guide-session.test.ts`
   - Do: guía pequeña con silencio y secciones, selección pura y referencia musical/tiempo multimedia separadas; pausa/buffering y llegada observada tras seek.
-  - Verify: `npm run test -- --run && npm run typecheck && npm run build`; comprobar guía y saltos reales desde varios estados.
+  - Verify: `pnpm run test --run && pnpm run typecheck && pnpm run build`; comprobar guía y saltos reales desde varios estados.
   - Done when: selección actual/siguiente correcta, pausa sin avance autónomo y navegación basada en observación, no target supuesto.
   - Depends on: T01.
 - [ ] **T03: Probar repetición de sección y exponer fallos con limpieza** `est:45m`
   - Why: resolver el segundo riesgo externo y asegurar que un fallo sea diagnosticable.
   - Files: `src/application/guide-session.ts`, `src/infrastructure/youtube-player.ts`, `src/App.vue`, `tests/unit/guide-session.test.ts`, `tests/unit/player-contract.test.ts`
   - Do: toggle de sección completa, evitar seeks duplicados pendientes, pausa/desactivar/saltos; estado error/autoplay/timeout y dispose sin callbacks/timers tardíos.
-  - Verify: `npm run test -- --run && npm run typecheck && npm run build`; probar varios ciclos reales y desmontaje/reapertura.
+  - Verify: `pnpm run test --run && pnpm run typecheck && pnpm run build`; probar varios ciclos reales y desmontaje/reapertura.
   - Done when: control de repetición/fallos testeado y comportamiento real registrado, o bloqueo de viabilidad explícito sin prometer éxito.
   - Depends on: T02 y contrato T01.
 - [ ] **T04: Verificar el recorrido y documentar medidas reales de viabilidad** `est:1h`
   - Why: separar evidencia de contrato de evidencia real y decidir si se puede continuar.
   - Files: `tests/e2e/s01-guide.spec.ts`, `tests/e2e/s01-youtube.smoke.spec.ts`, `playwright.config.ts`, `docs/validation/S01-youtube.md`, `docs/development.md`
   - Do: E2E falso determinista y smoke real opt-in; medir precisión/latencia/saltos/retorno, accesibilidad básica y diagnóstico; proponer umbrales desde datos, no elegir renderer final.
-  - Verify: `npm run lint && npm run typecheck && npm run test -- --run && npm run build && npm run test:e2e`; `npm run test:youtube` y revisión de evidencia real según disponibilidad.
+  - Verify: `pnpm run lint && pnpm run typecheck && pnpm run test --run && pnpm run build && pnpm run test:e2e`; `pnpm run test:youtube` y revisión de evidencia real según disponibilidad.
   - Done when: checks pasan, recorrido real documentado con método/entorno y límites, conclusión de viabilidad y criterios propuestos; pedir decisión si hay bloqueo o cambio de alcance.
   - Depends on: T01, T02, T03.
 
 ## Files Likely Touched
 
-- `package.json`, `package-lock.json`, `index.html`, `tsconfig.json`, `vite.config.ts`, `eslint.config.js`, `playwright.config.ts`.
+- `package.json`, `pnpm-lock.yaml`, `index.html`, `tsconfig.json`, `vite.config.ts`, `eslint.config.js`, `playwright.config.ts`.
 - `src/main.ts`, `src/App.vue`, `src/application/player-port.ts`, `src/application/guide-session.ts`, `src/infrastructure/youtube-player.ts`, `src/fixtures/minimal-guide.ts`.
 - `tests/unit/player-contract.test.ts`, `tests/unit/guide-session.test.ts`, `tests/e2e/s01-guide.spec.ts`, `tests/e2e/s01-youtube.smoke.spec.ts`.
 - `docs/validation/S01-material.md`, `docs/validation/S01-youtube.md`, `docs/development.md`, `.sdd/PREFERENCES.md` (comandos reales tras crearlos).
 
 ## Pending Decisions / Stop Conditions
 
-- Antes de T01: aprobación de ejecución y stack principal/gestor; vídeo y autorización; privacidad/aceptación/Made for Kids; entornos objetivo. Si falta un dato no derivable, preguntar, no inventar.
+- Antes de T01: nueva autorización de ejecución. Base/gestor, vídeo técnico inicial y escritorio Chromium aprobados (D006–D008); verificar condiciones de carga/privacidad/Made for Kids y reproducción real del ejemplo oficial, sin suponer derechos musicales ni cambiar material si falla. Elegir y documentar versiones estables compatibles y Node LTS en T01, no instalarlos durante la previsualización.
 - Renderer, algoritmo y modelo musical definitivo no se deciden en S01. Guía mínima HTML es propuesta local para revisar al autorizar, no adopción de un renderer final.
 - Resultado cuantitativo de S01 no es una aceptación automática: proponer umbrales y solicitar acuerdo antes de S04. Inviabilidad que afecte la promesa se eleva al usuario antes de S02.

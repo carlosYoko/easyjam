@@ -13,11 +13,11 @@ skills_used:
 
 ## Description
 
-Primera reproducción real visible, con pausa y tiempo observado, base ejecutable mínima y prueba de contrato. NO ejecutar hasta autorización explícita del usuario. Stack principal aún propuesto; aprobar su uso antes de instalar. La estimación incluye pequeños archivos de scaffold/configuración, no catorce módulos funcionales; si no cabe en una ventana, dividir antes de ejecutar y presentar ajuste.
+Primera reproducción real visible, con pausa y tiempo observado, base ejecutable mínima y prueba de contrato. Plan/criterios y base Vue 3/Vite/TypeScript estricto/Vitest/Playwright/pnpm/Node LTS aprobados específicamente para S01 (D006–D008); NO ejecutar hasta la siguiente autorización explícita. Vídeo inicial M7lc1UVf-VE, condicionado a inserción real, y Chrome/Chromium escritorio. Guía futura ficticia y rotulada, nunca transcripción del vídeo. La estimación incluye pequeños archivos de scaffold/configuración, no catorce módulos funcionales; si no cabe en una ventana, dividir antes de ejecutar y presentar ajuste.
 
 ## Steps
 
-1. Confirmar autorización de T01, Vue/Vite/TypeScript/Vitest/Playwright y gestor/versiones compatibles. Resolver vídeo/material permitido, procedencia, condiciones de carga/privacidad y entornos. Si falta autorización o contenido, detenerse sin inventarlos.
+1. Confirmar nueva autorización de T01; seleccionar versiones estables compatibles de la base aprobada y Node LTS, documentar versiones exactas y `packageManager` de pnpm. Revisar condiciones de carga/privacidad y procedencia del ejemplo oficial M7lc1UVf-VE; comprobarlo en Chrome/Chromium escritorio. No afirmar permiso para transcribirlo ni que la guía ficticia representa su música. Si falta autorización o no funciona la inserción, detenerse sin sustituir vídeo o material silenciosamente.
 2. Crear scaffold mínimo con TypeScript estricto, lint, Vitest y build reproducibles y lockfile. No Router, Pinia, backend o CI externa. Preparar tests del contrato antes/junto a la implementación.
 3. Definir límite pequeño `PlayerPort`/`PlayerSnapshot` sin tipos YT: estado normalizado, segundos observados, play/pause/seek, suscripción y dispose. Las órdenes no acreditan éxito hasta observar estado; duración desconocida no es cero musical.
 4. Integrar carga oficial con readiness y fallo visible; iframe visible sin overlays ni ocultar controles, HTTP local, origin/Referer correctos e interacción deliberada. No autoplay necesario ni secretos del proveedor en bundle.
@@ -34,7 +34,8 @@ Primera reproducción real visible, con pausa y tiempo observado, base ejecutabl
 
 ## Verification
 
-- `npm run lint && npm run typecheck && npm run test -- --run && npm run build`.
+- `pnpm run lint && pnpm run typecheck && pnpm run test --run && pnpm run build`.
+- Instalación reproducible: `pnpm install --frozen-lockfile` una vez creado el lockfile; documentar versiones elegidas sin inventar resultados antes de ejecutar.
 - `tests/unit/player-contract.test.ts`: comandos/estados/readiness/error/dispose con doble sin red.
 - Navegador real HTTP: interacción → PLAYING/tiempo creciente → pausa/tiempo detenido. Registrar entorno y estado real; si falla, tarea bloqueada.
 - Confirmar controles/tamaño/Referer y que no se enviaron claves ni se añadió contenido sin permiso. No afirmar CI remota instalada.
@@ -56,7 +57,7 @@ Primera reproducción real visible, con pausa y tiempo observado, base ejecutabl
 ## Expected Output
 
 - `package.json` — scripts/dependencias mínimas aprobadas.
-- `package-lock.json` — lockfile si npm queda confirmado; cambiar plan si se elige otro gestor.
+- `pnpm-lock.yaml` — lockfile de pnpm aprobado; conservar para instalaciones congeladas reproducibles.
 - `index.html` — entrada sin suprimir Referer.
 - `tsconfig.json` — strict y referencias necesarias.
 - `vite.config.ts` — Vue/Vitest mínimos.

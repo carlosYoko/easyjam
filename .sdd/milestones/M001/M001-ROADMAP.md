@@ -12,7 +12,7 @@
 ## Key Risks / Unknowns
 
 - Tiempo/saltos/bucles de YouTube no garantizan precisión musical o retorno continuo.
-- Derechos, privacidad, identidad y material concreto pendientes.
+- Derechos del arreglo/canción reales pendientes para S02; S01 tiene el ejemplo técnico oficial M7lc1UVf-VE y guía ficticia rotulada. Privacidad, identidad y reproducción integrada requieren comprobación.
 - Coherencia del arreglo y comodidad no se acreditan solo con un algoritmo.
 - Modelo temporal y renderizador aún no elegidos.
 
@@ -25,7 +25,7 @@
 
 ## Verification Classes
 
-- Contract verification: Vitest/contratos/validación/E2E deterministas; tipos, lint y build (propuesta de herramientas pendiente de aprobación para ejecutar).
+- Contract verification: Vitest/contratos/validación/E2E deterministas; tipos, lint y build. Herramientas aprobadas para S01 con pnpm/Node LTS; versiones exactas por fijar en T01, ejecución todavía no autorizada.
 - Integration verification: iframe oficial real, guía/tablatura, saltos, pausa, repetición y fallos; red externa fuera de CI determinista.
 - Operational verification: desmontaje/reapertura, limpieza de suscripciones/timers, estados de carga/buffering/error.
 - UAT / human verification: comodidad tocando, coherencia del arreglo, desfase perceptivo y utilidad del retorno. El agente verifica lo que pueda; hardware inaccesible se declara no probado.

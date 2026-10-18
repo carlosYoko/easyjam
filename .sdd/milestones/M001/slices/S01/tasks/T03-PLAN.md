@@ -33,7 +33,7 @@ Depende de T02 y del contrato T01. Probar repetición de sección completa sin e
 
 ## Verification
 
-- `npm run test -- --run && npm run typecheck && npm run build`.
+- `pnpm run test --run && pnpm run typecheck && pnpm run build`.
 - Tests de ciclos, seek pendiente, buffering, pausa/desactivación, saltos, fin, error y dispose con reloj virtual.
 - Navegador real: varios retornos desde sección elegida, cancelación y reapertura; guardar observaciones para informe T04, sin extraer audio.
 

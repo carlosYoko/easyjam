@@ -35,8 +35,8 @@ Depende de T01–T03. Cerrar evidencia mínima real sin ampliar funciones. No co
 
 ## Verification
 
-- `npm run lint && npm run typecheck && npm run test -- --run && npm run build && npm run test:e2e`.
-- `npm run test:youtube` con proveedor real cuando esté disponible; revisar resultados en vez de inferir éxito por arrancar.
+- `pnpm run lint && pnpm run typecheck && pnpm run test --run && pnpm run build && pnpm run test:e2e`.
+- `pnpm run test:youtube` con proveedor real cuando esté disponible; revisar resultados en vez de inferir éxito por arrancar.
 - `test -s docs/validation/S01-material.md && test -s docs/validation/S01-youtube.md` más revisión del informe y evidencia enlazada.
 - Browser assertions explícitas en la app local para estado, guía, pausa y error. Error de tercero no invalida automáticamente consola de la aplicación; distinguir procedencia.
 

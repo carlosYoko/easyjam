@@ -1,7 +1,7 @@
 # M001: EasyJam Guitar Practice MVP
 
 **Gathered:** 2026-10-18
-**Status:** Ready for planning — manual only; implementation requires explicit user approval.
+**Status:** Roadmap formalized; S01 plan/criteria and execution preparation approved. Task execution awaits separate explicit authorization.
 
 ## Project Description
 
@@ -23,8 +23,8 @@ La frustración con tablaturas complejas y saltos innecesarios por el mástil ex
 ### Entry point / environment
 
 - Entry point: SPA local servida por HTTP; comandos exactos se crearán en T01, no existen todavía.
-- Environment: navegador real; matriz objetivo pendiente de confirmar antes de medir. Móvil emulado no acredita hardware móvil.
-- Live dependencies involved: YouTube IFrame Player API y vídeo fijo permitido; sin backend/cuentas/base de datos.
+- Environment: S01 prioriza Chrome/Chromium de escritorio; otros navegadores y móviles posteriores. Móvil emulado no acredita hardware móvil.
+- Live dependencies involved: YouTube IFrame Player API; S01 usa inicialmente M7lc1UVf-VE con guía ficticia rotulada, condicionado a inserción real. S02 requiere canción/arreglo reales autorizados; sin backend/cuentas/base de datos.
 
 ## Completion Class
 
@@ -45,10 +45,10 @@ To call this milestone complete, we must prove:
 
 - Seek puede aterrizar en keyframe anterior y cambiar reproducción según estado; el tiempo solicitado no es el observado.
 - No existe garantía de repetición musical sin huecos; si no es útil, solicitar decisión de alcance.
-- Derechos/material concretos no seleccionados. Embebibilidad no concede derechos del arreglo.
+- Canción/arreglo reales y derechos para S02 no seleccionados. El ejemplo técnico oficial S01 no concede derechos musicales ni convierte su guía ficticia en transcripción.
 - Referer, privacidad/consentimiento y tratamiento Made for Kids deben resolverse antes de cargar el proveedor; posible procedimiento de metadatos pendiente, sin asumir claves.
 - API polling no demuestra latencia audible; separar error de selección, latencia de UI, alineación del arreglo y desfase perceptivo.
-- Renderer, unidades musicales definitivas, anclas, coste/algoritmo y matriz de entornos abiertos.
+- Renderer, unidades musicales definitivas, anclas y coste/algoritmo abiertos; escritorio Chrome/Chromium fijado para S01.
 
 ## Existing Codebase / Prior Art
 
@@ -85,7 +85,7 @@ No existen src, package.json ni implementación. No se referencian capacidades f
 
 ## Technical Constraints
 
-- Vue/Vite/TypeScript, Vitest/Playwright y arquitectura ligera siguen como propuesta principal, no ADR ratificado en bloque. Autorizar S01 debe resolver su base ejecutable explícitamente.
+- Vue 3/Vite/TypeScript estricto, Vitest/Playwright, pnpm y Node LTS compatible aprobados para S01. Versiones exactas se seleccionan/documentan en T01 con lockfile reproducible; ADR no ratificado en bloque. Preparación aprobada, ejecución aún bloqueada a la siguiente autorización.
 - Modelo musical separado de API YouTube; guía mínima no impone el esquema del arreglo completo.
 - Evaluar bibliotecas antes de construir motor/renderizador; sin decisiones especulativas.
 - Permisos, API oficial visible, tamaño mínimo documentado y controles sin overlays; no descargar/extraer audio.
@@ -99,8 +99,8 @@ No existen src, package.json ni implementación. No se referencian capacidades f
 
 ## Open Questions
 
-- Vídeo/arreglo/permiso concretos y revisión de privacidad/metadatos antes de T01 real.
-- Navegadores/dispositivos objetivo y disponibilidad de hardware para medidas.
+- Condiciones de carga/privacidad/metadatos y funcionamiento integrado del ejemplo oficial antes de acreditar T01; canción/arreglo/permiso reales antes de S02.
+- Versiones estables compatibles y versión Node LTS exactas en T01; no se han instalado dependencias.
 - Umbrales tras S01 y aceptación de límites de repetición.
 - Símbolos especiales, formas alternativas, política de octavas/transiciones del bucle, coste y algoritmo antes de S03.
 - Renderer y representación temporal definitiva antes de S04, sin acoplar a ejemplos del ADR.

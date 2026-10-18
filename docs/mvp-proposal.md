@@ -39,7 +39,7 @@ La comodidad se evalúa sobre la progresión completa. Un mínimo matemático so
 
 Se empieza con **una canción completa**, no solo un fragmento. Esta demuestra el recorrido técnico y funcional. Antes de declarar validado el producto con usuarios, se probarán varias canciones de estilos diferentes. No se fijan todavía cantidades, porcentajes ni metas estadísticas.
 
-La primera experiencia usa una canción completa, con varias secciones y suficiente variedad armónica. No necesita catálogo ni campo para pegar URLs. S01 puede usar una URL fija de un vídeo permitido y embebible. La selección concreta del material y la comprobación de permisos siguen pendientes; no se presume que ya exista contenido autorizado.
+La primera experiencia musical usa una canción completa, con varias secciones y suficiente variedad armónica. No necesita catálogo ni campo para pegar URLs. Como excepción técnica previa, S01 usará inicialmente el vídeo oficial de ejemplo `M7lc1UVf-VE`, condicionado a reproducción integrada efectiva, con secuencia ficticia identificada como prueba y no como transcripción. Su objetivo es Chrome/Chromium de escritorio; no acredita coherencia con la música del vídeo. La canción y arreglo reales con derechos resueltos se seleccionarán en S02.
 
 ### Derechos y plataformas
 
@@ -187,12 +187,12 @@ Los nombres de archivos, funciones y contratos se fijarán al planificar; no se 
 
 ## 7. Decisiones pendientes de aprobación
 
-1. Revisar el plan formal definitivo y autorizar expresamente S01; la estructura está aprobada, la ejecución no.
-2. Seleccionar canción, arreglo y vídeo concretos, con derechos y embebibilidad comprobados. Afinación estándar y trastes 0–12 ya están confirmados.
-3. Cerrar la propuesta principal de stack y evaluar bibliotecas/renderizador, versiones y licencias; ADR-001 sigue propuesto, no aceptado en bloque.
+1. Plan/criterios y preparación de S01 aprobados; ejecutar T01 requiere la siguiente autorización explícita tras su previsualización nativa.
+2. Seleccionar en S02 canción/arreglo/vídeo reales con derechos y embebibilidad comprobados; S01 tiene fijado el ejemplo técnico oficial, cuyo funcionamiento integrado aún debe verificarse. Afinación estándar y trastes 0–12 ya están confirmados.
+3. Base de S01 aprobada: Vue 3/Vite/TypeScript estricto/Vitest/Playwright, pnpm y Node LTS compatible. Versiones estables exactas se seleccionan/documentan en T01; bibliotecas/renderizador y sus licencias siguen pendientes. ADR-001 no aceptado en bloque.
 4. Definir política de acordes especiales, formas de quintas, octavas, restricciones y criterio ergonómico. La programación dinámica es candidata, no decisión ratificada.
 5. Acordar semántica temporal, desfases y contrato de reproducción con evidencia; no adoptar automáticamente ticks, PPQ=960 ni anclas del boceto.
-6. Acordar navegadores/dispositivos objetivo, tolerancia de sincronización y comportamiento aceptable del retorno de sección a partir de S01. Si repetir no es viable, el usuario decide cómo revisar el alcance.
+6. Chrome/Chromium escritorio fijado para S01; otros navegadores/móviles posteriores sin impedir su incorporación. Acordar tolerancia de sincronización y retorno aceptable a partir de medidas S01. Si repetir no es viable, el usuario decide cómo revisar el alcance.
 7. Definir después una entrada por URL o catálogo si se requiere; no son parte del MVP aprobado.
 8. Definir después la validación con usuarios y diversidad de canciones; no confundir cierre técnico con producto validado.
 9. Ratificar separadamente constitución y arquitectura, y sincronizar documentos canónicos antes de ejecutar.
@@ -204,6 +204,6 @@ Los nombres de archivos, funciones y contratos se fijarán al planificar; no se 
 - `ADR-001.md` conserva el estado propuesto y remite aquí para la secuencia y restricciones actuales; sus bocetos no son contratos aceptados.
 - `development.md` define calidad y Git; A/B arbitrario y cambios de tempo no se convierten en requisitos por aparecer en ejemplos de pruebas.
 
-**Siguiente paso exacto:** revisar el [plan de S01](../.sdd/milestones/M001/slices/S01/S01-PLAN.md) y aprobar explícitamente su ejecución/base técnica/material. Después, `/sdd next --dry-run` debe mostrar T01 y `/sdd next` ejecutará una sola unidad en modo paso a paso. No ejecutar esos comandos de implementación antes de autorización; no iniciar `/sdd auto`.
+**Siguiente paso exacto:** previsualizar T01 con el mecanismo nativo `/sdd next --dry-run` y esperar la siguiente autorización explícita de ejecución. Plan/criterios, base técnica y preparación están aprobados; no se autoriza ejecutar todavía. Después de esa nueva autorización, `/sdd next` ejecutará una sola unidad en modo paso a paso. No iniciar `/sdd auto`.
 
 M001 fue generado mediante `sdd_milestone_generate_id`. Contexto, roadmap, contrato y planes usan las plantillas instaladas; decisiones e investigación se registran con herramientas nativas. No se han creado a mano STATE, DB, runtime ni marcadores de ejecución. Investigación documental y propuestas numéricas pendientes de medidas no son evidencia de funcionamiento real.
