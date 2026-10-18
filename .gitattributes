@@ -1,0 +1,10 @@
+# Normalize text across Windows and worktrees; preserve binary source assets.
+* text=auto
+*.md text eol=lf whitespace=-blank-at-eol
+*.ts text eol=lf
+*.vue text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+.gitignore text eol=lf
+*.zip binary
