@@ -56,7 +56,7 @@ Comandos planificados: no existen todavía; T01 debe crearlos antes de usarlos c
   - Verify: `pnpm run lint && pnpm run typecheck && pnpm run test --run && pnpm run build`; reproducción real y estado/tiempo observados.
   - Done when: vídeo permitido realmente reproduce/pausa, reloj consultable y contrato testeado; si falta material, bloqueado sin fixture inventado.
   - Depends on: none; autorización explícita y material/condiciones de carga resueltos.
-- [ ] **T02: Conectar guía mínima al reloj observado y navegar secciones** `est:45m`
+- [x] **T02: Conectar guía mínima al reloj observado y navegar secciones** `est:45m`
   - Why: probar la sincronización y seek a través del camino real sin esperar al arreglo completo.
   - Files: `src/application/guide-session.ts`, `src/fixtures/minimal-guide.ts`, `src/App.vue`, `tests/unit/guide-session.test.ts`
   - Do: guía pequeña con silencio y secciones, selección pura y referencia musical/tiempo multimedia separadas; pausa/buffering y llegada observada tras seek.

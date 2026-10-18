@@ -1,6 +1,6 @@
 # Desarrollo, Git y calidad
 
-**Estado:** base local de S01 y revisión técnica de material verificadas; riesgo intermitente de T01 aceptado explícitamente por el usuario (D010) tras el ensayo acotado 10/10 por variante. T02 está autorizada; T03–T04 no. ADR-001 y arquitectura musical siguen propuestos.
+**Estado:** base local de S01 y revisión técnica de material verificadas; riesgo intermitente de T01 aceptado explícitamente por el usuario (D010) tras el ensayo acotado 10/10 por variante. T02 implementada y verificada; T03–T04 no autorizadas. ADR-001 y arquitectura musical siguen propuestos.
 
 ## Ciclo de trabajo
 
@@ -76,6 +76,22 @@ Véanse [material](validation/S01-material.md) e [informe del ensayo](validation
 La instrumentación temporal se retiró. El usuario aceptó el riesgo y autorizó
 solo T02 (D010); el cierre verificado de T01 consta en su resumen nativo. No declarar
 corregido el incidente ni avanzar a T03 sin nueva autorización.
+
+## Guía técnica de T02
+
+La página usa `selectGuideFrame()` y la fixture rotulada, con secciones y acordes
+actuales/siguientes, silencios explícitos, huecos sin evento y fin de secuencia.
+Las referencias compás/pulso/duración están separadas de `sourceTiming`; no son
+una transcripción ni el esquema definitivo de S02. No hay reloj de UI acumulativo.
+
+Los saltos requieren estado observado `playing` o `paused`; desde cued/idle hay
+que reproducir/pausar primero. El destino solicitado no confirma llegada y la
+navegación pausada mantiene esa intención. Buffering/error deshabilitan saltos.
+La fixture acaba a los 36 s, no el vídeo. No hay repetición (T03).
+
+Calidad: 65 tests (59 de guía y 6 de contrato), lint, tipos y build verificados.
+Evidencia real, controles nativos, teclado, diagnóstico inválido y limitaciones:
+[validación de guía](validation/S01-guide.md). T03 no se inicia automáticamente.
 
 ## CI propuesta para S01, no instalada ahora
 
