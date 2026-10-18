@@ -53,3 +53,14 @@ blob-report/
 .sdd/browser-baselines/
 .sdd/milestones/**/continue.md
 .sdd/milestones/**/*-CONTINUE.md
+
+# ── SDD baseline (auto-generated) ──
+.vscode/
+*.code-workspace
+.next/
+__pycache__/
+*.pyc
+.venv/
+venv/
+target/
+vendor/
