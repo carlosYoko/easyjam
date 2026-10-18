@@ -1,7 +1,7 @@
 # EasyJam — Visión de producto y alcance del MVP
 
 **Versión:** 0.1.0  
-**Estado:** borrador de producto, pendiente de validación con usuarios  
+**Estado:** alcance del MVP confirmado en discusión; pendiente de validación con usuarios. Planificación por slices: [propuesta revisada](mvp-proposal.md).  
 **Fecha:** 18 de octubre de 2026  
 **Documentos relacionados:** [constitución](constitution.md), [ADR-001](adr/ADR-001.md).
 
@@ -47,23 +47,25 @@ Quiere ver varias líneas instrumentales sincronizadas, asignar rítmica/bajo/so
 
 | ID | Capacidad | Resultado esperado |
 |---|---|---|
-| P0-01 | Catálogo pequeño de arreglos preparados y autorizados | Elegir una canción que ya tenga guía musical completa. |
+| P0-01 | Una canción completa con arreglo preparado y autorizado | Abrir la canción inicial; no se requiere catálogo ni entrada de URL. |
 | P0-02 | Reproductor de YouTube integrado y visible | Escuchar el vídeo embebido sin ocultarlo ni alterar el contenido. |
 | P0-03 | Secciones temporizadas | Mostrar intro, estrofa, estribillo, puente y cierre cuando existan. |
 | P0-04 | Arreglo rítmico completo | Cubrir desde el comienzo hasta el final con acordes, patrones y silencios. |
 | P0-05 | Conversión a quintas | Simplificar acordes convencionales conservando la fundamental definida. |
 | P0-06 | Optimización de digitaciones | Elegir posiciones alcanzables con menor esfuerzo global y mostrar el traste/cuerda. |
 | P0-07 | Sincronización visual | Resaltar la sección, compás y evento actuales según el reloj del reproductor. |
-| P0-08 | Navegación de práctica | Reproducir, pausar, saltar de sección y reiniciar desde un punto. |
+| P0-08 | Navegación de práctica | Reproducir, pausar, saltar de sección y repetir una sección completa según viabilidad real de YouTube; sin garantía de bucle sin interrupciones. |
 | P0-09 | Errores claros | Explicar si no hay arreglo, el vídeo no permite inserción o falla la sincronización. |
 
 **Alcance musical:** una pista de **guitarra rítmica** por arreglo, afinación estándar (E–A–D–G–B–E), acompañamiento con power chords, patrones rítmicos sencillos y silencios. La intro se cubre como **acompañamiento rítmico simplificado**; no se promete reconstruir su riff original.
 
-El primer catálogo puede ser de **3 canciones de demostración con permiso o música propia** para desarrollar el flujo; crecer a **5–10 canciones** de estilos distintos para la validación con personas reales.
+**Restricciones confirmadas:** guitarra de seis cuerdas, afinación estándar E–A–D–G–B–E, trastes 0–12 y dificultad fácil única. Quintas de dos notas como forma básica, con alternativas justificadas por comodidad. Los símbolos ambiguos sin conversión fiable se señalan para revisión.
+
+Se comienza con **una canción completa autorizada**, con varias secciones y variedad armónica. Antes de validar el producto con usuarios se probarán varias canciones de estilos distintos, sin cantidades ni porcentajes prefijados.
 
 ### Deseable tras el MVP (P1)
 
-- Repetición A/B de secciones y metrónomo/cuenta atrás sin modificar el audio de YouTube.
+- Editor A/B arbitrario y metrónomo/cuenta atrás sin modificar el audio de YouTube; la repetición de sección completa pertenece al MVP, condicionada por viabilidad.
 - Preferencia de zona del mástil; perfiles de optimización «menos movimiento» y «equilibrado».
 - Afinaciones adicionales, incluido Drop D, previa cobertura con tests musicales.
 - Ajuste manual de desfase del arreglo y editor/importador de progresiones temporizadas.
@@ -79,11 +81,11 @@ El primer catálogo puede ser de **3 canciones de demostración con permiso o m�
 - Usuarios, pagos, biblioteca comunitaria y publicación abierta de transcripciones.
 - Vista multitrack de bajo/rítmica/solista, jam multiusuario o sincronización entre dispositivos.
 
-**Importante:** en el MVP, pegar una URL de YouTube solo puede encontrar o asociar un **arreglo ya disponible y válido**. Una URL desconocida se responde con «Todavía no existe un arreglo para esta canción», no con una promesa de análisis automático.
+**Importante:** el MVP no incluye campo de URL ni catálogo. Si posteriormente se incorpora entrada por URL, solo podrá localizar un arreglo disponible; una URL desconocida no implicará generación automática.
 
 ## 5. Experiencia principal de usuario
 
-1. El guitarrista abre el catálogo o selecciona una canción con arreglo disponible.
+1. El guitarrista abre la canción inicial con arreglo disponible; no necesita catálogo ni pegar una URL.
 2. Ve el vídeo de YouTube **visible**, título, duración, afinación y dificultad del arreglo.
 3. Aparece un mapa de secciones. Puede empezar desde el principio o saltar a otra sección.
 4. Al reproducir, el sistema resalta en tiempo real el acorde/tablatura, su patrón rítmico y la sección activa.
@@ -142,14 +144,9 @@ Una canción sin arreglo disponible, con datos musicales corruptos o con vídeo 
 **Hipótesis H2:** las digitaciones optimizadas reducen pausas y dificultad percibida.  
 **Hipótesis H3:** ver las secciones reduce la pérdida de contexto al practicar.
 
-**Propuesta de experimento:** 5–10 personas con niveles variados, 5–10 canciones de diferentes estilos, sesión observada sin ayuda del facilitador. Las metas siguientes son **objetivos propuestos, no resultados**:
+**Validación pendiente:** observar la práctica con varias canciones de estilos diferentes y participantes del público objetivo, sin fijar todavía tamaño de muestra ni porcentajes. Evaluar finalización, comprensión de secciones/acordes, comodidad de transiciones y fallos bloqueantes. Completar el recorrido técnico con una canción no valida estas hipótesis con usuarios.
 
-| Indicador | Objetivo piloto |
-|---|---|
-| Finalización | ≥70 % de participantes terminan una canción de prueba a su ritmo sin abandonar. |
-| Claridad | ≥80 % entienden qué acorde y parte de la canción siguen. |
-| Usabilidad de cambios | ≥80 % califican las transiciones de digitación como cómodas. |
-| Estabilidad | Ningún error bloqueante en el recorrido de práctica durante la demostración. |
+La evidencia real con YouTube es obligatoria para cerrar el MVP; no implica depender de servicios externos en cada ejecución de CI.
 
 Registrar aparte la desviación entre el resaltado y el sonido en navegadores reales, incluyendo latencia tras buscar, sin fijar un SLA antes de la prueba técnica.
 
@@ -160,26 +157,20 @@ Registrar aparte la desviación entre el resaltado y el sonido en navegadores re
 | Derechos de tablaturas y arreglos | Música propia o contenido con permiso explícito; revisión antes de distribuir cada canción. |
 | Restricciones de YouTube | Reproductor visible, API oficial y ningún acceso directo/descarga del audio. |
 | Exactitud de la sincronización | Prueba de concepto con varios navegadores, tiempos de búsqueda y latencia real. |
-| Complejidad de teoría musical | Tonal.js y validaciones específicas; casos no compatibles se marcan. |
+| Complejidad de teoría musical | Evaluar bibliotecas como Tonal.js, sin adoptarlas todavía; casos no compatibles se marcan. |
 | Facilidad subjetiva de digitación | Coste explicable + pruebas comparativas con guitarristas reales. |
 | Riffs reconocibles que se pierden | Marcar el arreglo como simplificado y añadir riffs opcionales en iteraciones posteriores. |
 
 ## 10. Roadmap orientativo por entregables
 
-1. **Base SDD y dominio:** Constitución, modelo de arreglos, primeros tests y arquitectura aprobada.
-2. **Motor de simplificación:** acordes→quintas y selector global de digitaciones; pruebas con progresiones conocidas.
-3. **Primer recorrido vertical:** un vídeo permitido + arreglo completo + secciones + tablatura sincronizada.
-4. **MVP pilotable:** catálogo reducido, navegación, errores, accesibilidad y pruebas reales con guitarristas.
-5. **Práctica avanzada:** bucles, distintas afinaciones, opciones de comodidad y riffs simplificados.
-6. **Generación de arreglos:** análisis de archivos/fuentes **autorizados** y corrección humana, si la investigación lo justifica.
-7. **Modo banda:** pistas independientes (rítmica, bajo, solista) que comparten tiempo musical; después, múltiples dispositivos.
+La estructura S01–S05 aprobada como base y sus criterios de aceptación se mantienen en [mvp-proposal.md](mvp-proposal.md), sin duplicarlos aquí. Comienza con la prueba mínima de YouTube real y termina con validación integrada sin nuevas funcionalidades significativas.
 
 ## 11. Decisiones que debe tomar el equipo antes de desarrollar EJ-001
 
 - Elegir las primeras piezas musicales con permiso para distribución de arreglos y reproducción incrustada.
 - Validar la compatibilidad concreta de alphaTab o elegir un visualizador más sencillo si el uso de tablaturas no justifica su integración.
-- Determinar niveles de dificultad iniciales y la ventana de trastes de referencia.
-- Confirmar las metas de la prueba piloto y definir cómo se observarán sin recopilar datos personales innecesarios.
+- Concretar formas alternativas y política de símbolos especiales; dificultad fácil y trastes 0–12 ya confirmados.
+- Definir la validación posterior con usuarios sin cantidades ni porcentajes prefijados, evitando datos personales innecesarios.
 
 ---
 

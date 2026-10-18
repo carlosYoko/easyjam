@@ -1,6 +1,6 @@
 # EasyJam — Constitución del proyecto
 
-**Versión:** 0.1.0  
+**Versión:** 0.1.1  
 **Estado:** propuesta para ratificación  
 **Fecha:** 18 de octubre de 2026  
 **Propósito:** establecer reglas de ingeniería y producto que prevalecen sobre decisiones locales de implementación.
@@ -11,13 +11,14 @@
 
 EasyJam permite que una persona toque una canción completa, desde la introducción hasta el final, siguiendo un arreglo **simplificado, rítmico y sincronizado** con una fuente de reproducción autorizada. La primera experiencia se centra en guitarra rítmica y acordes de quinta; el modelo debe admitir en el futuro guitarra solista, bajo y práctica en grupo.
 
-Orden de prioridades cuando exista conflicto:
+**Condición obligatoria:** cumplimiento de derechos y plataformas; ninguna facilidad técnica, tocabilidad o experiencia justifica extraer audio ni redistribuir arreglos sin autorización.
+
+Orden de prioridades dentro de las opciones que cumplen esa condición:
 
 1. **Correctitud y tocabilidad musical:** ritmo, fundamental, afinación, silencios y transiciones deben ser coherentes.
 2. **Experiencia de práctica:** progresión clara, continuidad, legibilidad y control del usuario.
-3. **Cumplimiento de derechos y plataformas:** ninguna facilidad técnica justifica extraer audio ni redistribuir arreglos sin autorización.
-4. **Simplicidad y mantenibilidad:** preferir la solución menor que cumple el objetivo verificable.
-5. **Escalabilidad evolutiva:** preparar contratos, no construir infraestructura futura anticipadamente.
+3. **Simplicidad y mantenibilidad:** preferir la solución menor que cumple el objetivo verificable.
+4. **Escalabilidad evolutiva:** preparar contratos, no construir infraestructura futura anticipadamente.
 
 ## 2. Principios no negociables
 
@@ -121,7 +122,11 @@ Se usa SemVer documental: **MAJOR** si se elimina o contradice un principio; **M
 1. Aceptar esta constitución como base del repositorio.
 2. Confirmar licencias y procedencia de los arreglos musicales de demostración.
 3. Realizar prueba técnica de sincronización entre YouTube y el renderizador de tablaturas.
-4. Aprobar objetivos cuantitativos iniciales descritos en `product.md`.
+4. Definir la validación con usuarios sin cantidades ni porcentajes prefijados. El alcance confirmado se recoge en `product.md`; la secuencia candidata y sus puertas de aceptación, en `mvp-proposal.md`.
+
+### Registro documental
+
+- 0.1.1 — 18 de octubre de 2026: aclaración autorizada por el usuario de derechos y políticas como condición obligatoria y eliminación de metas cuantitativas no acordadas. No implica ratificación global de esta constitución.
 
 ---
 

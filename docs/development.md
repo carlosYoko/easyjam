@@ -31,7 +31,7 @@ No crear manualmente `STATE.md`, base de datos, manifiestos, marcadores de ejecu
 | Dominio / Vitest | C→C5, Am→A5, símbolos ambiguos, afinación estándar, alternativas G5/D5, límites de trastes y cuerdas, eventos imposibles | Resultados musicales explícitos, errores tipados y regresiones |
 | Optimización | Comparar con enumeración exhaustiva en progresiones pequeñas; caso donde greedy pierde; empates estables | Mínimo global para el coste declarado, no una promesa universal de comodidad |
 | Invariantes | Posiciones válidas, solo fundamental/quinta, tiempos conservados, determinismo, conversión ticks↔segundos | Casos generados deterministas; añadir librería de propiedades solo si aporta valor |
-| Tiempo | Silencios, límites [inicio, fin), cambios de tempo, anclas, pausa, seek, fin, bucles y reloj simulado | Sin red, temporizadores controlados, sin deriva acumulada |
+| Tiempo | Silencios, límites [inicio, fin), pausa, seek, fin y repetición de sección; cambios de tempo solo si la canción los requiere; anclas según modelo aprobado | Sin red, temporizadores controlados; no convierte A/B arbitrario en alcance |
 | Adaptadores | Contrato de reproductor, errores de proveedor, carga/validación de arreglos, montaje y limpieza de listeners | Dobles tipados y pruebas de integración de fronteras |
 | UI | Secciones, estados vacíos, teclado, foco visible, información no solo cromática | Vue Test Utils cuando haga falta; comprobación humana de legibilidad |
 | E2E / Playwright | Abrir arreglo → reproducir → seguir ritmo → saltar → repetir → terminar; fallos recuperables | Recorrido determinista con reproductor falso |

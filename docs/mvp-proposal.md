@@ -1,6 +1,6 @@
 # EasyJam Guitar Practice MVP — Propuesta revisada
 
-**Estado:** decisiones de producto recogidas; propuesta de slices pendiente de revisión. No es un roadmap operativo, no reserva un ID ni autoriza implementación.
+**Estado:** estructura S01–S05 y decisiones de producto aprobadas como base del milestone M001; pendiente de formalización nativa y revisión final antes de S01. No es un roadmap operativo, no reserva un ID ni autoriza implementación.
 **Actualización:** 18 de octubre de 2026.
 **Fuente:** aclaraciones explícitas del usuario durante la discusión del MVP.
 **Referencias:** [producto](product.md), [constitución](constitution.md), [ADR-001](adr/ADR-001.md), [desarrollo](development.md).
@@ -39,7 +39,7 @@ La comodidad se evalúa sobre la progresión completa. Un mínimo matemático so
 
 Se empieza con **una canción completa**, no solo un fragmento. Esta demuestra el recorrido técnico y funcional. Antes de declarar validado el producto con usuarios, se probarán varias canciones de estilos diferentes. No se fijan todavía cantidades, porcentajes ni metas estadísticas.
 
-Pegar una URL es una entrada deseada, no una promesa de generación automática: solo puede localizar un arreglo disponible. Una URL desconocida no dispara transcripción. Que esa entrada sea necesaria en el primer recorrido sigue pendiente; seleccionar el arreglo disponible puede bastar para la prueba inicial.
+La primera experiencia usa una canción completa, con varias secciones y suficiente variedad armónica. No necesita catálogo ni campo para pegar URLs. S01 puede usar una URL fija de un vídeo permitido y embebible. La selección concreta del material y la comprobación de permisos siguen pendientes; no se presume que ya exista contenido autorizado.
 
 ### Derechos y plataformas
 
@@ -57,13 +57,24 @@ Se usará el reproductor oficial visible. No se descargará ni extraerá audio i
 - Cambios de tempo si la canción elegida no los requiere.
 - Autenticación, cuentas y funcionalidades sociales.
 
-Afinaciones alternativas, preferencias avanzadas y generación asistida quedan para evolución posterior. La afinación estándar es la base candidata existente, todavía pendiente de confirmar junto con la canción.
+### Restricciones musicales confirmadas
+
+- Guitarra de seis cuerdas, afinación estándar E A D G B E (grave a aguda).
+- Quintas de dos notas como forma básica; alternativas solo cuando aporten comodidad y con política explícita y pruebas antes de incorporarlas.
+- Rango inicial inclusivo de trastes 0–12; la configuración para el usuario queda fuera del MVP.
+- Optimización sobre la progresión completa y resolución determinista de empates.
+- Conservación de tiempos, patrones rítmicos y silencios.
+- Acordes especiales o ambiguos sin simplificación fiable se señalan para revisión; no se transforman arbitrariamente.
+
+Afinaciones alternativas, preferencias avanzadas y generación asistida quedan para evolución posterior.
 
 ## 3. Arquitectura: límites, no ratificación
 
 Se busca una arquitectura modular, desacoplada y comprobable, con reglas de negocio testeables, KISS, YAGNI y reutilización de bibliotecas. Debe poder evolucionar hacia varios arreglos y pistas sin implementar ahora esa complejidad.
 
-Vue/Vite/TypeScript, Tonal.js, alphaTab, contratos de reproductor, representación temporal, algoritmo y pesos ergonómicos siguen siendo propuestas. No se aceptan dependencias ni APIs por aparecer en ADR-001. No se crean carpetas, capas, repositorios genéricos o infraestructura anticipada.
+La propuesta principal es Vue 3 + Vite + TypeScript, con Clean Architecture ligera y Ports & Adapters únicamente donde aporten valor, Vitest para unitarias y Playwright para E2E. Esto no ratifica ADR-001 en bloque. Tonal.js, alphaTab, contratos concretos de reproductor, representación temporal, algoritmo y pesos ergonómicos siguen abiertos. No se aceptan dependencias ni APIs por aparecer en un boceto. No se crean carpetas, capas, repositorios genéricos o infraestructura anticipada.
+
+El modelo temporal debe representar estructura musical (compases, pulsos y duraciones) y su correspondencia con el tiempo del reproductor, sin acoplar eventos a la API de YouTube. S01 medirá precisión, retraso de seek y retorno de sección en entornos identificados; con esos resultados se propondrán criterios cuantificables para revisión antes de S04. No se fijan tolerancias sin evidencia.
 
 No se introduce backend, base de datos o SSR en esta propuesta: no hay una necesidad demostrada del recorrido inicial. La arquitectura concreta se someterá a aprobación con evidencia.
 
@@ -84,7 +95,9 @@ La investigación técnica consultará documentación oficial y versiones reales
 
 ## 5. Vertical slices revisadas — candidatas
 
-Orden orientado a resolver el riesgo externo primero. Las slices son propuestas de capacidades, no planes nativos ejecutables. Sus contratos y tareas se concretarán tras la revisión del usuario.
+Orden y responsabilidades aprobados como base de planificación. No son planes nativos ejecutables. Sus contratos y tareas se concretarán durante la formalización y planificación de slices.
+
+**Límites de responsabilidad:** S01 prueba viabilidad real con guía mínima, sin construir el reproductor completo; S02 es responsable del arreglo completo y su validación, no del optimizador; S03 implementa simplificación/optimización, no el proveedor; S04 integra las capacidades anteriores en la práctica completa; S05 solo verifica y corrige defectos de integración, sin nuevas funcionalidades significativas. Todas incluyen pruebas pertinentes y decisiones documentadas. Los commits serán atómicos, verificados y trazables a la slice cuando exista su ID nativo.
 
 | Slice | Capacidad demostrable | Riesgo | Depende de |
 |---|---|---|---|
@@ -174,23 +187,23 @@ Los nombres de archivos, funciones y contratos se fijarán al planificar; no se 
 
 ## 7. Decisiones pendientes de aprobación
 
-1. Aprobar estas slices y su alcance: no son un roadmap nativo ni autorización para ejecutar S01.
-2. Seleccionar canción, arreglo y vídeo concretos, con derechos y embebibilidad comprobados; confirmar afinación estándar y rango de trastes.
-3. Elegir base tecnológica, bibliotecas/renderizador y herramientas tras evaluar documentación, licencias y necesidades; ADR-001 sigue propuesto.
+1. Revisar el plan formal definitivo y autorizar expresamente S01; la estructura está aprobada, la ejecución no.
+2. Seleccionar canción, arreglo y vídeo concretos, con derechos y embebibilidad comprobados. Afinación estándar y trastes 0–12 ya están confirmados.
+3. Cerrar la propuesta principal de stack y evaluar bibliotecas/renderizador, versiones y licencias; ADR-001 sigue propuesto, no aceptado en bloque.
 4. Definir política de acordes especiales, formas de quintas, octavas, restricciones y criterio ergonómico. La programación dinámica es candidata, no decisión ratificada.
 5. Acordar semántica temporal, desfases y contrato de reproducción con evidencia; no adoptar automáticamente ticks, PPQ=960 ni anclas del boceto.
 6. Acordar navegadores/dispositivos objetivo, tolerancia de sincronización y comportamiento aceptable del retorno de sección a partir de S01. Si repetir no es viable, el usuario decide cómo revisar el alcance.
-7. Confirmar si la entrada por URL forma parte del primer MVP o se comienza seleccionando el único arreglo disponible.
+7. Definir después una entrada por URL o catálogo si se requiere; no son parte del MVP aprobado.
 8. Definir después la validación con usuarios y diversidad de canciones; no confundir cierre técnico con producto validado.
 9. Ratificar separadamente constitución y arquitectura, y sincronizar documentos canónicos antes de ejecutar.
 
-## 8. Reconciliación documental pendiente
+## 8. Fuentes documentales y siguiente paso
 
-Esta revisión registra decisiones de producto confirmadas, pero no modifica ni ratifica los otros documentos:
+- `product.md` expresa el alcance de producto; esta propuesta concentra secuencia, límites y aceptación por slice, sin constituir un plan nativo.
+- `constitution.md` mantiene su estado de propuesta; derechos y políticas se formulan como condición obligatoria.
+- `ADR-001.md` conserva el estado propuesto y remite aquí para la secuencia y restricciones actuales; sus bocetos no son contratos aceptados.
+- `development.md` define calidad y Git; A/B arbitrario y cambios de tempo no se convierten en requisitos por aparecer en ejemplos de pruebas.
 
-- `product.md`: promover repetición de sección desde P1, sin editor A/B; expresar dificultad fácil única y catálogo inicial de una canción; retirar cifras piloto como compromisos del alcance actual.
-- `constitution.md`: formular derechos y políticas como condición obligatoria, no prioridad sacrificable. Sigue propuesta para ratificación.
-- `ADR-001.md`: adelantar prueba real, mantener renderer/algoritmo/modelo abiertos y distinguir CI determinista de aceptación real obligatoria.
-- `development.md`: los ejemplos de A/B, cambios de tempo y CI para S01 no implican alcance aprobado; ajustarlos al plan que se apruebe.
+**Siguiente paso exacto:** formalización manual de planificación en SDD Pi, sin auto: investigación técnica pendiente, comprobación de profundidad con el usuario, presentación y confirmación del contrato de capacidades, generación del ID nativo y escritura de contexto/roadmap con las plantillas instaladas. Después, planificar S01 con criterios verificables y presentar el plan definitivo para autorización explícita antes de escribir código. No iniciar `/sdd auto`.
 
-La actualización se limita a esta propuesta para su revisión. No crea artefactos nativos, reserva milestones, finaliza fases ni inicia ejecución SDD Pi.
+No hay aún un milestone nativo reservado ni planes de tarea. La denominación M001 expresa la intención del usuario; el ID definitivo lo asignará SDD. Esta preparación no finaliza el milestone ni autoriza ejecución.
