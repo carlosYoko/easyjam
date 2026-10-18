@@ -1,0 +1,55 @@
+# Node / Vue / Vite / TypeScript
+node_modules/
+dist/
+build/
+.vite/
+*.tsbuildinfo
+coverage/
+.nyc_output/
+.eslintcache
+*.log
+
+# Local secrets (only sanitized examples may be tracked)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS / editor / temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.cache/
+tmp/
+.bg-shell/
+
+# Original source archive is retained locally; canonical docs are versioned
+/EasyJam-documentacion-inicial.zip
+
+# Browser / E2E artifacts
+playwright-report/
+test-results/
+blob-report/
+
+# SDD runtime only — specifications, preferences and plans remain versioned
+.sdd/auto.lock
+.sdd/completed-units.json
+.sdd/STATE.md
+.sdd/metrics.json
+.sdd/activity/
+.sdd/forensics/
+.sdd/runtime/
+.sdd/worktrees/
+.sdd/parallel/
+.sdd/reports/
+.sdd/sdd.db
+.sdd/sdd.db-*
+.sdd/DISCUSSION-MANIFEST.json
+.sdd/browser-state/
+.sdd/browser-baselines/
+.sdd/milestones/**/continue.md
+.sdd/milestones/**/*-CONTINUE.md
