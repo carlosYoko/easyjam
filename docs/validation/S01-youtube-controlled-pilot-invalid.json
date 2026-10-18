@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "variant": "A",
+  "videoId": "M7lc1UVf-VE",
+  "capturedAt": "2026-10-18T15:46:56.434Z",
+  "browserVersion": "Chrome/153.0.0.0",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "protocol": {
+    "targets": [
+      10,
+      45,
+      90,
+      20,
+      120,
+      60,
+      180,
+      30,
+      240,
+      15
+    ],
+    "stateTimeoutMs": 15000,
+    "sampleMs": 200,
+    "pauseStableMs": 1000,
+    "finalPauseMs": 60000,
+    "seekToleranceSeconds": 2,
+    "automaticRetries": 0
+  },
+  "iframe": {
+    "width": 640,
+    "height": 390,
+    "referrerPolicy": "strict-origin-when-cross-origin"
+  },
+  "cycles": [
+    {
+      "cycle": 1,
+      "target": 10,
+      "status": "failed",
+      "beganMs": 20834,
+      "failure": "PROVIDER_OR_PORT_ERROR",
+      "endedMs": 20837
+    }
+  ],
+  "hold": {
+    "status": "not-run"
+  },
+  "errors": [],
+  "browserErrors": [],
+  "events": [
+    {
+      "atMs": 7198,
+      "cycle": 0,
+      "phase": "setup",
+      "event": "onReady",
+      "providerState": 5,
+      "providerSeconds": 0
+    },
+    {
+      "atMs": 11164,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "ready-observed",
+      "providerState": 5,
+      "providerSeconds": 0,
+      "portState": "idle",
+      "portSeconds": 0,
+      "portError": null
+    },
+    {
+      "atMs": 11367,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "transition",
+      "providerState": 5,
+      "providerSeconds": 0,
+      "portState": "idle",
+      "portSeconds": 0,
+      "portError": null
+    },
+    {
+      "atMs": 14526,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "onStateChange",
+      "providerState": -1,
+      "providerSeconds": 0,
+      "portState": "idle",
+      "portSeconds": 0,
+      "portError": null,
+      "data": -1
+    },
+    {
+      "atMs": 14562,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 0,
+      "portState": "idle",
+      "portSeconds": 0,
+      "portError": null,
+      "data": 3
+    },
+    {
+      "atMs": 14565,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 0,
+      "portState": "buffering",
+      "portSeconds": 0,
+      "portError": null
+    },
+    {
+      "atMs": 16322,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 0.019125990463256838,
+      "portState": "buffering",
+      "portSeconds": 0,
+      "portError": null,
+      "data": 1
+    },
+    {
+      "atMs": 16366,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 0.06312590081787109,
+      "portState": "playing",
+      "portSeconds": 0.019125990463256838,
+      "portError": null
+    },
+    {
+      "atMs": 20835,
+      "cycle": 1,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 4.509136080108642,
+      "portState": "playing",
+      "portSeconds": 4.475135921798706,
+      "portError": null,
+      "operation": "play"
+    },
+    {
+      "atMs": 20835,
+      "cycle": 1,
+      "phase": "play",
+      "event": "provider-command",
+      "providerState": 1,
+      "providerSeconds": 4.509136080108642,
+      "portState": "playing",
+      "portSeconds": 4.475135921798706,
+      "portError": null,
+      "operation": "play"
+    }
+  ]
+}

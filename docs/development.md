@@ -1,6 +1,6 @@
 # Desarrollo, Git y calidad
 
-**Estado:** convenciones de preparación autorizadas; herramientas y alcance de producto aún propuestos.
+**Estado:** base local de S01 y revisión técnica de material verificadas; riesgo intermitente de T01 aceptado explícitamente por el usuario (D010) tras el ensayo acotado 10/10 por variante. T02 está autorizada; T03–T04 no. ADR-001 y arquitectura musical siguen propuestos.
 
 ## Ciclo de trabajo
 
@@ -14,7 +14,7 @@ No crear manualmente `STATE.md`, base de datos, manifiestos, marcadores de ejecu
 
 ## Política Git
 
-- Rama inicial `main`, sin remoto configurado durante esta preparación.
+- Rama de integración `main`; remoto privado `https://github.com/carlosYoko/easyjam.git`. El trabajo de M001 vive en el worktree `.sdd/worktrees/M001`, rama `milestone/M001`; no hacer push sin autorización.
 - Conventional Commits en inglés: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`, `ci`, `perf`. Ejemplo futuro: `test(M001/S03): cover globally optimal fingering paths` (usar el ID real generado).
 - Un commit por cambio lógico verificable. Separar funcionalidades independientes y refactorizaciones sin relación. No commits vacíos.
 - Revisar `git status`, diff de trabajo y diff staged; añadir rutas explícitas, nunca `git add .` indiscriminadamente.
@@ -39,11 +39,49 @@ No crear manualmente `STATE.md`, base de datos, manifiestos, marcadores de ejecu
 
 Afinaciones adicionales (p. ej. Drop D) no se incorporan por preparar casos límite: deben rechazarse explícitamente hasta ampliar el alcance aprobado. Congelar la política de acordes slash/disminuidos/aumentados antes de escribir el conversor.
 
+## Base ejecutable local de S01
+
+Ejecutar desde el worktree `.sdd/worktrees/M001`, no desde la raíz de integración:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm run dev --host 127.0.0.1
+pnpm run lint
+pnpm run typecheck
+pnpm run test --run
+pnpm run build
+```
+
+Versiones exactas: Node.js 24.18.0 LTS (Krypton), pnpm 12.14.0,
+Vue 3.5.44, Vite 8.3.4, TypeScript 6.0.3, plugin Vue 6.0.10,
+Vitest 5.0.5, vue-tsc 3.3.13, ESLint 10.13.0, @eslint/js 10.0.1,
+eslint-plugin-vue 10.11.1 y typescript-eslint 8.71.2.
+`packageManager` fija pnpm y `pnpm-lock.yaml` fija la resolución.
+TypeScript 7 no se seleccionó porque queda fuera del rango `<6.1.0`
+aceptado por typescript-eslint 8.71.2. Node LTS se contrastó con el índice
+de distribuciones oficial; versiones y peers, con el registro npm.
+
+Los cuatro comandos de calidad existen y se verifican localmente. La instalación
+congelada no modifica el lockfile. No hay CI remota, Router, Pinia, backend,
+bibliotecas musicales ni renderer. Playwright está aprobado para S01, pero los
+scripts `test:e2e`/`test:youtube` y sus suites corresponden a T04 y no existen aún.
+La comprobación inicial en Chromium se realizó con las herramientas de navegador.
+
+**Revisión y riesgo aceptado:** la consulta oficial de Made for Kids del
+18-10-2026 resolvió `false` y confirmó `embeddable=true`. La clave local no entra
+en Vite ni Git. Un primer recorrido terminó con error 5; la investigación acotada
+posterior completó 10/10 ciclos en A y 10/10 en B sin reproducirlo. Se conserva como
+incidente intermitente de causa desconocida, sin parche ni recuperación añadidos.
+Véanse [material](validation/S01-material.md) e [informe del ensayo](validation/S01-youtube-controlled.md).
+La instrumentación temporal se retiró. El usuario aceptó el riesgo y autorizó
+solo T02 (D010); el cierre verificado de T01 consta en su resumen nativo. No declarar
+corregido el incidente ni avanzar a T03 sin nueva autorización.
+
 ## CI propuesta para S01, no instalada ahora
 
 Una sola cadena reproducible, con versión Node LTS compatible fijada y lockfile del gestor elegido: instalación congelada → lint → typecheck estricto → tests unitarios/integración → build → E2E crítico con reproductor falso. Proponer scripts `lint`, `typecheck`, `test` (no watch), `build` y `test:e2e`.
 
-ESLint y un único criterio de formateo consistente, sin herramientas redundantes. Base aprobada para S01: Vue 3, Vite, TypeScript estricto, Vitest y Playwright, con pnpm y Node LTS compatible; no requiere ratificar todo ADR-001. En T01, tras nueva autorización, seleccionar/documentar versiones estables exactas y `packageManager`, conservar `pnpm-lock.yaml` y verificar instalación con `pnpm install --frozen-lockfile`. No instalar ni crear lockfiles durante la previsualización. Añadir entonces comandos reales a `verification_commands` de SDD; `pre_merge_check: true` por sí solo no demuestra que se hayan ejecutado tests inexistentes.
+ESLint mantiene un único criterio de estilo, sin herramientas redundantes. La base de S01 y versiones fijadas arriba están autorizadas sin ratificar todo ADR-001. Se conserva `pnpm-lock.yaml`; los comandos locales reales se han incorporado a `verification_commands` del worktree. La ejecución de T01 fue autorizada por D009; D010 acepta el riesgo documentado tras verificarla y autoriza solo T02. T03–T04 no tienen autorización implícita.
 
 CI sin secretos ni servicios de pago. Antes de conectar un proveedor CI, confirmar remoto/plataforma y presupuesto de minutos; no asumir gratuidad. Los checks locales serán los mismos que en CI. Los fallos deterministas bloquearán integración. Una comprobación externa de YouTube será independiente y no bloqueará por fallos de red ajenos.
 

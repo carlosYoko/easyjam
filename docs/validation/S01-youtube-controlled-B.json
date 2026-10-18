@@ -1,0 +1,1781 @@
+{
+  "schemaVersion": 1,
+  "variant": "B",
+  "videoId": "M7lc1UVf-VE",
+  "capturedAt": "2026-10-18T15:53:08.738Z",
+  "browserVersion": "Chrome/153.0.0.0",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "protocol": {
+    "targets": [
+      10,
+      45,
+      90,
+      20,
+      120,
+      60,
+      180,
+      30,
+      240,
+      15
+    ],
+    "stateTimeoutMs": 15000,
+    "sampleMs": 200,
+    "pauseStableMs": 1000,
+    "finalPauseMs": 60000,
+    "seekToleranceSeconds": 2,
+    "automaticRetries": 0
+  },
+  "iframe": {
+    "width": 640,
+    "height": 390,
+    "referrerPolicy": "strict-origin-when-cross-origin"
+  },
+  "cycles": [
+    {
+      "cycle": 1,
+      "target": 10,
+      "status": "passed",
+      "beganMs": 37083,
+      "play": {
+        "atMs": 37930,
+        "cycle": 1,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 4.026775000000001
+      },
+      "pause": {
+        "atMs": 39039,
+        "cycle": 1,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 4.043082,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 39148,
+        "cycle": 1,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 10
+      },
+      "resume": {
+        "atMs": 40313,
+        "cycle": 1,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 11.091532946594238
+      },
+      "endedMs": 40313
+    },
+    {
+      "cycle": 2,
+      "target": 45,
+      "status": "passed",
+      "beganMs": 40314,
+      "play": {
+        "atMs": 41157,
+        "cycle": 2,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 11.935705950408936
+      },
+      "pause": {
+        "atMs": 42264,
+        "cycle": 2,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 11.94212,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 42377,
+        "cycle": 2,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 45
+      },
+      "resume": {
+        "atMs": 43455,
+        "cycle": 2,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 46.01226689700317
+      },
+      "endedMs": 43455
+    },
+    {
+      "cycle": 3,
+      "target": 90,
+      "status": "passed",
+      "beganMs": 43455,
+      "play": {
+        "atMs": 44313,
+        "cycle": 3,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 46.87127884741211
+      },
+      "pause": {
+        "atMs": 45430,
+        "cycle": 3,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 46.876166,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 45645,
+        "cycle": 3,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 90
+      },
+      "resume": {
+        "atMs": 46711,
+        "cycle": 3,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 91.00903196948242
+      },
+      "endedMs": 46711
+    },
+    {
+      "cycle": 4,
+      "target": 20,
+      "status": "passed",
+      "beganMs": 46712,
+      "play": {
+        "atMs": 47464,
+        "cycle": 4,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 91.76304204005432
+      },
+      "pause": {
+        "atMs": 48580,
+        "cycle": 4,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 91.767095,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 48688,
+        "cycle": 4,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 20
+      },
+      "resume": {
+        "atMs": 49864,
+        "cycle": 4,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 21.10222118310547
+      },
+      "endedMs": 49864
+    },
+    {
+      "cycle": 5,
+      "target": 120,
+      "status": "passed",
+      "beganMs": 49864,
+      "play": {
+        "atMs": 50715,
+        "cycle": 5,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 21.952759917984007
+      },
+      "pause": {
+        "atMs": 51829,
+        "cycle": 5,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 21.956579,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 51938,
+        "cycle": 5,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 120
+      },
+      "resume": {
+        "atMs": 53020,
+        "cycle": 5,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 121.01710601144408
+      },
+      "endedMs": 53020
+    },
+    {
+      "cycle": 6,
+      "target": 60,
+      "status": "passed",
+      "beganMs": 53020,
+      "play": {
+        "atMs": 53781,
+        "cycle": 6,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 121.77983598664856
+      },
+      "pause": {
+        "atMs": 54895,
+        "cycle": 6,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 121.782844,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 54999,
+        "cycle": 6,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 60
+      },
+      "resume": {
+        "atMs": 56082,
+        "cycle": 6,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 61.01975114686584
+      },
+      "endedMs": 56082
+    },
+    {
+      "cycle": 7,
+      "target": 180,
+      "status": "passed",
+      "beganMs": 56082,
+      "play": {
+        "atMs": 56846,
+        "cycle": 7,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 61.782482019073484
+      },
+      "pause": {
+        "atMs": 57956,
+        "cycle": 7,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 61.787912,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 58062,
+        "cycle": 7,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 180
+      },
+      "resume": {
+        "atMs": 59134,
+        "cycle": 7,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 181.01195211444093
+      },
+      "endedMs": 59134
+    },
+    {
+      "cycle": 8,
+      "target": 30,
+      "status": "passed",
+      "beganMs": 59134,
+      "play": {
+        "atMs": 59890,
+        "cycle": 8,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 181.76792503814698
+      },
+      "pause": {
+        "atMs": 61001,
+        "cycle": 8,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 181.772616,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 61113,
+        "cycle": 8,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 30
+      },
+      "resume": {
+        "atMs": 62192,
+        "cycle": 8,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 31.01074596948242
+      },
+      "endedMs": 62192
+    },
+    {
+      "cycle": 9,
+      "target": 240,
+      "status": "passed",
+      "beganMs": 62192,
+      "play": {
+        "atMs": 62944,
+        "cycle": 9,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 31.76241690463257
+      },
+      "pause": {
+        "atMs": 64051,
+        "cycle": 9,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 31.767917,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 64157,
+        "cycle": 9,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 240
+      },
+      "resume": {
+        "atMs": 65328,
+        "cycle": 9,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 241.10391788365175
+      },
+      "endedMs": 65328
+    },
+    {
+      "cycle": 10,
+      "target": 15,
+      "status": "passed",
+      "beganMs": 65328,
+      "play": {
+        "atMs": 66081,
+        "cycle": 10,
+        "phase": "play",
+        "event": "play-observed",
+        "providerState": 1,
+        "providerSeconds": 241.8584551487732
+      },
+      "pause": {
+        "atMs": 67199,
+        "cycle": 10,
+        "phase": "pause",
+        "event": "pause-stable",
+        "providerState": 2,
+        "providerSeconds": 241.862141,
+        "stableMs": 1000
+      },
+      "seek": {
+        "atMs": 67415,
+        "cycle": 10,
+        "phase": "seek",
+        "event": "seek-observed",
+        "providerState": 2,
+        "providerSeconds": 15
+      },
+      "resume": {
+        "atMs": 68579,
+        "cycle": 10,
+        "phase": "resume",
+        "event": "resume-observed",
+        "providerState": 1,
+        "providerSeconds": 16.09729908010864
+      },
+      "endedMs": 68579
+    }
+  ],
+  "hold": {
+    "status": "passed",
+    "before": {
+      "atMs": 68693,
+      "cycle": 11,
+      "phase": "final-pause",
+      "event": "final-pause-start",
+      "providerState": 2,
+      "providerSeconds": 16.101422
+    },
+    "after": {
+      "atMs": 128695,
+      "cycle": 11,
+      "phase": "final-pause",
+      "event": "final-pause-end",
+      "providerState": 2,
+      "providerSeconds": 16.101422
+    },
+    "requestedMs": 60000
+  },
+  "errors": [],
+  "browserErrors": [],
+  "events": [
+    {
+      "atMs": 710,
+      "cycle": 0,
+      "phase": "setup",
+      "event": "onReady",
+      "providerState": 5,
+      "providerSeconds": 0
+    },
+    {
+      "atMs": 4732,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "ready-observed",
+      "providerState": 5,
+      "providerSeconds": 0
+    },
+    {
+      "atMs": 4944,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "transition",
+      "providerState": 5,
+      "providerSeconds": 0
+    },
+    {
+      "atMs": 32467,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "onStateChange",
+      "providerState": -1,
+      "providerSeconds": 0,
+      "data": -1
+    },
+    {
+      "atMs": 32495,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 0,
+      "data": 3
+    },
+    {
+      "atMs": 32535,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 0
+    },
+    {
+      "atMs": 33922,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 0.022349020980834963,
+      "data": 1
+    },
+    {
+      "atMs": 33950,
+      "cycle": 0,
+      "phase": "ready",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 0.05034913732910157
+    },
+    {
+      "atMs": 37083,
+      "cycle": 1,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 3.1816029752044677,
+      "operation": "play"
+    },
+    {
+      "atMs": 37930,
+      "cycle": 1,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 4.026775000000001
+    },
+    {
+      "atMs": 37930,
+      "cycle": 1,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 4.026775000000001,
+      "operation": "pause"
+    },
+    {
+      "atMs": 37949,
+      "cycle": 1,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 4.043082,
+      "data": 2
+    },
+    {
+      "atMs": 38140,
+      "cycle": 1,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 4.043082
+    },
+    {
+      "atMs": 39039,
+      "cycle": 1,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 4.043082,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 39039,
+      "cycle": 1,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 4.043082,
+      "operation": "seek",
+      "target": 10
+    },
+    {
+      "atMs": 39148,
+      "cycle": 1,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 10
+    },
+    {
+      "atMs": 39148,
+      "cycle": 1,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 10,
+      "operation": "resume"
+    },
+    {
+      "atMs": 39154,
+      "cycle": 1,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 10,
+      "data": 3
+    },
+    {
+      "atMs": 39340,
+      "cycle": 1,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 10
+    },
+    {
+      "atMs": 39419,
+      "cycle": 1,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 10.198886782562257,
+      "data": 1
+    },
+    {
+      "atMs": 39544,
+      "cycle": 1,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 10.323886782562257
+    },
+    {
+      "atMs": 40313,
+      "cycle": 1,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 11.091532946594238
+    },
+    {
+      "atMs": 40314,
+      "cycle": 2,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 11.091532946594238,
+      "operation": "play"
+    },
+    {
+      "atMs": 41157,
+      "cycle": 2,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 11.935705950408936
+    },
+    {
+      "atMs": 41157,
+      "cycle": 2,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 11.935705950408936,
+      "operation": "pause"
+    },
+    {
+      "atMs": 41171,
+      "cycle": 2,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 11.94212,
+      "data": 2
+    },
+    {
+      "atMs": 41340,
+      "cycle": 2,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 11.94212
+    },
+    {
+      "atMs": 42264,
+      "cycle": 2,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 11.94212,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 42265,
+      "cycle": 2,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 11.94212,
+      "operation": "seek",
+      "target": 45
+    },
+    {
+      "atMs": 42377,
+      "cycle": 2,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 45
+    },
+    {
+      "atMs": 42377,
+      "cycle": 2,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 45,
+      "operation": "resume"
+    },
+    {
+      "atMs": 42385,
+      "cycle": 2,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 45,
+      "data": 3
+    },
+    {
+      "atMs": 42545,
+      "cycle": 2,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 45
+    },
+    {
+      "atMs": 42682,
+      "cycle": 2,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 45.24013589700317,
+      "data": 1
+    },
+    {
+      "atMs": 42734,
+      "cycle": 2,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 45.29213594277954
+    },
+    {
+      "atMs": 43455,
+      "cycle": 2,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 46.01226689700317
+    },
+    {
+      "atMs": 43455,
+      "cycle": 3,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 46.013266824523924,
+      "operation": "play"
+    },
+    {
+      "atMs": 44313,
+      "cycle": 3,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 46.87127884741211
+    },
+    {
+      "atMs": 44313,
+      "cycle": 3,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 46.87127884741211,
+      "operation": "pause"
+    },
+    {
+      "atMs": 44322,
+      "cycle": 3,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 46.876166,
+      "data": 2
+    },
+    {
+      "atMs": 44367,
+      "cycle": 3,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 46.876166
+    },
+    {
+      "atMs": 45430,
+      "cycle": 3,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 46.876166,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 45430,
+      "cycle": 3,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 46.876166,
+      "operation": "seek",
+      "target": 90
+    },
+    {
+      "atMs": 45645,
+      "cycle": 3,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 90
+    },
+    {
+      "atMs": 45645,
+      "cycle": 3,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 90,
+      "operation": "resume"
+    },
+    {
+      "atMs": 45651,
+      "cycle": 3,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 90,
+      "data": 3
+    },
+    {
+      "atMs": 45737,
+      "cycle": 3,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 90
+    },
+    {
+      "atMs": 45917,
+      "cycle": 3,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 90.21511002098083,
+      "data": 1
+    },
+    {
+      "atMs": 45941,
+      "cycle": 3,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 90.23910995040893
+    },
+    {
+      "atMs": 46711,
+      "cycle": 3,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 91.00903196948242
+    },
+    {
+      "atMs": 46712,
+      "cycle": 4,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 91.00903196948242,
+      "operation": "play"
+    },
+    {
+      "atMs": 47464,
+      "cycle": 4,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 91.76304204005432
+    },
+    {
+      "atMs": 47464,
+      "cycle": 4,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 91.76304204005432,
+      "operation": "pause"
+    },
+    {
+      "atMs": 47474,
+      "cycle": 4,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 91.767095,
+      "data": 2
+    },
+    {
+      "atMs": 47533,
+      "cycle": 4,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 91.767095
+    },
+    {
+      "atMs": 48580,
+      "cycle": 4,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 91.767095,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 48580,
+      "cycle": 4,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 91.767095,
+      "operation": "seek",
+      "target": 20
+    },
+    {
+      "atMs": 48688,
+      "cycle": 4,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 20
+    },
+    {
+      "atMs": 48688,
+      "cycle": 4,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 20,
+      "operation": "resume"
+    },
+    {
+      "atMs": 48694,
+      "cycle": 4,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 20,
+      "data": 3
+    },
+    {
+      "atMs": 48740,
+      "cycle": 4,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 20
+    },
+    {
+      "atMs": 48977,
+      "cycle": 4,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 20.215300020980834,
+      "data": 1
+    },
+    {
+      "atMs": 49139,
+      "cycle": 4,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 20.37829988937378
+    },
+    {
+      "atMs": 49864,
+      "cycle": 4,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 21.10222118310547
+    },
+    {
+      "atMs": 49864,
+      "cycle": 5,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 21.10222118310547,
+      "operation": "play"
+    },
+    {
+      "atMs": 50715,
+      "cycle": 5,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 21.952759917984007
+    },
+    {
+      "atMs": 50715,
+      "cycle": 5,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 21.952759917984007,
+      "operation": "pause"
+    },
+    {
+      "atMs": 50724,
+      "cycle": 5,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 21.956579,
+      "data": 2
+    },
+    {
+      "atMs": 50733,
+      "cycle": 5,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 21.956579
+    },
+    {
+      "atMs": 51829,
+      "cycle": 5,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 21.956579,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 51829,
+      "cycle": 5,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 21.956579,
+      "operation": "seek",
+      "target": 120
+    },
+    {
+      "atMs": 51938,
+      "cycle": 5,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 120
+    },
+    {
+      "atMs": 51939,
+      "cycle": 5,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 120,
+      "operation": "resume"
+    },
+    {
+      "atMs": 51943,
+      "cycle": 5,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 120,
+      "data": 3
+    },
+    {
+      "atMs": 52139,
+      "cycle": 5,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 120
+    },
+    {
+      "atMs": 52224,
+      "cycle": 5,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 120.22240687602233,
+      "data": 1
+    },
+    {
+      "atMs": 52340,
+      "cycle": 5,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 120.33840681307983
+    },
+    {
+      "atMs": 53020,
+      "cycle": 5,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 121.01710601144408
+    },
+    {
+      "atMs": 53020,
+      "cycle": 6,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 121.01810593896484,
+      "operation": "play"
+    },
+    {
+      "atMs": 53781,
+      "cycle": 6,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 121.77983598664856
+    },
+    {
+      "atMs": 53781,
+      "cycle": 6,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 121.77983598664856,
+      "operation": "pause"
+    },
+    {
+      "atMs": 53790,
+      "cycle": 6,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 121.782844,
+      "data": 2
+    },
+    {
+      "atMs": 53947,
+      "cycle": 6,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 121.782844
+    },
+    {
+      "atMs": 54895,
+      "cycle": 6,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 121.782844,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 54895,
+      "cycle": 6,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 121.782844,
+      "operation": "seek",
+      "target": 60
+    },
+    {
+      "atMs": 54999,
+      "cycle": 6,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 60
+    },
+    {
+      "atMs": 54999,
+      "cycle": 6,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 60,
+      "operation": "resume"
+    },
+    {
+      "atMs": 55008,
+      "cycle": 6,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 60,
+      "data": 3
+    },
+    {
+      "atMs": 55143,
+      "cycle": 6,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 60
+    },
+    {
+      "atMs": 55294,
+      "cycle": 6,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 60.23271794850159,
+      "data": 1
+    },
+    {
+      "atMs": 55339,
+      "cycle": 6,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 60.27771802479553
+    },
+    {
+      "atMs": 56082,
+      "cycle": 6,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 61.01975114686584
+    },
+    {
+      "atMs": 56082,
+      "cycle": 7,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 61.020751074386595,
+      "operation": "play"
+    },
+    {
+      "atMs": 56846,
+      "cycle": 7,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 61.782482019073484
+    },
+    {
+      "atMs": 56846,
+      "cycle": 7,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 61.782482019073484,
+      "operation": "pause"
+    },
+    {
+      "atMs": 56855,
+      "cycle": 7,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 61.787912,
+      "data": 2
+    },
+    {
+      "atMs": 56938,
+      "cycle": 7,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 61.787912
+    },
+    {
+      "atMs": 57956,
+      "cycle": 7,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 61.787912,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 57956,
+      "cycle": 7,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 61.787912,
+      "operation": "seek",
+      "target": 180
+    },
+    {
+      "atMs": 58062,
+      "cycle": 7,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 180
+    },
+    {
+      "atMs": 58062,
+      "cycle": 7,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 180,
+      "operation": "resume"
+    },
+    {
+      "atMs": 58067,
+      "cycle": 7,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 180,
+      "data": 3
+    },
+    {
+      "atMs": 58140,
+      "cycle": 7,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 180
+    },
+    {
+      "atMs": 58344,
+      "cycle": 7,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 180.22148402098082,
+      "data": 1
+    },
+    {
+      "atMs": 58546,
+      "cycle": 7,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 180.4224839961853
+    },
+    {
+      "atMs": 59134,
+      "cycle": 7,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 181.01195211444093
+    },
+    {
+      "atMs": 59134,
+      "cycle": 8,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 181.01295204196168,
+      "operation": "play"
+    },
+    {
+      "atMs": 59890,
+      "cycle": 8,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 181.76792503814698
+    },
+    {
+      "atMs": 59890,
+      "cycle": 8,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 181.76792503814698,
+      "operation": "pause"
+    },
+    {
+      "atMs": 59907,
+      "cycle": 8,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 181.772616,
+      "data": 2
+    },
+    {
+      "atMs": 59945,
+      "cycle": 8,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 181.772616
+    },
+    {
+      "atMs": 61001,
+      "cycle": 8,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 181.772616,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 61001,
+      "cycle": 8,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 181.772616,
+      "operation": "seek",
+      "target": 30
+    },
+    {
+      "atMs": 61113,
+      "cycle": 8,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 30
+    },
+    {
+      "atMs": 61113,
+      "cycle": 8,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 30,
+      "operation": "resume"
+    },
+    {
+      "atMs": 61119,
+      "cycle": 8,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 30,
+      "data": 3
+    },
+    {
+      "atMs": 61147,
+      "cycle": 8,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 30
+    },
+    {
+      "atMs": 61387,
+      "cycle": 8,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 30.205562093460085,
+      "data": 1
+    },
+    {
+      "atMs": 61543,
+      "cycle": 8,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 30.361561992370607
+    },
+    {
+      "atMs": 62192,
+      "cycle": 8,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 31.01074596948242
+    },
+    {
+      "atMs": 62192,
+      "cycle": 9,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 31.01074596948242,
+      "operation": "play"
+    },
+    {
+      "atMs": 62944,
+      "cycle": 9,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 31.76241690463257
+    },
+    {
+      "atMs": 62944,
+      "cycle": 9,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 31.76241690463257,
+      "operation": "pause"
+    },
+    {
+      "atMs": 62955,
+      "cycle": 9,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 31.767917,
+      "data": 2
+    },
+    {
+      "atMs": 63137,
+      "cycle": 9,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 31.767917
+    },
+    {
+      "atMs": 64051,
+      "cycle": 9,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 31.767917,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 64051,
+      "cycle": 9,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 31.767917,
+      "operation": "seek",
+      "target": 240
+    },
+    {
+      "atMs": 64157,
+      "cycle": 9,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 240
+    },
+    {
+      "atMs": 64157,
+      "cycle": 9,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 240,
+      "operation": "resume"
+    },
+    {
+      "atMs": 64162,
+      "cycle": 9,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 240,
+      "data": 3
+    },
+    {
+      "atMs": 64344,
+      "cycle": 9,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 240
+    },
+    {
+      "atMs": 64440,
+      "cycle": 9,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 240.21831602098084,
+      "data": 1
+    },
+    {
+      "atMs": 64543,
+      "cycle": 9,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 240.3203160190735
+    },
+    {
+      "atMs": 65328,
+      "cycle": 9,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 241.10391788365175
+    },
+    {
+      "atMs": 65328,
+      "cycle": 10,
+      "phase": "play",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 241.10491804959108,
+      "operation": "play"
+    },
+    {
+      "atMs": 66081,
+      "cycle": 10,
+      "phase": "play",
+      "event": "play-observed",
+      "providerState": 1,
+      "providerSeconds": 241.8584551487732
+    },
+    {
+      "atMs": 66081,
+      "cycle": 10,
+      "phase": "pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 241.8584551487732,
+      "operation": "pause"
+    },
+    {
+      "atMs": 66088,
+      "cycle": 10,
+      "phase": "pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 241.862141,
+      "data": 2
+    },
+    {
+      "atMs": 66134,
+      "cycle": 10,
+      "phase": "pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 241.862141
+    },
+    {
+      "atMs": 67199,
+      "cycle": 10,
+      "phase": "pause",
+      "event": "pause-stable",
+      "providerState": 2,
+      "providerSeconds": 241.862141,
+      "stableMs": 1000
+    },
+    {
+      "atMs": 67199,
+      "cycle": 10,
+      "phase": "seek",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 241.862141,
+      "operation": "seek",
+      "target": 15
+    },
+    {
+      "atMs": 67415,
+      "cycle": 10,
+      "phase": "seek",
+      "event": "seek-observed",
+      "providerState": 2,
+      "providerSeconds": 15
+    },
+    {
+      "atMs": 67415,
+      "cycle": 10,
+      "phase": "resume",
+      "event": "command",
+      "providerState": 2,
+      "providerSeconds": 15,
+      "operation": "resume"
+    },
+    {
+      "atMs": 67420,
+      "cycle": 10,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 3,
+      "providerSeconds": 15,
+      "data": 3
+    },
+    {
+      "atMs": 67535,
+      "cycle": 10,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 3,
+      "providerSeconds": 15
+    },
+    {
+      "atMs": 67692,
+      "cycle": 10,
+      "phase": "resume",
+      "event": "onStateChange",
+      "providerState": 1,
+      "providerSeconds": 15.210460948501586,
+      "data": 1
+    },
+    {
+      "atMs": 67741,
+      "cycle": 10,
+      "phase": "resume",
+      "event": "transition",
+      "providerState": 1,
+      "providerSeconds": 15.259460973297118
+    },
+    {
+      "atMs": 68579,
+      "cycle": 10,
+      "phase": "resume",
+      "event": "resume-observed",
+      "providerState": 1,
+      "providerSeconds": 16.09729908010864
+    },
+    {
+      "atMs": 68580,
+      "cycle": 11,
+      "phase": "final-pause",
+      "event": "command",
+      "providerState": 1,
+      "providerSeconds": 16.09729908010864,
+      "operation": "pause"
+    },
+    {
+      "atMs": 68588,
+      "cycle": 11,
+      "phase": "final-pause",
+      "event": "onStateChange",
+      "providerState": 2,
+      "providerSeconds": 16.101422,
+      "data": 2
+    },
+    {
+      "atMs": 68693,
+      "cycle": 11,
+      "phase": "final-pause",
+      "event": "final-pause-start",
+      "providerState": 2,
+      "providerSeconds": 16.101422
+    },
+    {
+      "atMs": 68737,
+      "cycle": 11,
+      "phase": "final-pause",
+      "event": "transition",
+      "providerState": 2,
+      "providerSeconds": 16.101422
+    },
+    {
+      "atMs": 128695,
+      "cycle": 11,
+      "phase": "final-pause",
+      "event": "final-pause-end",
+      "providerState": 2,
+      "providerSeconds": 16.101422
+    }
+  ]
+}

@@ -49,7 +49,7 @@ Comandos planificados: no existen todavía; T01 debe crearlos antes de usarlos c
 
 ## Tasks
 
-- [ ] **T01: Crear la entrada mínima con YouTube real y comprobar material** `est:1h`
+- [x] **T01: Crear la entrada mínima con YouTube real y comprobar material** `est:1h`
   - Why: comprobar la reproducción externa antes de construir guía/motor.
   - Files: `package.json`, `src/main.ts`, `src/App.vue`, `src/application/player-port.ts`, `src/infrastructure/youtube-player.ts`, `tests/unit/player-contract.test.ts`, `docs/validation/S01-material.md`
   - Do: previa aprobación, fijar base/gestor/versiones, scripts y tests; documentar permisos/privacidad/vídeo; integrar iframe visible y play/pause/tiempo con límites pequeños. No catálogo/renderizador/optimizador.
