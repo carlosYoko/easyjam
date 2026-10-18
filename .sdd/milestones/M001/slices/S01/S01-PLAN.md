@@ -1,5 +1,7 @@
 # S01: YouTube real y guía mínima
 
+**Current status — D013:** SUSPENDED, incomplete and outside the active roadmap. T01/T02 remain implemented/verified with their original checked records and summaries; T03/T04 remain unchecked, suspended and not executed. Do not resume this plan. The gate and deliverables below describe the original plan historically, not current permissions. Reuse PlayerPort/YouTube/observed-clock evidence under S06–S11; no fictitious slice completion.
+
 **Goal:** Resolver pronto la viabilidad real de YouTube mediante una guía mínima de acordes y secciones, sin construir un reproductor completo ni fijar el renderer final.
 **Demo:** Desde una página local, cargar deliberadamente un vídeo fijo permitido, reproducir/pausar, seguir la guía basada en su reloj, saltar y activar/desactivar repetición de sección; consultar diagnóstico y medidas reales.
 

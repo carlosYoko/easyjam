@@ -8,6 +8,8 @@ skills_used:
 
 # T04: Verificar el recorrido y documentar medidas reales de viabilidad
 
+**Execution status:** SUSPENDED by D013 scope revision; not executed, not completed. This historical plan is outside the active roadmap. Do not dispatch/resume it. Re-evaluate relevant evidence/tests in S07/S10/S11 under new plans/authorization; preserve this ID and unfinished checkbox.
+
 **Slice:** S01 — YouTube real y guía mínima
 **Milestone:** M001
 

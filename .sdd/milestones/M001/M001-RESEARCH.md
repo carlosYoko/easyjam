@@ -4,87 +4,74 @@
 
 ## Summary
 
-Investigación documental, no prueba de ejecución. No hay src, package.json, fixtures musicales ni aplicación en este repositorio. Se revisaron producto, constitución, ADR-001, propuesta de MVP y convenciones; la estructura S01–S05 y el contrato R001–R020 fueron confirmados por el usuario. Ninguna capacidad está validada.
+D013 aprueba producto, dirección ADR-002 y S06–S11; permite archivo independiente autorizado exclusivamente para S06 y esquema SQLite menor que siete tablas si cumple requisitos. Solo formalización/planificación y commits documentales autorizados; plan S06/T01–T06 espera revisión antes de código. D012 concreta D011: biblioteca con análisis previo durable, calidad antes que velocidad y pentagrama Y tablatura reales del arreglo simplificado. Esta actualización es documental: sin instalar/adoptar motor, alphaTab, DB de canciones o backend, ni ejecutar benchmark/transcripción/integración nueva. La base T01/T02 sí existe en worktree, commits 01c0c7d/1b4690d, 65 tests y evidencia YouTube/reloj/guía ficticia; no resuelve transcripción/partitura. Error 5 aceptado D010, no reparado.
 
-YouTube documenta play/pause, getCurrentTime(), estados y seekTo(). Esto permite intentar la guía mínima real, pero no acredita precisión: seek puede llegar al keyframe anterior y desde cued/unstarted puede iniciar reproducción. Loop de vídeo/playlist no equivale a bucle de sección. El renderer no resuelve estas limitaciones.
+Documentación alphaTab consultada mediante Context7 /websites/alphatab_net y guía oficial directamente: muestra notación estándar/TAB, cursor/scroll/interacción y medios externos con anclas y tiempo actualizado. Es candidato prioritario, no integración EasyJam validada. No asumir que sus animaciones/interpolación se congelan en buffering de YouTube o que un objeto MIDI basta para notación. Snippets con variables inconsistentes o APIs HTTP espurias se descartan; verificar referencias/tipos de versión elegida antes de implementar.
+
+YouTube IFrame/Data API documentan reproducción/tiempo/metadatos, no fuente analizable de audio. III.E.1 exige aprobación escrita previa para descargar/importar/cachear audiovisual; III.D.7 no permite APIs no documentadas sin permiso. Fuente independiente/mapping/permiso todavía no acreditados; insertabilidad/derechos musicales/autorización de plataforma no equivalentes. URL sola sigue objetivo condicionado; sin fuente, pendiente explícito, bloqueo y alternativas antes de alterar alcance. Investigación no equivale a dictamen jurídico.
 
 ## Recommendation
 
-Mantener cinco slices, con S01 pequeña y aislada: vídeo fijo autorizado, guía mínima de acordes/secciones, tiempo observado, saltos, repetición y diagnóstico. No elegir aún renderer ni algoritmo. No usar samples de documentación como evidencia automática de permisos musicales. Resolver material y condiciones de carga antes de ejecutar.
+Resolver material/fuente y medir análisis real orientado a rítmica antes del pipeline completo (S06 aprobada para planificación, no ejecución). Probar notación simultánea/modelo y alphaTab/YouTube temprano (S07), no aplazar renderer fundamental hasta después de DB/optimizador. Luego biblioteca/async/SQLite (S08), arreglo notacional global persistido (S09), práctica integrada (S10), aceptación/recuperación real (S11). Roadmap aprobado por D013; revisar plan S06 antes de código. T03/T04 antiguas suspendidas. Archivo de prueba autorizado no cierra URL única.
+
+Calidad primero: permitir análisis bastante mayor que duración; sin deadline ligado a canción. Evaluar recursos/coste/cuelgue de forma justificada, distinguir heartbeat/red/progreso real y no inventar porcentaje/ETA. Una lease vencida no prueba que otro ejecutor pueda empezar sin duplicar cómputo vivo.
 
 ## Implementation Landscape
 
 ### Key Files
 
-- `docs/product.md` — alcance confirmado.
-- `docs/mvp-proposal.md` — responsabilidades y aceptación S01–S05.
-- `docs/constitution.md` — propuesta transversal, no ratificada globalmente.
-- `docs/adr/ADR-001.md` — candidatos y bocetos, no APIs existentes.
-- `docs/development.md` — checks y Git.
-- `.sdd/PREFERENCES.md` — único archivo de preferencias de proyecto preexistente; no duplicar nombre/capitalización.
+- .sdd/milestones/M001/M001-CONTEXT.md — experiencia confirmada/14 pasos; M001-ROADMAP.md es cola activa S06–S11, M001-ROADMAP-HISTORY.md conserva historial suspendido.
+- .sdd/REQUIREMENTS.md y DECISIONS.md — R001–R013/R017/R018 activos, owners S06–S11 formalizados en D013; ninguno validado globalmente.
+- docs/product.md — historias/capacidades/estados y aceptación; docs/mvp-proposal.md — dependencias/pruebas/riesgos, refleja SDD sin árbol specs paralelo.
+- docs/adr/ADR-002.md — dirección aceptada D013 y detalles revisables; ejemplo SQLite/jobs simplificable, no siete tablas obligatorias. Vue3/TS/backend local mínimo/SQLite aprobados, driver/motor/renderer/serialización por probar, constitución no ratificada globalmente.
+- .sdd/worktrees/M001/src/application/player-port.ts y src/infrastructure/youtube-player.ts — snapshot/play/pause/seek/subscribe/dispose y adapter oficial existentes. Sin API de audio.
+- .sdd/worktrees/M001/src/application/guide-session.ts — selectGuideFrame/requestSectionNavigation, ventanas [inicio,fin), silencio/gap y reloj observado; no modelo musical definitivo.
+- .sdd/worktrees/M001/docs/validation/S01-guide.md y S01-youtube-controlled.md — evidencia existente, no partitura/transcripción real. .sdd/sdd.db es DB del agente, no de canciones.
 
 ### Build Order
 
-S01 primero resuelve proveedor real; S02 contenido completo; S03 motor global; S04 integración; S05 aceptación sin nuevas funciones. Solo S01 tiene tareas planificadas. La escritura de planes no autoriza T01, auto ni S02.
+S06→S07→S08→S09→S10→S11, go/no-go tras material/calidad y renderer/sync; no ejecución autorizada aquí. T01/T02 reutilizadas sin declarar S01 completa. Propuesta de backend local único con ejecutor administrado, no petición HTTP/polling/frontend como dueño del trabajo; cerrar navegador no cancela. Apagar backend/equipo puede interrumpir y requiere checkpoint/reconciliación. Sin microservicios o infraestructura distribuida.
 
 ### Verification Approach
 
-Vitest para intervalos/selección/repetición/dobles del adaptador, Playwright determinista para el recorrido y errores, tipos/lint/build. Prueba real separada con entrada HTTP local, vídeo permitido, interacción explícita y registro de entorno. Medir target vs tiempo observado, tiempo de recuperación de seek, sobrepaso de fin de sección y retorno, selección UI vs reloj observado y desfase perceptivo independiente. La UI y el mismo getCurrentTime no son referencias independientes del audio. Registrar método, muestras, incertidumbre, rango/percentiles cuando la muestra lo permita; no umbrales arbitrarios. Proponerlos tras medir y pedir aprobación antes de S04.
+Matriz en docs/mvp-proposal.md: referencia musical legítima, pruebas de conversión notacional y anclas/unidades; SQLite en fichero/procesos/conexiones distintos, constraints/carreras/claim/checkpoint/rollback/fencing; cerrar navegador mientras analiza, regresar y reabrir tras restart sin nuevas llamadas al analizador; regeneración/anclas sin audio; publicación Lista solo con original/arreglo/sync compatibles. Contratos deterministas no sustituyen final real de audio/análisis/DB/reinicio/vídeo.
+
+Evaluar calidad por dimensión, no solo un agregado: notas/acordes pertinentes a rítmica y cambios, beats/downbeats/métrica/duraciones, silencio vs desconocido, secciones y alineación; review de arreglo tocado. Proponer umbrales después de medir y acordarlos antes de go/no-go. Contrastar cursor con anclas audibles independientes del propio getCurrentTime; polling no es precisión acústica/SLA.
 
 ## Don't Hand-Roll
 
-| Problem | Existing Solution | Why Use It |
+| Necesidad | Candidato documentado | Límite / experimento pendiente |
 |---|---|---|
-| Reproducción de YouTube | IFrame Player API oficial | Evita extracción y controles no documentados |
-| Tablatura/ritmo final | Evaluar alphaTab y VexFlow | Motores maduros; no reconstruir notación completa |
-| Teoría de notas/acordes | Evaluación posterior de biblioteca como Tonal.js | S01 usa acordes preparados y no necesita un motor musical |
-| Identidad/estado SDD | Herramienta nativa de ID, herramientas de decisiones/research y plantillas instaladas | No inventar DB/runtime/STATE ni simular ejecución |
+| Armonía | Chordino/NNLS Chroma | Calidad/licencias/Windows sin probar; acordes no determinan ritmo de guitarra. |
+| Beat/estructura | QM Vamp | Beats/bar/segmentación no garantizan métrica/secciones semánticas correctas. |
+| Notas | Basic Pitch, README indica Apache-2.0 | Mejor con instrumento individual; no asumir mezcla completa. Pesos/dependencias/licencias y notas rítmicas relevantes por evaluar. |
+| Preprocesamiento/multipaso | Herramientas maduras por evaluar | Comparar baseline con remuestreo/normalización, separación armónico-percusiva/fuentes o contexto/pasadas cuando haya hipótesis medible. Artefactos/latencias pueden empeorar resultado. No separador propio ni dependencia adoptada por intuición. |
+| Notación/tiempo | alphaTab prioritario | Staff.showStandardNotation/showTablature, cursor, scrollMode/scrollElement e interacción documentados; verificar licencia/assets/modelo/teclado/ciclo de vida antes de adoptar. Alternativa madura solo si insuficiente y con decisión. |
+| Persistencia | SQLite/driver maduro por elegir | Un escritor; FK/UNIQUE/transacciones cortas, no cola distribuida reinventada. |
 
 ## Constraints
 
-- YouTube: viewport mínimo 200×200; 480×270 recomendado para 16:9. Controles/branding visibles, sin overlays que oculten ninguna parte.
-- Identificación por HTTP Referer; no suprimirla con no-referrer/noreferrer. Origin es una medida adicional, no sustituto general de Referer en SPA. Probar HTTP local, no file://.
-- onAutoplayBlocked es distinto de onError; iniciar por interacción y reflejar estado real, no éxito del comando supuesto.
-- Estados oficiales -1/0/1/2/3/5; getDuration puede devolver 0 antes de metadatos. No confundir con canción vacía.
-- Errores 2/5/100/101/150/153 requieren diagnóstico explícito. Carga de script sin respuesta debe tener fallo visible y limpieza.
-- Políticas III.A exigen revisar términos/privacidad; III.E.4 describe datos enviados incluso al cargar el player y obligaciones Made for Kids. No tener cuentas no elimina estas obligaciones. Procedimiento de verificación de metadatos abierto; si necesita credenciales, usar secure_env_collect solo al necesitarlo, sin exponerlas ni inventar backend.
-- No descargar, aislar audio, ocultar anuncios ni usar APIs no documentadas. No acreditar derechos solo por embebibilidad.
-
-## Common Pitfalls
-
-- **Seek solicitado ≠ observado** — seekTo retorna void y puede usar keyframes; medir observación y no mover la guía de forma optimista.
-- **Pausa antes de primer play** — buscar desde cued puede disparar reproducción; distinguir estados y probar bloqueo del navegador.
-- **Bucle nominal** — loop/setLoop repiten vídeo/playlist; repetición de sección precisa controlar frontera y verificar retorno, buffering y gap. endSeconds de cueVideoById deja de aplicar tras seekTo.
-- **Deriva y pestaña oculta** — no acumular reloj UI como autoridad; timers pueden sufrir throttling. Registrar reactivación de pestaña; no prometer background playback.
-- **Polling = precisión** — son magnitudes distintas. Ejemplo alphaTab de 50 ms no es SLA.
-- **Ejemplos no listos para producción** — ejemplos alphaTab incluyen fragmentos con identificadores inconsistentes; validar APIs/tipos de la versión elegida en vez de copiarlos literalmente.
-- **Sincronía circular** — comparar guía con el mismo reloj que la selecciona solo acredita lógica, no alineación audible del vídeo.
-
-## Rendering Alternatives
-
-| Candidate | Evidence | Cost / Pending |
-|---|---|---|
-| Guía mínima HTML | S01 solo necesita acordes/secciones y estado actual | Propuesta para S01, no renderer final ni motor de tablatura propio |
-| alphaTab | Guía oficial de external media, IExternalMediaHandler y updatePosition en milisegundos; sincronización externa desde 1.6; página consultada muestra 1.8.4 | Construir/adaptar modelo y sync points, ciclo de vida y evaluar assets/licencia/bundle; no instalado ni adoptado |
-| VexFlow | Tutorial oficial describe motor de notación SVG/Canvas, TabStave/TabNote y duraciones/silencios | Mayor orquestación propia de cursor/layout/tiempo; API/versiones/licencias a fijar al elegir; no instalado ni adoptado |
-
-Context7 produjo un fragmento VexFlow con endpoints HTTP incongruentes; se descartó. Solo se usan sus ejemplos de notación contrastados con el tutorial. No hay un backend VexFlow propuesto.
+- Modelo neutral/versionado: compases/métrica/anacrusa si procede, ticks PPQ o racionales por elegir, tempo, eventos/notas/quintas/rests/duraciones/ligaduras, alturas/octavas/transposición guitarra, cuerdas/trastes, secciones/ocurrencias/anclas. Misma música simplificada en pentagrama y TAB, no original complejo. Adaptar orden de cuerdas/units, no guardar alphaTab como única fuente.
+- AlphaTab guía documenta EnabledExternalMedia/IExternalMediaHandler/updatePosition y sync points; segundos YouTube vs milisegundos alphaTab. Probar cursor/scroll en pausa/buffering/seek/fin y navegación desde compás sin optimismo/bucle de callbacks. PlayerPort existente sigue autoridad; no segundo reloj/sintetizador audible. Ejemplo 50 ms no es SLA.
+- Correcciones de sync persistidas con revisión/grabación, no reanalizar audio; cortes/velocidad pueden invalidar un offset. Mecanismo mínimo por aprobar, no editor completo implícito.
+- Preprocesamiento: misma referencia/hardware/config/versión, baseline vs técnica aislada, mejora/degradación medible por dimensión y coste/tiempo. Conservar original y transformaciones/mapeos/latencias. No cuantizar borrando silencios/microtiempo; N.C. no prueba silencio de guitarra.
+- Internamente estados pending/processing/ready/error + phase; externamente solo Pendiente/Analizando/Preparando arreglo/Lista/Error. Es proyección propuesta, no código existente. Lista exige original aceptado, arreglo notacional válido y sync compatible. Fallo posterior no destruye último arreglo válido.
+- SQLite: identity única por vídeo, índice parcial de trabajo activo, claim atómico, checkpoint original, publicación atómica con fencing; motor/red fuera de transacción. Busy/error SQL no implica repetir análisis aceptado. Timeout remoto incierto requiere recuperar job/idempotencia, no retry ciego. No exactly-once físico universal.
+- Fuente ausente no se sustituye por fixture/importación; audio permitido, procedencia/retención y correspondencia verificadas. Metadatos API separados, refresco/borrado según III.E.4 (límite general 30 días para datos no autorizados); sin tokens/enlaces firmados en datos/logs.
+- YouTube visible con controles/branding y sin overlays; mínimo 200×200, recomendado 480×270 para 16:9. Referer no suprimido, origin no lo sustituye. onAutoplayBlocked distinto de error; estado cued 5 no error 5; duración inicial cero no prueba canción vacía. Seek/bucle de vídeo no garantiza retorno exacto/gapless de sección.
 
 ## Open Risks
 
-- Vídeo/arreglo/permiso y matriz de navegadores/dispositivos no seleccionados. No obtener evidencia móvil real por emular viewport.
-- Privacidad/aceptación y procedimiento Made for Kids pueden necesitar revisión antes de cargar vídeo; se incorporaron al contrato con confirmación del usuario.
-- Viabilidad de repetición y criterios de sincronía solo podrán decidirse con S01 ejecutada tras aprobación.
-- Stack principal sigue propuesto; versión Node/gestor/lockfile deben fijarse al autorizar T01, sin instalar ahora.
-- SDD distribuido contiene descripciones históricas contradictorias. Se consultó README real en raíz (pkg/README no existe), plantillas y handlers instalados; next usa step:true y ejecuta una unidad, dry-run solo previsualiza. No se invocaron motores ni comandos de ejecución.
+Fuente/mapping/derechos/cobertura, calidad/corrección necesaria, motor/recursos/coste, serialización/modelo musical y licencia/assets alphaTab, interpolación interna/units/anclas en YouTube, ejecutor Windows/cancelación/reconciliación y SQLite/backup, error 5 desconocido y loops. Sin benchmark nuevo, fuente seleccionada, integración alphaTab ejecutada, validación móvil física o usuarios. Umbrales/método de ajuste y diseño necesitan aprobación.
 
 ## Sources
 
-- Context7 `/websites/developers_google_youtube`: getCurrentTime, seekTo, estados/errores y requisitos; contrastado con fuente oficial.
-- [YouTube IFrame API](https://developers.google.com/youtube/iframe_api_reference) — operaciones/estados/seek/onAutoplayBlocked/errores.
-- [Required Minimum Functionality](https://developers.google.com/youtube/terms/required-minimum-functionality) — Referer, tamaños y overlays.
-- [Developer Policies](https://developers.google.com/youtube/terms/developer-policies) — III.A, III.E.1/4, III.F y cumplimiento; lectura de secciones relevantes, no dictamen jurídico.
-- Context7 `/websites/alphatab_net` y [Audio & Video Sync](https://www.alphatab.net/docs/guides/audio-video-sync) — integración externa y advertencia seek.
-- Context7 `/0xfe/vexflow` y [Tutorial](https://github.com/vexflow/vexflow/wiki/Tutorial) — motor de notación y tablatura, sin tomar snippets HTTP como API real.
-- README real de SDD instalado, plantillas context/roadmap/project/requirements/research/plan/task-plan y handlers auto/workflow — flujo nativo y formatos.
-- Búsqueda prevista: `site.developers.google.com youtube iframe api seekTo keyframe onAutoplayBlocked error 153 referer minimum player`. No disponible por falta de clave; BRAVE_API_KEY opcional omitida. Se consultaron fuentes oficiales directamente; no se declara búsqueda web exitosa.
+Consulta documental 2026-10-18. Context7 /websites/alphatab_net: búsqueda de notación estándar+TAB, cursor/scroll y medios externos/anclas; corroborada guía principal con lectura directa. No se declara benchmark ni nuevas pruebas reales. Búsqueda web general no disponible en investigación anterior por clave opcional omitida; no se pidió de nuevo ni bloqueó lectura directa.
+
+- [alphaTab Audio & Video Sync](https://www.alphatab.net/docs/guides/audio-video-sync) — guía oficial leída: medios externos/anclas/unidades, integración necesaria, no garantía de buffering EasyJam.
+- [Staff](https://www.alphatab.net/docs/reference/types/model/staff), [scrollMode](https://www.alphatab.net/docs/reference/settings/player/scrollmode), [scrollElement](https://www.alphatab.net/docs/reference/settings/player/scrollelement), [enableCursor](https://www.alphatab.net/docs/reference/settings/player/enablecursor), [enableUserInteraction](https://www.alphatab.net/docs/reference/settings/player/enableuserinteraction) — referencias consultadas mediante Context7; no endpoints HTTP reales.
+- [Media Sync Editor](https://www.alphatab.net/docs/guides/media-sync-editor) — sync points por compás; evaluar compatibilidad/ocurrencias, no editor adoptado.
+- [YouTube Developer Policies](https://developers.google.com/youtube/terms/developer-policies), [videos.list](https://developers.google.com/youtube/v3/docs/videos/list), [IFrame API](https://developers.google.com/youtube/iframe_api_reference), [RMF](https://developers.google.com/youtube/terms/required-minimum-functionality) — fuentes de investigación previa y evidencia T01/T02; no dictamen jurídico ni fuente de audio.
+- [Basic Pitch README](https://raw.githubusercontent.com/spotify/basic-pitch/main/README.md), [Chordino](https://www.isophonics.net/nnls-chroma), [QM Vamp](https://www.vamp-plugins.org/plugin-doc/qm-vamp-plugins.html) — candidatos documentales previos, no seleccionados/instalados/probados.
+- [SQLite transactions](https://www.sqlite.org/lang_transaction.html), [ON CONFLICT](https://www.sqlite.org/lang_conflict.html) — investigación previa: transacciones/constraints, no migraciones implementadas.
+- Plantillas nativas context/research/roadmap y registros de requisitos/decisiones: propuesta no equivale a ejecución.
