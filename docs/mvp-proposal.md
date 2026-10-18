@@ -1,6 +1,6 @@
 # EasyJam Guitar Practice MVP — Propuesta revisada
 
-**Estado:** estructura S01–S05 y decisiones de producto aprobadas como base del milestone M001; pendiente de formalización nativa y revisión final antes de S01. No es un roadmap operativo, no reserva un ID ni autoriza implementación.
+**Estado:** propuesta documental aprobada y formalizada como milestone nativo M001 en modo manual. Contexto/roadmap y planes de S01 creados; ninguna tarea ejecutada. S01 requiere autorización explícita antes de T01.
 **Actualización:** 18 de octubre de 2026.
 **Fuente:** aclaraciones explícitas del usuario durante la discusión del MVP.
 **Referencias:** [producto](product.md), [constitución](constitution.md), [ADR-001](adr/ADR-001.md), [desarrollo](development.md).
@@ -91,11 +91,11 @@ No se introduce backend, base de datos o SSR en esta propuesta: no hay una neces
 | Renderizador excesivo o incompatible | Evaluar API, licencia, representación rítmica, silencios y sincronización con el reloj externo | Antes de comprometer S04; alphaTab no es obligatorio |
 | Modelo temporal ambiguo | Definir unidades, límites, desfase y fuente autoritativa con la canción elegida | S02/S04; no imponer PPQ, anclas o cambios de tempo sin necesidad |
 
-La investigación técnica consultará documentación oficial y versiones reales. No se afirma aquí haber probado YouTube, Tonal.js o alphaTab.
+La [investigación documental realizada](../.sdd/milestones/M001/M001-RESEARCH.md) contrasta documentación oficial y alternativas. No se afirma haber probado en ejecución YouTube, Tonal.js o alphaTab.
 
 ## 5. Vertical slices revisadas — candidatas
 
-Orden y responsabilidades aprobados como base de planificación. No son planes nativos ejecutables. Sus contratos y tareas se concretarán durante la formalización y planificación de slices.
+Orden y responsabilidades aprobados y formalizados en el [roadmap nativo M001](../.sdd/milestones/M001/M001-ROADMAP.md). Esta propuesta conserva la justificación de producto; las dependencias, contratos y tareas operativos se mantienen en los artefactos nativos. Solo S01 tiene tareas.
 
 **Límites de responsabilidad:** S01 prueba viabilidad real con guía mínima, sin construir el reproductor completo; S02 es responsable del arreglo completo y su validación, no del optimizador; S03 implementa simplificación/optimización, no el proveedor; S04 integra las capacidades anteriores en la práctica completa; S05 solo verifica y corrige defectos de integración, sin nuevas funcionalidades significativas. Todas incluyen pruebas pertinentes y decisiones documentadas. Los commits serán atómicos, verificados y trazables a la slice cuando exista su ID nativo.
 
@@ -204,6 +204,6 @@ Los nombres de archivos, funciones y contratos se fijarán al planificar; no se 
 - `ADR-001.md` conserva el estado propuesto y remite aquí para la secuencia y restricciones actuales; sus bocetos no son contratos aceptados.
 - `development.md` define calidad y Git; A/B arbitrario y cambios de tempo no se convierten en requisitos por aparecer en ejemplos de pruebas.
 
-**Siguiente paso exacto:** formalización manual de planificación en SDD Pi, sin auto: investigación técnica pendiente, comprobación de profundidad con el usuario, presentación y confirmación del contrato de capacidades, generación del ID nativo y escritura de contexto/roadmap con las plantillas instaladas. Después, planificar S01 con criterios verificables y presentar el plan definitivo para autorización explícita antes de escribir código. No iniciar `/sdd auto`.
+**Siguiente paso exacto:** revisar el [plan de S01](../.sdd/milestones/M001/slices/S01/S01-PLAN.md) y aprobar explícitamente su ejecución/base técnica/material. Después, `/sdd next --dry-run` debe mostrar T01 y `/sdd next` ejecutará una sola unidad en modo paso a paso. No ejecutar esos comandos de implementación antes de autorización; no iniciar `/sdd auto`.
 
-No hay aún un milestone nativo reservado ni planes de tarea. La denominación M001 expresa la intención del usuario; el ID definitivo lo asignará SDD. Esta preparación no finaliza el milestone ni autoriza ejecución.
+M001 fue generado mediante `sdd_milestone_generate_id`. Contexto, roadmap, contrato y planes usan las plantillas instaladas; decisiones e investigación se registran con herramientas nativas. No se han creado a mano STATE, DB, runtime ni marcadores de ejecución. Investigación documental y propuestas numéricas pendientes de medidas no son evidencia de funcionamiento real.

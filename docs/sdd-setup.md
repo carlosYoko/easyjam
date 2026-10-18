@@ -41,16 +41,27 @@ La carga global sí produce avisos: el archivo preexistente `~/.sdd/preferences.
 
 ## Punto de parada y siguiente acción
 
-No se crearon `PROJECT.md`, `REQUIREMENTS.md`, `STATE.md`, milestones, IDs, roadmaps operativos, manifiestos ni decisiones aprobadas. [La propuesta de M001](mvp-proposal.md) es material de entrada, no estado del motor.
+Milestone nativo **M001** formalizado en modo manual tras investigación, confirmación de profundidad, contrato de requisitos y vista previa aprobados por el usuario.
 
-Dentro de la sesión SDD Pi, ejecutar:
+- [Contexto](../.sdd/milestones/M001/M001-CONTEXT.md) y [roadmap](../.sdd/milestones/M001/M001-ROADMAP.md): cinco slices, ninguna ejecutada.
+- [Plan S01](../.sdd/milestones/M001/slices/S01/S01-PLAN.md): cuatro tareas secuenciales; no hay planes de S02.
+- ID generado por herramienta nativa; investigación y decisiones registradas con herramientas disponibles. Artefactos de planificación redactados con plantillas instaladas, como prescribe el protocolo; no se fabricaron archivos internos del motor.
+- No se escribió STATE, DB, runtime ni marcadores a mano. La base de datos que creen las herramientas queda ignorada, no versionada.
+
+**Parada obligatoria:** revisar y autorizar explícitamente S01 antes de T01, resolviendo base tecnológica, material y condiciones de prueba pendientes. No ejecutar código, auto, push, S02 ni cierre del milestone con la aprobación documental.
+
+Tras esa autorización, en la sesión SDD Pi:
 
 ```text
-/sdd discuss
+/sdd next --dry-run
 ```
 
-Si se abre desde una terminal nueva, iniciar primero `sdd` desde la raíz del repositorio. En la discusión solicitar: «Lee docs/ y prepara EasyJam Guitar Practice MVP a partir de docs/mvp-proposal.md. Solo discusión y propuesta: no ratifiques decisiones, no finalices la generación del milestone ni inicies ejecución sin mi aprobación».
+Debe previsualizar M001/S01/T01; si no coincide, reconciliar sin ejecutar. Para empezar una sola unidad:
 
-La discusión nativa requiere reflexión, investigación, confirmación de profundidad, contrato de requisitos y vista previa del roadmap. Antes de escribir un milestone, SDD debe generar el ID con `sdd_milestone_generate_id`; M001 aquí es solo el nombre solicitado, no una reserva. La preferencia global de IDs no fue modificada.
+```text
+/sdd next
+```
 
-**Precaución:** el prompt distribuido de discusión indica que finalizar la escritura puede arrancar auto automáticamente. No confirmar el cierre/escritura hasta revisar las propuestas y acordar explícitamente el modo de continuación. Esta preparación se detiene antes de ese punto y no invoca comandos de ejecución ni headless.
+El handler instalado de `next` usa modo paso a paso (`step: true`); la llamada interna se denomina `startAuto`, pero no activa avance autónomo entre unidades. No confundir `/sdd next` con una orden de solo planificación.
+
+**Precaución:** el flujo de discusión distribuido puede arrancar automáticamente si se emite su frase de cierre. Esta preparación no emite esa señal ni invoca comandos de ejecución o headless. Las convenciones y pendientes de ratificación permanecen en los documentos canónicos; aprobar planes no acepta ADR-001 en bloque.
