@@ -1,106 +1,99 @@
 # M001: EasyJam Guitar Practice MVP
 
 **Gathered:** 2026-10-18
-**Status:** Roadmap formalized; S01 plan/criteria and execution preparation approved. Task execution awaits separate explicit authorization.
+**Status:** Producto, ADR-002 como dirección inicial y roadmap S06–S11 aprobados por D013. Formalización/planificación S06, no ejecución de código. Manual, una unidad autorizada por vez.
 
 ## Project Description
 
-EasyJam permite acompañar una canción completa de forma accesible y cómoda, no reproducir fielmente la interpretación original. «No necesitas tocar una canción exactamente como el artista original para disfrutar tocándola de principio a fin».
+Dos pantallas: Mi biblioteca (vacío/Añadir URL, listado simple/estados/reutilización) y práctica (pentagrama+TAB del arreglo simplificado, cursor/scroll/compases/secciones/duraciones/rests/navegación y vídeo YouTube oficial visible). Transcribir previamente y conservar original/arreglo/alineación en SQLite; practicar/reabrir/regenerar no reanaliza audio.
 
-Usuario inicial: principiante/intermedio que conoce mínimamente las quintas. Dificultad única fácil. Simplificar no es sustituir indiscriminadamente todo por quintas: respetar armonía, estructura, ritmo y silencios. Si un riff esencial no admite simplificación coherente, documentar y posponer esa canción.
+Guitarra rítmica fácil/principiante-intermedio, seis cuerdas E A D G B E, trastes 0–12 inclusivos, quintas de dos notas con alternativas justificadas y digitaciones globales deterministas. Ritmo/rests/progresión/secciones conservados; no reconstrucción exacta de todos los instrumentos/solos/riffs.
 
 ## Why This Milestone
 
-La frustración con tablaturas complejas y saltos innecesarios por el mástil exige validar la tocabilidad de la progresión completa. La prioridad explícita es no construir gran parte con simuladores para descubrir al final que YouTube no sirve: S01 es pequeña, real y temprana; no un reproductor completo.
+Cerrar recorrido reutilizable de preparación musical real y práctica, retirando planes obsoletos sin perder base T01/T02. Fuente/calidad y renderer/sync se prueban temprano antes de infraestructura/pipeline completos.
 
 ## User-Visible Outcome
 
 ### When this milestone is complete, the user can:
 
-- Abrir una canción autorizada completa y seguir quintas, ritmo, silencios y secciones con el vídeo real visible.
-- Saltar entre secciones, pausar/reanudar, repetir una sección según viabilidad aceptada y terminar sin perder contexto.
+- Ver Mi biblioteca, añadir URL cubierta, detectar/reutilizar procesadas y abrir listas directamente.
+- Observar exactamente Pendiente / Analizando / Preparando arreglo / Lista / Error y motivo/fase reales. Cerrar navegador no cancela ejecutor activo; apagar backend/equipo puede interrumpirlo y exige reconciliación.
+- Practicar pentagrama Y tablatura del mismo arreglo guardado, cursor/scroll/sección y navegación por compás/sección; pausa/buffering sin avance autónomo, seek observado/anclas corregibles persistidas.
+- Reiniciar/reabrir con misma biblioteca/artefactos, sin análisis; regeneración o ajuste sync tampoco analiza ni destruye arreglo válido previo.
 
 ### Entry point / environment
 
-- Entry point: SPA local servida por HTTP; comandos exactos se crearán en T01, no existen todavía.
-- Environment: S01 prioriza Chrome/Chromium de escritorio; otros navegadores y móviles posteriores. Móvil emulado no acredita hardware móvil.
-- Live dependencies involved: YouTube IFrame Player API; S01 usa inicialmente M7lc1UVf-VE con guía ficticia rotulada, condicionado a inserción real. S02 requiere canción/arreglo reales autorizados; sin backend/cuentas/base de datos.
+- Entry point: futura Mi biblioteca HTTP local; la base actual está en .sdd/worktrees/M001, no integrada en main.
+- Environment: Chrome/Chromium escritorio, local monousuario/loopback; sin backend público sin otra decisión.
+- Live dependencies involved: YouTube oficial, futura SQLite en fichero/motor/fuente permitida. AlphaTab prioritario, no adoptado. .sdd/sdd.db pertenece al agente.
 
 ## Completion Class
 
-- Contract complete means: pruebas musicales, de tiempo, validación de datos, adaptadores y E2E con dobles pasan; tipos/lint/build reproducibles.
-- Integration complete means: canción completa y guía/tablatura sincronizada con YouTube real; navegación, repetición y errores ejercitados.
-- Operational complete means: carga, pausa, búsqueda, buffering, error y desmontaje/reapertura sin recursos duplicados. No despliegue público o servicios supervisados en este alcance.
+- Contract complete means: identidad/URL, reglas musicales/notacionales/anclas, versiones y fronteras runtime validadas y testeadas.
+- Integration complete means: fuente/analizador reales→original→arreglo global→SQLite/biblioteca→pentagrama+TAB/YouTube/cursor/scroll conectados.
+- Operational complete means: navegador cerrado durante análisis, proceso nuevo/SQLite/reinicio, concurrencia/claim/checkpoint/rollback/fencing/retry sin corrupción ni análisis repetido al reutilizar.
 
 ## Final Integrated Acceptance
 
 To call this milestone complete, we must prove:
 
-- Abrir arreglo → reproducir → seguir secciones/acordes/ritmo/silencios → saltar → repetir según acuerdo → terminar con un vídeo real permitido.
-- Pausa, saltos consecutivos y fallo recuperable no inventan avance ni borran el arreglo válido.
-- Medidas reales contrastadas con umbrales propuestos tras S01 y aprobados antes de S04. Mocks no sustituyen esa evidencia.
-- S05 solo verifica/corrige defectos del conjunto, sin introducir funcionalidades significativas. No equivale a validar el producto con usuarios.
+1. Abro EasyJam.
+2. Veo Mi biblioteca.
+3. Añado canción nueva por URL.
+4. Se identifica/valida material.
+5. Se procesa fuente autorizada correspondiente al vídeo.
+6. Se genera transcripción musical real útil para rítmica.
+7. Se genera arreglo simplificado en quintas y posiciones globales.
+8. Se guarda original/arreglo/alineación en SQLite.
+9. La canción aparece Lista.
+10. Abro y veo pentagrama Y tablatura del arreglo simplificado.
+11. Pulso Play en YouTube oficial visible.
+12. Cursor/scroll siguen reloj observado; pausa/buffering/seek/navegación correctos.
+13. Cierro/reabro, incluyendo nuevo proceso backend/DB en prueba operativa.
+14. La canción sigue disponible sin volver a transcribir.
+
+Además cerrar navegador durante análisis, volver a estado/resultado; carreras/crash/rollback/retry y regeneración/anclas sin motor. Audio/análisis/DB/vídeo/reinicio reales, no fixtures/dobles como aceptación final. Lista exige original aceptado/arreglo/sync válidos.
 
 ## Risks and Unknowns
 
-- Seek puede aterrizar en keyframe anterior y cambiar reproducción según estado; el tiempo solicitado no es el observado.
-- No existe garantía de repetición musical sin huecos; si no es útil, solicitar decisión de alcance.
-- Canción/arreglo reales y derechos para S02 no seleccionados. El ejemplo técnico oficial S01 no concede derechos musicales ni convierte su guía ficticia en transcripción.
-- Referer, privacidad/consentimiento y tratamiento Made for Kids deben resolverse antes de cargar el proveedor; posible procedimiento de metadatos pendiente, sin asumir claves.
-- API polling no demuestra latencia audible; separar error de selección, latencia de UI, alineación del arreglo y desfase perceptivo.
-- Renderer, unidades musicales definitivas, anclas y coste/algoritmo abiertos; escritorio Chrome/Chromium fijado para S01.
+- Fuente/resolutor/cobertura/permiso para URL sola no acreditados. D013 autoriza archivo independiente permitido solo en experimento S06. No implica producto upload ni resolver requisito URL única, que debe demostrarse o cambiarse explícitamente antes de aceptación final.
+- Calidad antes que velocidad; puede tardar mucho más que canción, recursos/cuelgue justificados y heartbeat/red/progreso distintos. Métricas/umbrales con referencia/calibración/acuerdo antes de veredicto final; armonía no prueba ritmo/rests/secciones, N.C. no prueba silencio.
+- Modelo/serialización/transposición/anclas/ocurrencias y alphaTab/units/buffering/seek/accesibilidad/licencia/assets no probados. Alineación independiente del mismo reloj selector, no SLA/gapless por polling.
+- Error 5 intermitente aceptado D010 sigue abierto. Backend/driver/motor/recursos/recuperación de ejecución incierta por decidir con evidencia.
 
 ## Existing Codebase / Prior Art
 
-- `docs/product.md` — alcance confirmado; no catálogo ni campo URL.
-- `docs/mvp-proposal.md` — secuencia y límites aprobados de S01–S05.
-- `docs/constitution.md` — propuesta transversal, no ratificación global.
-- `docs/adr/ADR-001.md` — propuesta principal y bocetos, no APIs existentes.
-- `docs/development.md` — calidad y commits explícitos; no push.
-- `.sdd/PREFERENCES.md` — preferencias preexistentes, worktree por milestone y merge preservando commits; no modificar globales.
-
-No existen src, package.json ni implementación. No se referencian capacidades fantasma como existentes.
+T01 01c0c7d/T02 1b4690d en worktree milestone/M001: Vue/Vite/TS, versiones/lockfile, PlayerPort/adapter oficial, reloj observado/selección [inicio,fin)/navegación de guía ficticia, 65 tests y evidencia real. No son transcripción/renderer. src/application/player-port.ts, src/infrastructure/youtube-player.ts, src/application/guide-session.ts y docs/validation/S01-guide.md/S01-youtube-controlled.md se reutilizan; no cambiar resúmenes completados. S01 no completada.
 
 > See `.sdd/DECISIONS.md` for all architectural and pattern decisions — it is an append-only register; read it during planning, append to it during execution.
 
 ## Relevant Requirements
 
-- R001–R013 — todos mapeados en el roadmap; ninguno validado.
-- R014–R018 — evolución posterior sin milestones reservados.
-- R019–R020 — exclusiones del alcance.
+R001–R013/R017/R018 activos, ninguno validado globalmente; owners actualizados al roadmap D013. R014–R016 diferidos, R019/R020 exclusiones. S06: R012/R017 primarios, apoya R002/R003/R013. T01 material/protocolo; T02 contratos; T03 baseline real; T04 métricas/calidad; T05 notación/alineación; T06 evaluación/go-no-go. Scope de archivo no cierra URL única ni requisitos globales.
 
 ## Scope
 
 ### In Scope
 
-- S01 YouTube real/guía mínima; S02 arreglo completo; S03 conversión/optimización; S04 integración; S05 aceptación final.
-- Seis cuerdas, E A D G B E, trastes 0–12, quintas básicas de dos notas, empates deterministas, tiempos/ritmo/silencios conservados.
-- Una canción completa con varias secciones y variedad armónica, dificultad fácil; revisar ambigüedades.
+Biblioteca/URL, análisis previo real/durable, SQLite/reuso/dedupe, original/arreglo/sync separados, quintas/optimización global, pentagrama+TAB/cursor/scroll/navegación/YouTube visible/anclas corregibles, errores/recuperación y repetición condicionada. Ahora solo formalizar y planificar S06; archivo permitido para prueba, calidad antes de rapidez.
 
 ### Out of Scope / Non-Goals
 
-- Catálogo, URL arbitraria, IA, riffs/solos automáticos, varias dificultades, bajo/solista, A/B arbitrario, metrónomo/cuenta atrás y afinaciones adicionales.
-- Cambios de tempo si la canción no los requiere; cuentas, backend e infraestructura anticipada.
-- No ejecutar tareas ni auto con esta aprobación documental; no avanzar a S02 ni cerrar milestone.
+Cuentas/multiusuario/pagos/estadísticas/favoritos/filtros/editor completo, microservicios/colas externas, cualquier URL o mezcla garantizada, solos/riffs/afinaciones/dificultades extra, A/B arbitrario/gapless garantizado. Sin código todavía, auto/milestone completo, implementación S07–S11, cierre, merge/push o .gitignore ajeno.
 
 ## Technical Constraints
 
-- Vue 3/Vite/TypeScript estricto, Vitest/Playwright, pnpm y Node LTS compatible aprobados para S01. Versiones exactas se seleccionan/documentan en T01 con lockfile reproducible; ADR no ratificado en bloque. Preparación aprobada, ejecución aún bloqueada a la siguiente autorización.
-- Modelo musical separado de API YouTube; guía mínima no impone el esquema del arreglo completo.
-- Evaluar bibliotecas antes de construir motor/renderizador; sin decisiones especulativas.
-- Permisos, API oficial visible, tamaño mínimo documentado y controles sin overlays; no descargar/extraer audio.
-- Commits atómicos revisados con rutas explícitas; runtime/DB/STATE gestionados por SDD, no escritos a mano.
+D013 aprueba Vue3/TS, backend local mínimo, SQLite, módulos/adaptadores sustituibles, original/arreglo separados y procesamiento durable. ADR-002 es dirección inicial ajustable por pruebas, NO obligación de siete tablas: mínimo suficiente, KISS/SOLID/YAGNI. Driver/framework/motor/renderer/serialización se fijan con evidencia/autorización.
+
+Dominio independiente de Vue/SQL/YouTube/alphaTab/motor, puertos/validación por frontera real, sin repositorio universal/capas especulativas. Modelo notacional neutral/versionado; renderer muestra arreglo sin decidir digitaciones. alphaTab primero, no renderer propio si biblioteca madura sirve.
 
 ## Integration Points
 
-- YouTube: reloj en segundos, comandos asíncronos y estados; usar tiempo observado, no reloj UI acumulativo.
-- Renderizador futuro: posiciones/eventos ya decididos; alphaTab admite external media en milisegundos, VexFlow es alternativa de notación; ninguna dependencia adoptada.
-- SDD: ID generado por herramienta nativa, artefactos con plantillas instaladas y decisiones/research mediante herramientas disponibles; modo manual exclusivamente.
+Fuente/analizador sustituibles→original; generación→arreglo/receta/posiciones; almacenamiento/jobs→estado/checkpoints/publicación seguros; renderer→notación; PlayerPort→tiempo observado/anclas/cursor. Red/motor fuera de transacciones, práctica de lectura sin análisis. Conservar base técnica y evidencia sin merge automático.
 
 ## Open Questions
 
-- Condiciones de carga/privacidad/metadatos y funcionamiento integrado del ejemplo oficial antes de acreditar T01; canción/arreglo/permiso reales antes de S02.
-- Versiones estables compatibles y versión Node LTS exactas en T01; no se han instalado dependencias.
-- Umbrales tras S01 y aceptación de límites de repetición.
-- Símbolos especiales, formas alternativas, política de octavas/transiciones del bucle, coste y algoritmo antes de S03.
-- Renderer y representación temporal definitiva antes de S04, sin acoplar a ejemplos del ADR.
+Fuente/mapping/cobertura URL, material/referencia autorizados, métricas/criterios/recursos y motor/pipeline, modelo exacto y alphaTab, backend/driver/ejecutor/path/backup. T01 busca/verifica material/protocolo sin código, no exige al usuario trabajo que agente pueda hacer. Falta de fuente bloquea, no produce fixture.
+
+Native steering: appendOverride implementa `/sdd steer`; nuevo roadmap activo S06–S11, anterior preservado M001-ROADMAP-HISTORY.md. S01/T03–T04 y S02–S05 explícitamente suspendidas, no completadas. Replan documentado en S01-REPLAN.md; no inventar completed-slice/blocker para invocar reassess/replan automáticos. Ambas copias deben derivar S06/T01; reconstrucción STATE solo nativa. Revisión del plan antes de ejecutar una unidad mediante `/sdd dispatch execute`; nunca `/sdd auto`/next loop sin autorización.

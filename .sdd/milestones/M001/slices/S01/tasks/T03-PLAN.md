@@ -8,6 +8,8 @@ skills_used:
 
 # T03: Probar repetición de sección y exponer fallos con limpieza
 
+**Execution status:** SUSPENDED by D013 scope revision; not executed, not completed. This historical plan is outside the active roadmap. Do not dispatch/resume it. Re-evaluate required behavior in S10 only after its own plan/authorization; preserve this ID and unfinished checkbox.
+
 **Slice:** S01 — YouTube real y guía mínima
 **Milestone:** M001
 

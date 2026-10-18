@@ -13,7 +13,7 @@ skills_used:
 
 ## Description
 
-Depende de T01: reutiliza su contrato/adaptador/entrada. Mostrar acorde y sección actuales/siguientes y silencios con datos mínimos preparados, sin implementar el esquema completo de S02. La aprobación documental no autoriza esta tarea.
+Depende de T01: reutiliza su contrato/adaptador/entrada. Mostrar acorde y sección actuales/siguientes y silencios con datos mínimos preparados, sin implementar el esquema completo de S02. Ejecución de T02 autorizada explícitamente por el usuario en D010, tras aceptar el riesgo documentado y verificar T01. No autoriza T03.
 
 ## Steps
 
@@ -25,10 +25,10 @@ Depende de T01: reutiliza su contrato/adaptador/entrada. Mostrar acorde y secci�
 
 ## Must-Haves
 
-- [ ] Guía actual/siguiente y sección corresponden a segundos observados, incluidos silencios y límites.
-- [ ] Pausa/buffering no generan avance autónomo; buscar repetidamente no selecciona por target sin observación.
-- [ ] Guía separada de YT y esquema definitivo del arreglo; datos preparados identificados como tales.
-- [ ] Página usa la función testeada y el adaptador real de T01; no solo una vista ficticia.
+- [x] Guía actual/siguiente y sección corresponden a segundos observados, incluidos silencios y límites.
+- [x] Pausa/buffering no generan avance autónomo; buscar repetidamente no selecciona por target sin observación.
+- [x] Guía separada de YT y esquema definitivo del arreglo; datos preparados identificados como tales.
+- [x] Página usa la función testeada y el adaptador real de T01; no solo una vista ficticia.
 
 ## Verification
 

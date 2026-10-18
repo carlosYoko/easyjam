@@ -1,5 +1,7 @@
 # S01: YouTube real y guía mínima
 
+**Current status — D013:** SUSPENDED, incomplete and outside the active roadmap. T01/T02 remain implemented/verified with their original checked records and summaries; T03/T04 remain unchecked, suspended and not executed. Do not resume this plan. The gate and deliverables below describe the original plan historically, not current permissions. Reuse PlayerPort/YouTube/observed-clock evidence under S06–S11; no fictitious slice completion.
+
 **Goal:** Resolver pronto la viabilidad real de YouTube mediante una guía mínima de acordes y secciones, sin construir un reproductor completo ni fijar el renderer final.
 **Demo:** Desde una página local, cargar deliberadamente un vídeo fijo permitido, reproducir/pausar, seguir la guía basada en su reloj, saltar y activar/desactivar repetición de sección; consultar diagnóstico y medidas reales.
 
@@ -49,14 +51,14 @@ Comandos planificados: no existen todavía; T01 debe crearlos antes de usarlos c
 
 ## Tasks
 
-- [ ] **T01: Crear la entrada mínima con YouTube real y comprobar material** `est:1h`
+- [x] **T01: Crear la entrada mínima con YouTube real y comprobar material** `est:1h`
   - Why: comprobar la reproducción externa antes de construir guía/motor.
   - Files: `package.json`, `src/main.ts`, `src/App.vue`, `src/application/player-port.ts`, `src/infrastructure/youtube-player.ts`, `tests/unit/player-contract.test.ts`, `docs/validation/S01-material.md`
   - Do: previa aprobación, fijar base/gestor/versiones, scripts y tests; documentar permisos/privacidad/vídeo; integrar iframe visible y play/pause/tiempo con límites pequeños. No catálogo/renderizador/optimizador.
   - Verify: `pnpm run lint && pnpm run typecheck && pnpm run test --run && pnpm run build`; reproducción real y estado/tiempo observados.
   - Done when: vídeo permitido realmente reproduce/pausa, reloj consultable y contrato testeado; si falta material, bloqueado sin fixture inventado.
   - Depends on: none; autorización explícita y material/condiciones de carga resueltos.
-- [ ] **T02: Conectar guía mínima al reloj observado y navegar secciones** `est:45m`
+- [x] **T02: Conectar guía mínima al reloj observado y navegar secciones** `est:45m`
   - Why: probar la sincronización y seek a través del camino real sin esperar al arreglo completo.
   - Files: `src/application/guide-session.ts`, `src/fixtures/minimal-guide.ts`, `src/App.vue`, `tests/unit/guide-session.test.ts`
   - Do: guía pequeña con silencio y secciones, selección pura y referencia musical/tiempo multimedia separadas; pausa/buffering y llegada observada tras seek.
