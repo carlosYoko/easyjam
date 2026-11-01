@@ -38,7 +38,7 @@ Evaluador CLI local `pnpm run evaluate:s06` disponible en .sdd/worktrees/M001 pa
 
 ## Risks and Unknowns
 
-Code Monkey adquirido/decodificado con fuente oficial y checksum; hoja armónica del artista y reproducción iframe verificadas. No material/referencia completa aceptados ni correspondencia musical acreditada. GAPS presenta referencia alineada prometedora, pero permisos/procedencia no resueltos; el usuario no autoriza contacto externo. No benchmark, motor compatible o umbral aceptados. Armonía no determina rasgueos/rests, N.C. no prueba silencio. Candidato notacional puede requerir datos ausentes. Grabaciones/cortes/velocidad distintos impiden mapear por un offset. Tiempo/coste/recursos y licencias/plataforma por medir; no SLA de duración musical.
+Code Monkey retenido explícitamente para completar referencia independiente en D016, sin aceptar material ni autorizar analizador/cambio de canción. Investigación T07 aporta pistas de tab/score y evidencia primaria de ediciones mono/estéreo distintas, no tiempos musicales revisados. Code Monkey adquirido/decodificado con fuente oficial y checksum; hoja armónica del artista y reproducción iframe verificadas. No material/referencia completa aceptados ni correspondencia musical acreditada. GAPS presenta referencia alineada prometedora, pero permisos/procedencia no resueltos; el usuario no autoriza contacto externo. No benchmark, motor compatible o umbral aceptados. Armonía no determina rasgueos/rests, N.C. no prueba silencio. Candidato notacional puede requerir datos ausentes. Grabaciones/cortes/velocidad distintos impiden mapear por un offset. Tiempo/coste/recursos y licencias/plataforma por medir; no SLA de duración musical.
 
 ## Existing Codebase / Prior Art
 

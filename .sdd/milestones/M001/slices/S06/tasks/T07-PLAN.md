@@ -15,6 +15,8 @@ Puerta obligatoria separada de T01 por aprobación explícita del usuario en D01
 
 ## Steps
 
+**Continuación autorizada D016 (2026-11-01):** mantener Code Monkey y completar referencia independiente, no ensayo sin referencia ni cambio de canción. Búsqueda acotada aporta tab de estudio con autor original desconocido, pista Songsterr s39935 y testimonio primario de mastering mono/estéreo. Ninguna acredita referencia temporal: T07 sigue bloqueada, sin analizar. Evidencia y checklist de anotación/revisión en S06-reference.md.
+
 1. Revisar investigación T01 y fuentes públicas actualizadas. Elegir una canción completa concreta; Code Monkey es candidato, no aceptación. No transferir licencias entre composición, grabación, score, repositorio de software o mirror.
 2. Acreditar permisos de análisis, transcripción/derivados y retención local; verificar archivo y hash, duración/decodificación/cobertura completa y disponibilidad. No sustituir por fragmentos o sintetizados sin decisión explícita. Audio y snapshots protegidos permanecen locales.
 3. Obtener referencia musical/temporal legítima independiente del motor: autor/método/licencia/revisión, ocurrencias de armonía, compás/beat, ataques/duraciones/rests/secciones y unidades con incertidumbre/cobertura explícitas. Una dimensión ausente es no medible, no aceptada. Si la falta impide el objetivo de S06, bloquear, no reducir criterios unilateralmente.
