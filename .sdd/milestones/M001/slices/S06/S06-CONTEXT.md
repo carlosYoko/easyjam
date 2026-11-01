@@ -1,7 +1,7 @@
 # S06: Fuente autorizada y análisis de calidad
 
 **Gathered:** 2026-10-18
-**Status:** T01 documental completada bajo separación explícita D014 (2026-10-31). T07 conserva la aceptación de material/referencia como puerta obligatoria antes de T03. T02 y restantes no autorizadas ni iniciadas; sin auto, cierre de slice, merge o push. Archivo S06 no acredita URL única.
+**Status:** T01 documental completada bajo separación explícita D014 (2026-10-31). T07 conserva la aceptación de material/referencia como puerta obligatoria antes de T03. T02 autorizada explícitamente y completada el 2026-11-01: contratos/CLI sin motor, 113 tests y lint/tipos/build verificados. T07 y restantes no autorizadas ni iniciadas; sin auto, cierre de slice, merge o push. Archivo S06 no acredita URL única.
 
 ## Project Description
 
@@ -19,7 +19,7 @@ Revisar ejecución reproducible de canción completa, original real conservado, 
 
 ### Entry point / environment
 
-Evaluador CLI local futuro en .sdd/worktrees/M001; Node/TS/pnpm de base existente. Archivo independiente permitido, referencia legítima y grabación YouTube correspondiente si disponible. Cerrar navegador no es prueba async de producto en esta slice; eso pertenece S08.
+Evaluador CLI local `pnpm run evaluate:s06` disponible en .sdd/worktrees/M001 para validación/diagnóstico; todavía sin adaptador de producción. Node/TS/pnpm de base existente. Archivo independiente permitido, referencia legítima y grabación YouTube correspondiente si disponible. Cerrar navegador no es prueba async de producto en esta slice; eso pertenece S08.
 
 ## Completion Class
 
@@ -52,7 +52,7 @@ D013 → primarios R012/R017; apoyo R002/R003/R013 y aceptación parcial R009. E
 
 ### In Scope
 
-T01 investigación documental completada; T02 evaluador/contratos pendiente de autorización; T07 aceptación obligatoria de material/referencia y protocolo antes de T03; T03 motor+baseline real; T04 calidad/experimento mínimo y puerta de criterios; T05 notación/alineación candidata; T06 repetir evaluación e informe de decisión. Orden explícito T01 → T02 → T07 → T03 → T04 → T05 → T06, sin renumerar IDs existentes.
+T01 investigación documental completada; T02 evaluador/contratos completada sin analizador ni material aceptado; T07 aceptación obligatoria de material/referencia y protocolo antes de T03; T03 motor+baseline real; T04 calidad/experimento mínimo y puerta de criterios; T05 notación/alineación candidata; T06 repetir evaluación e informe de decisión. Orden explícito T01 → T02 → T07 → T03 → T04 → T05 → T06, sin renumerar IDs existentes.
 
 ### Out of Scope / Non-Goals
 
@@ -68,4 +68,4 @@ Contrato análisis mínimo/evaluador→adaptador motor→original/versiones/chec
 
 ## Open Questions
 
-T01 documenta hallazgos/propuesta; D014 traslada material/referencia y revisión del protocolo a T07 obligatoria antes del análisis. T02 puede preparar contratos y fallos solo con autorización propia, sin aceptar candidatos o ejecutar motor. T03/T04 aportarán calibración para umbrales a aprobar antes de T05/T06. Sin evidencia suficiente, T07 bloqueada; S06 conserva todos sus criterios de derechos/calidad. Planes T01–T07 describen las unidades; solo T01 está cerrada.
+T01 documenta hallazgos/propuesta; D014 traslada material/referencia y revisión del protocolo a T07 obligatoria antes del análisis. T02 ha preparado contratos y fallos con autorización explícita, sin aceptar candidatos o ejecutar motor. T03/T04 aportarán calibración para umbrales a aprobar antes de T05/T06. Sin evidencia suficiente, T07 bloqueada; S06 conserva todos sus criterios de derechos/calidad. Planes T01–T07 describen las unidades; solo T01 y T02 están cerradas, con evidencia en sus resúmenes. T07 es la siguiente unidad, pendiente de autorización y evidencia.

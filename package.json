@@ -14,13 +14,15 @@
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "evaluate:s06": "node scripts/evaluate-song.ts"
   },
   "dependencies": {
     "vue": "3.5.44"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
+    "@types/node": "24.19.2",
     "@vitejs/plugin-vue": "6.0.10",
     "eslint": "10.13.0",
     "eslint-plugin-vue": "10.11.1",

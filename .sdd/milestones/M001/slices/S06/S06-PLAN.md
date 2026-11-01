@@ -3,7 +3,7 @@
 **Goal:** Demostrar con canción completa autorizada que un análisis real produce armonía/cambios y tiempos suficientemente útiles para preparar guitarra rítmica, un candidato notacional trazable y alineación con la grabación. Si no es viable, bloquear y pedir decisión con evidencia, sin sustituir salida por fixtures.
 **Demo:** Desde un comando local de evaluación (no la futura biblioteca), procesar un manifest de material permitido, ejecutar motor(es) existente(s), validar original neutral, comparar con referencia independiente y producir informe/notación candidata/anclas con errores e incertidumbre explícitos.
 
-**Authorization:** D013 aprueba la dirección; D014 registra la separación explícita aprobada el 2026-10-31: T01 completada solo como investigación documental, referencia/aceptación de material obligatorias en T07 antes de T03. Orden operativo **T01 → T02 → T07 → T03 → T04 → T05 → T06**; IDs existentes conservados. T02 y todas las unidades restantes requieren revisión y autorización individual; ninguna iniciada por cerrar T01. Sin contacto a terceros, auto, S07–S11, cierre de slice, merge o push. Archivo independiente permitido solo en S06, no producto de subida ni prueba de URL única. Criterios integrados intactos; sin backend/renderer/optimizador completos aquí.
+**Authorization:** D013 aprueba la dirección; D014 registra la separación explícita aprobada el 2026-10-31: T01 completada solo como investigación documental, referencia/aceptación de material obligatorias en T07 antes de T03. Orden operativo **T01 → T02 → T07 → T03 → T04 → T05 → T06**; IDs existentes conservados. T02 fue autorizada explícitamente el 2026-11-01 y está completada: contratos/CLI local sin adaptador de producción, 113 tests y lint/tipos/build verificados. T07 y restantes requieren revisión y autorización individual; no se han iniciado. Sin contacto a terceros, auto, S07–S11, cierre de slice, merge o push. Archivo independiente permitido solo en S06, no producto de subida ni prueba de URL única. Criterios integrados intactos; sin backend/renderer/optimizador completos aquí.
 
 ## Must-Haves
 
@@ -23,7 +23,7 @@
 
 ## Verification
 
-Comandos/archivos siguientes son OBJETIVOS a crear durante tareas autorizadas, no scripts ya disponibles. Ejecutar desde `.sdd/worktrees/M001`.
+Los comandos base y el CLI de T02 ya existen. La ejecución musical completa, métricas y candidato notacional siguen siendo objetivos de las tareas posteriores autorizadas. Ejecutar desde `.sdd/worktrees/M001`.
 
 - Base existente: `pnpm run lint && pnpm run typecheck && pnpm run test --run && pnpm run build` conserva 65 tests previos y añade contratos/evaluación cuando corresponda.
 - T01 documental: `node --input-type=module -e "import fs from 'node:fs'; for (const p of ['docs/validation/S06-material.md','docs/validation/S06-protocol.md']) if (!fs.statSync(p).size) process.exit(1)"`; revisar evidencia, límites y ausencia de secretos. Aceptación de permiso/referencia/edición y segmentos concretos se verifica en T07 antes de T03, no se infiere del cierre documental de T01.
@@ -55,7 +55,7 @@ Comandos/archivos siguientes son OBJETIVOS a crear durante tareas autorizadas, n
   - Do: investigar fuentes completas/permisos/referencias, adquirir candidato independiente, registrar checksum/formato/decodificación, comprobar iframe y proponer métricas/herramientas/recursos. Investigación documental completada bajo separación explícita D014; sin análisis ni código de producto.
   - Verify: comando documental indicado arriba, hashes y evidencia real de decodificación/iframe; revisión de límites y ausencia de secretos/código.
   - Done when: hallazgos y propuesta documentados, faltantes trasladados a T07 obligatoria antes de T03. Cerrar T01 no acepta material ni rebaja requisitos de S06.
-- [ ] **T02: Crear evaluador local y contratos de entrada/salida** `est:1h`
+- [x] **T02: Crear evaluador local y contratos de entrada/salida** `est:1h`
   - Why: hacer reproducible y diagnosticable el experimento sin construir backend/biblioteca.
   - Files: `scripts/evaluate-song.ts`, `src/application/analysis-evaluation.ts`, `tests/unit/analysis-evaluation.test.ts`, `package.json` y configuración mínima si necesaria.
   - Do: manifest/salidas validados, interfaz al adaptador, CLI seguro/error tipado/reporte/checksum/versiones; tests con dobles claramente identificados. Puede preparar contratos con material aún pendiente: nunca aceptarlo, analizarlo o presentarlo como transcripción. T07 debe aceptar material/referencia antes de T03. Script real ejecutable, sin TODOs/success ficticio: motor ausente explícito. No deps/capas/DB innecesarias.
