@@ -12,7 +12,7 @@ skills_used:
 
 ## Description
 
-Solo tras T01, revisión de material/protocolo y autorización de esta unidad. Evaluador de experimento local, no API/backend/biblioteca/DB. Dominio no importa motor; script orquesta adaptador mediante contrato pequeño.
+Solo tras T01 documental, revisión de la propuesta de contratos/protocolo y autorización explícita de esta unidad. D014 permite construir contratos/diagnósticos con material aún no aceptado: dobles solo en tests, rechazo explícito de fuente/referencia no acreditadas, sin análisis ni aceptación ficticia. T07 sigue obligatoria antes de T03. Evaluador de experimento local, no API/backend/biblioteca/DB. Dominio no importa motor; script orquesta adaptador mediante contrato pequeño.
 
 ## Steps
 
@@ -42,7 +42,8 @@ Solo tras T01, revisión de material/protocolo y autorización de esta unidad. E
 
 ## Inputs
 
-- `docs/validation/S06-material.md` — material verificado T01.
+- `docs/validation/S06-material.md` — investigación T01 y material aún no aceptado; no oráculo de transcripción.
+- `.sdd/milestones/M001/slices/S06/tasks/T07-PLAN.md` — puerta obligatoria de material/referencia antes del análisis T03.
 - `docs/validation/S06-protocol.md` — evaluación/errores.
 - `package.json` — base real/gestor/versiones.
 - `tsconfig.json` — integración TS estricta.

@@ -12,7 +12,7 @@ skills_used:
 
 ## Description
 
-Tras T02 y autorización explícita: convertir evaluador en recorrido real fuente→motor→original. El motor se elige por evidencia T01, no por nombre fijo en una propuesta. Instalar únicamente lo necesario con licencia/versiones/configuración revisadas, sin servicios/costes externos no autorizados.
+Tras T02, T07 completada con material/referencia/protocolo revisados y autorización explícita de esta unidad: convertir evaluador en recorrido real fuente→motor→original. D014 permite cerrar T01 documental, no saltar T07. El motor se elige por evidencia T01/T07, no por nombre fijo en una propuesta. Instalar únicamente lo necesario con licencia/versiones/configuración revisadas, sin servicios/costes externos no autorizados.
 
 ## Steps
 
@@ -42,6 +42,7 @@ Tras T02 y autorización explícita: convertir evaluador en recorrido real fuent
 
 ## Inputs
 
+- `docs/validation/S06-reference.md` — puerta T07: permisos, referencia independiente, correspondencia y segmentos congelados aceptados; su mera existencia no habilita análisis.
 - `docs/validation/S06-material.md` — derechos y grabación.
 - `docs/validation/S06-protocol.md` — candidato/runtime/recursos.
 - `scripts/evaluate-song.ts` — CLI T02.

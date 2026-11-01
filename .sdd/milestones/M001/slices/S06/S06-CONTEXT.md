@@ -1,7 +1,7 @@
 # S06: Fuente autorizada y análisis de calidad
 
 **Gathered:** 2026-10-18
-**Status:** Plan preparado para revisión; ninguna tarea/código autorizados aún. D013 aprueba planificación y archivo autorizado de prueba, no URL única resuelta.
+**Status:** T01 documental completada bajo separación explícita D014 (2026-10-31). T07 conserva la aceptación de material/referencia como puerta obligatoria antes de T03. T02 y restantes no autorizadas ni iniciadas; sin auto, cierre de slice, merge o push. Archivo S06 no acredita URL única.
 
 ## Project Description
 
@@ -38,7 +38,7 @@ Evaluador CLI local futuro en .sdd/worktrees/M001; Node/TS/pnpm de base existent
 
 ## Risks and Unknowns
 
-No archivo/resolutor/referencia seleccionados; no benchmark, motor o umbral aceptados. Armonía no determina rasgueos/rests, N.C. no prueba silencio. Candidato notacional puede requerir datos ausentes. Grabaciones/cortes/velocidad distintos impiden mapear por un offset. Tiempo/coste/recursos y licencias/plataforma por medir; no SLA de duración musical.
+Code Monkey adquirido/decodificado con fuente oficial y checksum; hoja armónica del artista y reproducción iframe verificadas. No material/referencia completa aceptados ni correspondencia musical acreditada. GAPS presenta referencia alineada prometedora, pero permisos/procedencia no resueltos; el usuario no autoriza contacto externo. No benchmark, motor compatible o umbral aceptados. Armonía no determina rasgueos/rests, N.C. no prueba silencio. Candidato notacional puede requerir datos ausentes. Grabaciones/cortes/velocidad distintos impiden mapear por un offset. Tiempo/coste/recursos y licencias/plataforma por medir; no SLA de duración musical.
 
 ## Existing Codebase / Prior Art
 
@@ -52,7 +52,7 @@ D013 → primarios R012/R017; apoyo R002/R003/R013 y aceptación parcial R009. E
 
 ### In Scope
 
-T01 material/protocolo documental; T02 evaluador/contratos; T03 motor+baseline real; T04 calidad/experimento mínimo y puerta de criterios; T05 notación/alineación candidata; T06 repetir evaluación e informe de decisión.
+T01 investigación documental completada; T02 evaluador/contratos pendiente de autorización; T07 aceptación obligatoria de material/referencia y protocolo antes de T03; T03 motor+baseline real; T04 calidad/experimento mínimo y puerta de criterios; T05 notación/alineación candidata; T06 repetir evaluación e informe de decisión. Orden explícito T01 → T02 → T07 → T03 → T04 → T05 → T06, sin renumerar IDs existentes.
 
 ### Out of Scope / Non-Goals
 
@@ -68,4 +68,4 @@ Contrato análisis mínimo/evaluador→adaptador motor→original/versiones/chec
 
 ## Open Questions
 
-T01 resolverá material/referencia y protocolo antes de código. T03/T04 aportarán calibración para umbrales a aprobar antes de T05/T06. Sin permisos o resultados útiles, elevar decisión y detenerse. S06-PLAN.md y tasks/T01–T06-PLAN.md son la propuesta de ejecución detallada pendiente de revisión.
+T01 documenta hallazgos/propuesta; D014 traslada material/referencia y revisión del protocolo a T07 obligatoria antes del análisis. T02 puede preparar contratos y fallos solo con autorización propia, sin aceptar candidatos o ejecutar motor. T03/T04 aportarán calibración para umbrales a aprobar antes de T05/T06. Sin evidencia suficiente, T07 bloqueada; S06 conserva todos sus criterios de derechos/calidad. Planes T01–T07 describen las unidades; solo T01 está cerrada.
