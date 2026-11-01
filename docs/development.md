@@ -1,10 +1,10 @@
 # Desarrollo, Git y calidad
 
-**Estado:** T01 (01c0c7d) y T02 (1b4690d) implementadas/verificadas en `.sdd/worktrees/M001`, con reproductor oficial y guía ficticia, 65 tests y checks locales. No integradas en main. D013 aprueba producto, Vue3/TS/backend local mínimo/SQLite, dirección ADR-002 y S06–S11. Esquema de siete tablas no obligatorio, mínimo suficiente con KISS/SOLID/YAGNI. Solo formalización/planificación S06; plan T01–T06 pendiente de revisión antes de código. T03/T04 suspendidas y fuera de cola, sin auto/cierre/merge/push.
+**Estado:** S01/T01 (01c0c7d) y S01/T02 (1b4690d) implementadas en `.sdd/worktrees/M001`, con reproductor oficial y guía ficticia. S06/T01 documental cerrada bajo D014; S06/T02 autorizada y completada el 2026-11-01 con contratos/CLI sin motor, 113 tests y lint/tipos/build verificados. No integradas en main. D013 aprueba producto/dirección ADR-002 y S06–S11; esquema mínimo suficiente, no siete tablas obligatorias. T07 conserva la puerta de material/referencia antes de T03. S01/T03–T04 siguen suspendidas; sin auto/cierre/merge/push por esta unidad.
 
 ## Ubicación y verificaciones existentes
 
-La aplicación está en el worktree `.sdd/worktrees/M001`, rama `milestone/M001`, no en la raíz main. Desde ese directorio existen `pnpm install --frozen-lockfile`, `pnpm run dev --host 127.0.0.1`, `pnpm run lint`, `pnpm run typecheck`, `pnpm run test --run` y `pnpm run build`. Node 24.18.0/pnpm 12.14.0 y lockfile fijados. Verificado durante T01/T02; una edición documental no acredita nuevas pruebas funcionales.
+La aplicación está en el worktree `.sdd/worktrees/M001`, rama `milestone/M001`, no en la raíz main. Desde ese directorio existen `pnpm install --frozen-lockfile`, `pnpm run dev --host 127.0.0.1`, `pnpm run lint`, `pnpm run typecheck`, `pnpm run test --run` y `pnpm run build`. Node 24.18.0/pnpm 12.14.0 y lockfile fijados. Verificado de nuevo en S06/T02. Existe además `pnpm run evaluate:s06 --manifest <local.json> --output <new-report.json>`: valida entrada/checksum y reporta fallos, pero no dispone de analizador ni puede aceptar una transcripción. Contrato, límites y evidencia en [S06-evaluator.md](validation/S06-evaluator.md).
 
 Aún no existen comandos de backend, DB/migraciones, analizador o tablatura real. No ejecutarlos ni inventarlos en esta propuesta. SQLite de canciones no es `.sdd/sdd.db`. La evidencia técnica está en `docs/validation/` **del worktree**. Error 5 intermitente aceptado en D010, no corregido. Práctica final requiere arreglo real persistido, no fixture.
 
@@ -20,15 +20,14 @@ Con planes/unidades autorizados, los nuevos checks previstos son: pentagrama+TAB
 
 No crear manualmente `STATE.md`, base de datos, manifiestos, marcadores de ejecución ni un árbol `specs/` paralelo. No iniciar el motor hasta aprobar el alcance. Tras iniciarlo, SDD gestiona sus commits de tareas y milestones.
 
-## Continuación manual aprobada D013
+## Continuación manual aprobada D013/D014
 
-- Plan detallado: `.sdd/milestones/M001/slices/S06/S06-PLAN.md` y `tasks/T01–T06-PLAN.md`; revisar antes de ejecutar.
-- Primera unidad: S06/T01 material/referencia/protocolo documental, sin código ni instalación. Archivo independiente autorizado permitido para prueba, no aceptación URL única.
-- Tras autorizar explícitamente solo esa unidad, desde sesión SDD del worktree `.sdd/worktrees/M001`, usar `/sdd dispatch execute`. El comando deriva unidad activa: debe mostrar M001/S06/T01. No acepta un ID arbitrario, por eso se verifican root y worktree; si selecciona otra unidad, detener.
+- Plan detallado: `.sdd/milestones/M001/slices/S06/S06-PLAN.md` y tareas T01–T07, con orden T01 → T02 → T07 → T03 → T04 → T05 → T06.
+- T01 documental y T02 contratos/CLI están completadas. La siguiente unidad es T07, pendiente de autorización propia y de evidencia suficiente; material/referencia aún no aceptados. No ejecutar T03 hasta completar y revisar T07.
+- Para una sesión de ejecución nativa, comprobar primero que la unidad seleccionada corresponde a la autorizada. No usar `/sdd auto` ni avanzar automáticamente por cerrar una tarea. Cada siguiente unidad/slice requiere revisión y autorización.
 - La fase nativa `executing` significa que existe un plan con tarea pendiente; NO acredita ejecución iniciada ni concede autorización. El gate humano del plan sigue vigente.
-- `/sdd dispatch execute` crea sesión de una unidad, no inicia bucle auto. No usar `/sdd auto` ni `/sdd next` como sustitución sin revisar comportamiento de versión. Antes de cada siguiente tarea o slice, revisión y nueva autorización.
-- Revisión de alcance mediante appendOverride, mecanismo nativo de `/sdd steer`, con reescritura de documentos. `reassess` exige slice completa; no se simula cierre para usarlo. Historial en M001-ROADMAP-HISTORY.md/S01-REPLAN.md; T01/T02 preservadas, T03/T04 suspendidas/no ejecutadas.
-- S06 aún no tiene script evaluate:s06 ni analizador: comandos futuros etiquetados en planes, no disponibles por esta formalización.
+- Revisión de alcance mediante mecanismos nativos de SDD; no simular cierre de slice para forzar reevaluación. Historial en M001-ROADMAP-HISTORY.md/S01-REPLAN.md; S01/T01–T02 preservadas y S01/T03–T04 suspendidas.
+- `evaluate:s06` existe desde T02; la integración del motor, mediciones musicales y aceptación siguen pendientes. T02 usa Node TypeScript nativo y tipos Node de desarrollo (D015), no instala un analizador.
 
 ## Política Git
 
@@ -69,7 +68,7 @@ T02 usa `selectGuideFrame()` y fixture rotulada, actual/siguiente, silencios, hu
 
 Los scripts locales descritos arriba ya existen. E2E integrado y smoke real separado están pendientes; no presentar `test:e2e` como comando disponible. No se autoriza CI externa ni instalar herramientas en la revisión documental.
 
-La base S01 ya fijó versiones y pnpm-lock.yaml; la revisión no reinstala ni cambia dependencias. No editar `verification_commands` ni preferencias de ejecución para promover el roadmap candidato. Los checks nuevos se definirán con los planes aprobados.
+La base S01 conserva sus versiones; S06/T02 añade únicamente `@types/node` 24.19.2 (MIT) y la dependencia transitiva de tipos `undici-types` 7.24.6 (MIT), con lockfile actualizado y tipos de scripts comprobados. No hay nuevas dependencias de ejecución. No editar `verification_commands` ni preferencias para promover tareas o el roadmap.
 
 CI futura sin secretos ni servicios de pago no acordados. Antes de conectarla, confirmar plataforma y presupuesto; no asumir gratuidad. Checks deterministas y evidencia externa deben distinguirse: un fallo de red no prueba defecto musical ni una fixture acredita viabilidad de YouTube.
 

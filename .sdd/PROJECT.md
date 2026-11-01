@@ -10,11 +10,13 @@ EasyJam es una biblioteca de canciones previamente transcritas para practicar gu
 
 ## Current State
 
-T01 01c0c7d y T02 1b4690d existen en .sdd/worktrees/M001, rama milestone/M001: PlayerPort, YouTube oficial, reloj observado, navegación de guía ficticia, 65 tests y evidencia real. No integrados en main ni desplegados públicamente. Error 5 intermitente aceptado D010, causa desconocida, no reparado.
+S01/T01 01c0c7d y S01/T02 1b4690d existen en .sdd/worktrees/M001, rama milestone/M001: PlayerPort, YouTube oficial, reloj observado, navegación de guía ficticia y evidencia real. No integrados en main ni desplegados públicamente. Error 5 intermitente aceptado D010, causa desconocida, no reparado.
 
-No hay aún biblioteca/backend/SQLite de canciones/analizador/optimizador/partitura real. .sdd/sdd.db es del agente, no almacenamiento de producto. D012 precisa D011 y autoriza solo documentación/investigación: calidad sobre velocidad, proceso durable independiente del navegador, cinco estados y pentagrama+TAB/cursor/scroll/navegación obligatorios. alphaTab investigado documentalmente, no instalado/adoptado/probado en EasyJam.
+S06/T01 completada como investigación documental bajo D014; material/referencia aún no aceptados. S06/T02 autorizada por el usuario y completada el 2026-11-01: evaluador local `pnpm run evaluate:s06`, validación runtime de manifest/original, checksum y reportes seguros. CLI sin adaptador de producción; no genera transcripción ni aceptación musical. D015 registra Node TypeScript nativo y tipos Node solo de desarrollo. Checks lint/tipos/build y 113 tests pasan (65 existentes + 48 nuevos). Evidencia y contrato en docs/validation/S06-evaluator.md del worktree.
 
-Fuente de verdad: M001-CONTEXT.md, REQUIREMENTS.md y M001-ROADMAP.md; docs/product.md, mvp-proposal.md y ADR-002 explican experiencia/dirección aprobadas en D013. S06→S07→S08→S09→S10→S11 son la cola operativa; plan S06/T01–T06 preparado para revisión, ninguna ejecutada/autorizada aún. Primera unidad T01 material/protocolo documental. T03/T04 y S02–S05 suspendidos/fuera de cola, S01 no completada; historia preservada. No código, auto, ejecución S07–S11, cierre, merge o push. Native steering registrado en OVERRIDES, estado verificado en ambas copias antes de continuar.
+No hay aún biblioteca/backend/SQLite de canciones/analizador/optimizador/partitura real. .sdd/sdd.db es del agente, no almacenamiento de producto. alphaTab investigado documentalmente, no instalado/adoptado/probado en EasyJam.
+
+Fuente de verdad: M001-CONTEXT.md, REQUIREMENTS.md y M001-ROADMAP.md; docs/product.md, mvp-proposal.md y ADR-002 explican experiencia/dirección aprobadas en D013. S06→S07→S08→S09→S10→S11 son la cola operativa. En S06 el orden es T01 → T02 → T07 → T03 → T04 → T05 → T06; solo T01/T02 completadas. T07 exige autorización propia y aceptación de material/referencia antes de T03. S01/T03–T04 y S02–S05 suspendidos/fuera de cola; historia preservada. Sin auto, ejecución de tareas posteriores, cierre de slice/milestone, merge o push autorizados por T02. Estado runtime/DB gestionado por SDD, no editado manualmente.
 
 ## Architecture / Key Patterns
 
@@ -36,6 +38,6 @@ R001–R013/R017/R018 activos, ninguno validado globalmente. R014–R016 diferid
 
 ## Milestone Sequence
 
-- [ ] M001: EasyJam Guitar Practice MVP — Roadmap S06–S11 aprobado, S06 planificada/pendiente de revisión y autorización de T01. No slice activa completada, ningún código nuevo.
+- [ ] M001: EasyJam Guitar Practice MVP — Roadmap S06–S11 aprobado; S06/T01 documental y T02 contratos/CLI completadas. T07 pendiente de autorización y evidencia. Ninguna slice activa completada.
 
 Sin otros milestones reservados; STATE se reconstruye únicamente mediante rebuildState nativo, sin editar runtime/DB ni marcadores de ejecución.

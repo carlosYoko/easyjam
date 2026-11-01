@@ -10,6 +10,8 @@ skills_used:
 **Slice:** S06 — Fuente autorizada y análisis de calidad
 **Milestone:** M001
 
+**Status:** Completada el 2026-11-01 tras autorización explícita. CLI/contratos y fallos verificados con 113 tests; sin analizador real ni material aceptado. Evidencia en T02-SUMMARY.md y docs/validation/S06-evaluator.md. T07 permanece pendiente de autorización/evidencia.
+
 ## Description
 
 Solo tras T01 documental, revisión de la propuesta de contratos/protocolo y autorización explícita de esta unidad. D014 permite construir contratos/diagnósticos con material aún no aceptado: dobles solo en tests, rechazo explícito de fuente/referencia no acreditadas, sin análisis ni aceptación ficticia. T07 sigue obligatoria antes de T03. Evaluador de experimento local, no API/backend/biblioteca/DB. Dominio no importa motor; script orquesta adaptador mediante contrato pequeño.
@@ -24,9 +26,9 @@ Solo tras T01 documental, revisión de la propuesta de contratos/protocolo y aut
 
 ## Must-Haves
 
-- [ ] CLI ejecutable/contrato probado y datos inválidos rechazados.
-- [ ] Motor ausente/entrada no autorizada no producen transcripción ni aceptación ficticia.
-- [ ] Base T01/T02 de S01 sin regresiones; sin DB/renderer/backend innecesarios.
+- [x] CLI ejecutable/contrato probado y datos inválidos rechazados.
+- [x] Motor ausente/entrada no autorizada no producen transcripción ni aceptación ficticia.
+- [x] Base T01/T02 de S01 sin regresiones; sin DB/renderer/backend innecesarios.
 
 ## Verification
 
