@@ -3,6 +3,8 @@
 Date: 2026-10-31
 Status: **T01 documentary research complete under D014; material/reference gate remains BLOCKED in T07.**
 
+T07 review, 2026-11-01: existing audio/chart/FAQ artifacts remain present and their SHA-256 hashes match T01. Primary FAQ/license/chart sources were reread; no complete timed reference or recording correspondence was established. The explicit gate and minimum-tool limitations are recorded in [S06-reference.md](S06-reference.md). T02 contracts/CLI are complete; this does not clear material or authorize T03. No new acquisition, playback, installation or analyzer run in this review.
+
 ## Scope and authorization
 
 The user authorized S06/T01 documentary research and explicitly approved separating its pending material/reference acceptance into mandatory T07 before analysis (D014). T01 closure covers documented findings and draft protocol only, not cleared material or musical quality. No installation, analyzer execution, paid service, product upload feature, T02, merge or push follows from this closure. The user explicitly declined third-party contact. D013 remains the product/architecture baseline. This report does not alter the historical technical video `M7lc1UVf-VE` or claim URL-only acquisition.
@@ -95,7 +97,7 @@ An ordinary direct HTTPS GET to the sample's official Zenodo file link returned 
 
 ## Material gate and next unit (T07)
 
-T01 is complete only as documentary research under the user's explicit D014 scope split. T02 may prepare contracts/diagnostics only after its own authorization; T03 analysis is prohibited until mandatory T07 establishes and obtains review of the evidence below. Code Monkey remains a candidate, not accepted material. T07, rather than T01, owns these unresolved requirements:
+T01 is complete only as documentary research under the user's explicit D014 scope split. T02 contracts/diagnostics are separately authorized and completed; T03 analysis is prohibited until mandatory T07 establishes and obtains review of the evidence below. Code Monkey remains a candidate, not accepted material. T07, rather than T01, owns these unresolved requirements:
 
 1. Produce/review a full-song timed reference independently of the candidate analyzer, starting from the artist chart and the permitted recording. Establish performed chord occurrences, bar/meter map, sections, known rests and uncertainty. The current agent has no verified listening/annotation evidence and must not invent these labels or fill them from model output. Musical human review remains required where independent evidence cannot establish them.
 2. Compare independent landmarks from permitted official playback with the local recording. Official iframe playback is now verified, but the agent has no independently verified listening/annotation evidence. The watch-page authentication failure was not an iframe playback blocker. Do not treat playback success or nearly equal durations as proof of edition identity, or extract media to obtain alignment evidence.

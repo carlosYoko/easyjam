@@ -1,7 +1,7 @@
 # S06: Fuente autorizada y análisis de calidad
 
 **Gathered:** 2026-10-18
-**Status:** T01 documental completada bajo separación explícita D014 (2026-10-31). T07 conserva la aceptación de material/referencia como puerta obligatoria antes de T03. T02 autorizada explícitamente y completada el 2026-11-01: contratos/CLI sin motor, 113 tests y lint/tipos/build verificados. T07 y restantes no autorizadas ni iniciadas; sin auto, cierre de slice, merge o push. Archivo S06 no acredita URL única.
+**Status:** T01 documental completada bajo separación explícita D014 (2026-10-31). T07 conserva la aceptación de material/referencia como puerta obligatoria antes de T03. T02 autorizada explícitamente y completada el 2026-11-01: contratos/CLI sin motor, 113 tests y lint/tipos/build verificados. Revisión acotada T07 autorizada y realizada el 2026-11-01; BLOQUEADA y sin completar por referencia temporal/correspondencia/segmentos/herramientas no acreditados, según docs/validation/S06-reference.md. T03 y restantes no iniciadas; sin auto, cierre de slice, merge o push. Archivo S06 no acredita URL única.
 
 ## Project Description
 
@@ -68,4 +68,4 @@ Contrato análisis mínimo/evaluador→adaptador motor→original/versiones/chec
 
 ## Open Questions
 
-T01 documenta hallazgos/propuesta; D014 traslada material/referencia y revisión del protocolo a T07 obligatoria antes del análisis. T02 ha preparado contratos y fallos con autorización explícita, sin aceptar candidatos o ejecutar motor. T03/T04 aportarán calibración para umbrales a aprobar antes de T05/T06. Sin evidencia suficiente, T07 bloqueada; S06 conserva todos sus criterios de derechos/calidad. Planes T01–T07 describen las unidades; solo T01 y T02 están cerradas, con evidencia en sus resúmenes. T07 es la siguiente unidad, pendiente de autorización y evidencia.
+T01 documenta hallazgos/propuesta; D014 traslada material/referencia y revisión del protocolo a T07 obligatoria antes del análisis. T02 ha preparado contratos y fallos con autorización explícita, sin aceptar candidatos o ejecutar motor. T03/T04 aportarán calibración para umbrales a aprobar antes de T05/T06. Sin evidencia suficiente, T07 bloqueada; S06 conserva todos sus criterios de derechos/calidad. Planes T01–T07 describen las unidades; solo T01 y T02 están cerradas, con evidencia en sus resúmenes. T07 es la siguiente unidad: revisión acotada realizada, tarea bloqueada y puerta no aceptada; T03 sigue prohibida.

@@ -2,13 +2,13 @@
 
 Date: 2026-10-31
 Status: **T01 documentary proposal complete under D014; DRAFT musical protocol, material/reference gate T07 blocked, no analysis results or acceptance thresholds.**
-Authorization: S06/T01 research/documentation only. This is not authorization for installation or T02–T06.
+Authorization: T01 research is complete and T02 contracts/CLI were separately authorized and completed. The user approved a bounded T07 evidence review on 2026-11-01; its [gate record](S06-reference.md) remains BLOCKED. No installation, analyzer execution, third-party contact, material acceptance or advancement to T03 follows from this review.
 
 ## Purpose and gates
 
 Evaluate full-song usefulness for simplified rhythm guitar, not exact transcription of all instruments. Keep original engine output separate from reference and derived arrangement. The material review in [S06-material.md](S06-material.md) is a prerequisite. Missing permission, reference or recording identity blocks execution; a completed process or well-formed JSON is not acceptance.
 
-1. T01 closes as documented research/proposed protocol only (explicit user-approved D014 split). T02 may prepare contracts/diagnostics after its own review and authorization, using labelled test doubles and rejecting unapproved material; no analysis or acceptance of candidates.
+1. T01 closes as documented research/proposed protocol only (explicit user-approved D014 split). T02 contracts/diagnostics are separately completed and verified, using labelled test doubles and rejecting unapproved material; no analysis or acceptance of candidates.
 2. Complete mandatory T07 before T03: clear material, rights, independent reference, edition, concrete calibration/holdout intervals and review actual protocol/tool proposal. Then authorize T03 independently and pin approved artifacts before installation. Order: T01 → T02 → T07 → T03 → T04 → T05 → T06. Missing reference still blocks analysis; no integrated S06 criterion is waived.
 3. T03/T04 pilot only on calibration intervals; disclose the full-song engine output but do not score or tune on reserved holdout.
 4. Agree thresholds, matching tolerances, required reference coverage and resource limits after pilot and before T05/T06 holdout verdict. If full output/reference has already influenced choices, disclose leakage and reserve new independently annotated intervals/material rather than claiming blind validation.
@@ -27,7 +27,9 @@ Primary pages retrieved 2026-10-31; documentation claims are not local compatibi
 
 Minimum proposal: Chordino with one compatible command-line Vamp host for harmony; add only the temporal tool justified by reference coverage. Do not choose an engine until licenses/binaries are verified. Basic Pitch, source separation and preprocessing are deferred unless a specific measured baseline error motivates one isolated comparison. No custom detector, renderer, cloud upload or service purchase.
 
-## Reproducibility record (future evaluator, not implemented)
+## Reproducibility record (T02 foundation; musical run still pending)
+
+T02 implements manifest/output validation, streaming source checksum, run ID, timestamps, runtime/hash diagnostics and safe local reports; see [S06-evaluator.md](S06-evaluator.md). It has no production adapter, musical metrics or resource benchmark. T07's [gate record](S06-reference.md) remains blocked. The following full experiment record is still required for later authorized runs; do not confuse it with current CLI capabilities.
 
 Each run needs run ID, source/reference checksums, permission record, exact engine/host/model/dependency versions and hashes, configuration/hash, audio conversion details including channel policy and delay, OS/CPU/RAM, runtime/peak memory/disk use, phase timestamps and exit status. Record seeds where relevant and nondeterminism. Preserve original output locally, not overwritten by arrangement generation. Do not silently substitute another decoder/model/configuration after a failure.
 
@@ -64,4 +66,4 @@ Reject missing/unreadable file, checksum mismatch, absent/expired permission, in
 
 ## Review outcome required
 
-Approve or amend source/reference, concrete segments, metric policies and minimum compatible tool proposal in T07 before T03 analysis. Thresholds remain pending pilot evidence and explicit agreement before holdout verdict. T01 is complete only as documentary research under the explicit D014 scope split, not as accepted material or evidence of musical quality. T02 and every subsequent unit require separate authorization; no S06 closure or S07 advancement. Third-party contact remains explicitly disallowed.
+Approve or amend source/reference, concrete segments, metric policies and minimum compatible tool proposal in T07 before T03 analysis. Thresholds remain pending pilot evidence and explicit agreement before holdout verdict. T01 is complete only as documentary research under the explicit D014 scope split, and T02 only as verified contracts/CLI, not as accepted material or evidence of musical quality. The bounded T07 review remains blocked; the source README documents Sonic Annotator 1.7 as GPL-2.0-or-later, but exact plugin/binary licensing and a compatible pair are still unverified. No essential gate is waived. T03 and later units require separate authorization after the T07 gate is accepted; no S06 closure or S07 advancement. Third-party contact remains explicitly disallowed.

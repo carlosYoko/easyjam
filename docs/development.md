@@ -23,7 +23,7 @@ No crear manualmente `STATE.md`, base de datos, manifiestos, marcadores de ejecu
 ## Continuación manual aprobada D013/D014
 
 - Plan detallado: `.sdd/milestones/M001/slices/S06/S06-PLAN.md` y tareas T01–T07, con orden T01 → T02 → T07 → T03 → T04 → T05 → T06.
-- T01 documental y T02 contratos/CLI están completadas. La siguiente unidad es T07, pendiente de autorización propia y de evidencia suficiente; material/referencia aún no aceptados. No ejecutar T03 hasta completar y revisar T07.
+- T01 documental y T02 contratos/CLI están completadas. La siguiente unidad es T07: revisión acotada autorizada y realizada el 2026-11-01, BLOQUEADA por evidencia insuficiente, sin completar; véase docs/validation/S06-reference.md. Material/referencia aún no aceptados. No ejecutar T03 hasta completar y revisar T07.
 - Para una sesión de ejecución nativa, comprobar primero que la unidad seleccionada corresponde a la autorizada. No usar `/sdd auto` ni avanzar automáticamente por cerrar una tarea. Cada siguiente unidad/slice requiere revisión y autorización.
 - La fase nativa `executing` significa que existe un plan con tarea pendiente; NO acredita ejecución iniciada ni concede autorización. El gate humano del plan sigue vigente.
 - Revisión de alcance mediante mecanismos nativos de SDD; no simular cierre de slice para forzar reevaluación. Historial en M001-ROADMAP-HISTORY.md/S01-REPLAN.md; S01/T01–T02 preservadas y S01/T03–T04 suspendidas.
