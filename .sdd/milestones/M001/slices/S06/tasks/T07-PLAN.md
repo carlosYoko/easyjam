@@ -11,7 +11,7 @@ skills_used: []
 
 ## Description
 
-Puerta obligatoria separada de T01 por aprobación explícita del usuario en D014. ID añadido sin renumerar T02–T06; se ejecuta antes de T03, no después de T06. El orden operativo es T01 → T02 → T07 → T03 → T04 → T05 → T06, con autorización individual. T02 puede preparar contratos y errores con dobles identificados, no aceptar material ni ejecutar el motor. **T07 está pendiente de autorización y de evidencia suficiente.** Sin contacto a terceros, costes, extracción YouTube o cambio silencioso de alcance.
+Puerta obligatoria separada de T01 por aprobación explícita del usuario en D014. ID añadido sin renumerar T02–T06; se ejecuta antes de T03, no después de T06. El orden operativo es T01 → T02 → T07 → T03 → T04 → T05 → T06, con autorización individual. T02 puede preparar contratos y errores con dobles identificados, no aceptar material ni ejecutar el motor. **Revisión acotada de T07 autorizada y realizada el 2026-11-01; tarea BLOQUEADA, no completada.** Archivo/snapshots locales conservan hashes; referencia temporal completa, correspondencia musical, segmentos y pareja compatible de herramientas siguen sin acreditarse. Puerta explícita en `docs/validation/S06-reference.md`. No se autoriza T03 ni se amplía el alcance por esta revisión. Sin contacto a terceros, costes, extracción YouTube o cambio silencioso de alcance.
 
 ## Steps
 

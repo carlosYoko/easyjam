@@ -16,7 +16,7 @@ S06/T01 completada como investigación documental bajo D014; material/referencia
 
 No hay aún biblioteca/backend/SQLite de canciones/analizador/optimizador/partitura real. .sdd/sdd.db es del agente, no almacenamiento de producto. alphaTab investigado documentalmente, no instalado/adoptado/probado en EasyJam.
 
-Fuente de verdad: M001-CONTEXT.md, REQUIREMENTS.md y M001-ROADMAP.md; docs/product.md, mvp-proposal.md y ADR-002 explican experiencia/dirección aprobadas en D013. S06→S07→S08→S09→S10→S11 son la cola operativa. En S06 el orden es T01 → T02 → T07 → T03 → T04 → T05 → T06; solo T01/T02 completadas. T07 exige autorización propia y aceptación de material/referencia antes de T03. S01/T03–T04 y S02–S05 suspendidos/fuera de cola; historia preservada. Sin auto, ejecución de tareas posteriores, cierre de slice/milestone, merge o push autorizados por T02. Estado runtime/DB gestionado por SDD, no editado manualmente.
+Fuente de verdad: M001-CONTEXT.md, REQUIREMENTS.md y M001-ROADMAP.md; docs/product.md, mvp-proposal.md y ADR-002 explican experiencia/dirección aprobadas en D013. S06→S07→S08→S09→S10→S11 son la cola operativa. En S06 el orden es T01 → T02 → T07 → T03 → T04 → T05 → T06; solo T01/T02 completadas. Revisión acotada T07 autorizada y realizada el 2026-11-01: artefactos locales y hashes reconfirmados, pero tarea BLOQUEADA por referencia temporal/correspondencia/segmentos/herramientas no acreditados (docs/validation/S06-reference.md). T07 sigue sin completar; T03 exige aceptación explícita de material/referencia y autorización propia. S01/T03–T04 y S02–S05 suspendidos/fuera de cola; historia preservada. Sin auto, ejecución de tareas posteriores, cierre de slice/milestone, merge o push autorizados por T02. Estado runtime/DB gestionado por SDD, no editado manualmente.
 
 ## Architecture / Key Patterns
 
@@ -38,6 +38,6 @@ R001–R013/R017/R018 activos, ninguno validado globalmente. R014–R016 diferid
 
 ## Milestone Sequence
 
-- [ ] M001: EasyJam Guitar Practice MVP — Roadmap S06–S11 aprobado; S06/T01 documental y T02 contratos/CLI completadas. T07 pendiente de autorización y evidencia. Ninguna slice activa completada.
+- [ ] M001: EasyJam Guitar Practice MVP — Roadmap S06–S11 aprobado; S06/T01 documental y T02 contratos/CLI completadas. T07 revisada y bloqueada por evidencia insuficiente, no completada. Ninguna slice activa completada.
 
 Sin otros milestones reservados; STATE se reconstruye únicamente mediante rebuildState nativo, sin editar runtime/DB ni marcadores de ejecución.
