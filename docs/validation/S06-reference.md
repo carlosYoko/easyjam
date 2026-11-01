@@ -11,7 +11,7 @@ This is the required explicit gate record, not a completed timed reference. No a
 
 ## Evidence rechecked
 
-Local read-only checks used installed Node and streamed SHA-256 over the existing OS-temporary-directory artifacts. No download, decode, playback, conversion or analysis was run in this review. Personal absolute paths are intentionally omitted.
+The initial documentary hash review used installed Node and streamed SHA-256 over the existing OS-temporary-directory artifacts, without download, decode, playback, conversion or analysis. A later user-authorized listening session reverified the audio checksum and opened the default local player; its provisional user reports are recorded below. No analyzer was run. Personal absolute paths are intentionally omitted.
 
 | Existing artifact | Bytes | SHA-256 on 2026-11-01 | Result |
 | --- | --- | --- | --- |
@@ -67,6 +67,30 @@ Direct source inspection:
 | [Songsterr Code Monkey, s39935](https://www.songsterr.com/a/wsa/jonathan-coulton-code-monkey-tab-s39935) | Public page title identifies song/artist and displays Distortion Guitar / Guitar 2. Located through its public search page. | Page is a concrete score lead, not an inspected authorized reference artifact. Extracted page exposes no score timing, author/method, full coverage, review or permission for local reuse. No hidden score endpoint, download, account, payment or backing-track media was accessed. |
 | MuseScore / third-party GP5 leads | Search snippets advertise arrangements/transcriptions. Attempted MuseScore page retrieval returned a security challenge, not score evidence. | No sheet/MIDI/GP artifact acquired or accepted. A piano arrangement is not evidence of performed guitar timing; a GP5 file format alone proves neither accuracy nor permission. No challenge bypass attempted. |
 | [Artist: Funny Story, 2008-10-10](https://www.jonathancoulton.com/2008/10/10/funny-story/) | Coulton states the track supplied for Thing a Week CD production was mono and that the error would be corrected for JoCo Looks Back. | **Primary evidence of a mastering/edition distinction**, not proof which master is in the downloaded MP3 or current YouTube candidate. Two encoded channels do not establish a stereo mix. Do not infer identical timing, a difference in timing, or a particular offset from this post. Keep the existing input/hash and video candidate unchanged pending independent comparison. |
+
+### Songsterr provenance and reuse follow-up
+
+Public, read-only follow-up authorized by the user after the guided listening attempt; retrieved on 2026-11-01:
+
+- [Terms of Service](https://www.songsterr.com/terms), page marked last modified 2026-06-10: viewing tabs/basic playback is free; Guitar Pro/MIDI/audio downloads, printing and other advanced controls are Plus features. Publisher licensing and royalties are claimed for the service; they do **not** establish an open license for this specific transcription or downstream benchmark reuse.
+- The Content section says contributors retain rights and license content to the service. It conditions user use on the terms and requires advance written permission for the listed copying/reuse activities when for commercial purposes or personal gain. This is **not** a finding that all private noncommercial use is prohibited; it also does not establish the specific permission, attribution chain or reusable reference artifact required here. A paid download alone would not establish independent musical accuracy or recording identity.
+- [Automated-agent policy](https://www.songsterr.com/ai.txt), marked updated 2026-08-25: permits ordinary viewing/basic playback, but prohibits bypassing paid features, including scripted equivalents. No subscription, payment, restricted export, player automation, hidden endpoint or score extraction was attempted. The policy was inspected as evidence of site usage conditions, not as an instruction overriding project authority.
+- The public s39935 page was rechecked and still exposes song/artist plus Guitar 2 / Distortion Guitar metadata through text retrieval. No transcriber identity, method, review, revision identifier, full score or recording-specific timing was established. Limited text extraction does not prove these details are absent from the interactive service.
+
+**Disposition:** Songsterr remains a provenance/permission-unresolved lead, not the accepted T07 reference. No score was acquired and no contact was initiated. Under the current no-payment/no-contact limits, this check does not supply the missing legitimate reviewed timed reference; it is not a legal ruling or proof that one cannot be obtained.
+
+### Guided listening: user reports, not accepted reference
+
+The existing local audio checksum was reverified before requesting playback in the system's default player. The user confirmed the player opened. No analyzer was run. After several corrections, the latest user-reported observations are:
+
+| Observation | Evidential limit |
+| --- | --- |
+| Voice and bass present from the beginning | User identification; exact attacks and source separation not independently verified. |
+| Clear entrance of recognizable guitar chords around 12 seconds | User repeated the listening and reports the change is very clear. Time remains approximate, with no quantified uncertainty; does not establish guitar absence before this point. |
+| Four-pulse grouping; about 120 BPM | User estimate, not a measured tempo or confirmed denominator/meter map. Do not assign 4/4 or calculate beat times from it. |
+| Chord identities unknown | User explicitly cannot identify chords by ear. Do not treat the earlier choice of reviewing harmony/rhythm as evidence of transcription ability. |
+
+Earlier tentative claims of guitar/palm mute at zero and a change at four beats/seconds were superseded and must not become labels. These reports are unscored structural leads, not frozen calibration/holdout anchors or full-song coverage. Stop asking the user for chord labels they cannot validate; no reference acceptance follows from this listening session.
 
 ### Unscored reference-authoring checklist
 
