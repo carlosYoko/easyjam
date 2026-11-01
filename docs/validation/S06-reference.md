@@ -5,7 +5,7 @@ Status: **BLOCKED — T07 review performed; task not completed, material not acc
 
 ## Authorized scope and outcome
 
-The user approved reviewing T07 against existing evidence and primary sources after T02. This review does not authorize installation, analyzer execution, third-party contact, paid services, YouTube extraction, a scope reduction or advancement to T03. D014 and all integrated S06 criteria remain intact. T01 documentary closure and T02 contract tests are not musical acceptance evidence.
+The user approved reviewing T07 against existing evidence and primary sources after T02, then explicitly selected **Code Monkey** and **completing its independent reference**, not an unreferenced exploratory run (D016). Continue research with this song; do not substitute another candidate automatically. This does not authorize installation, analyzer execution, third-party contact, paid services, YouTube extraction, a scope reduction or advancement to T03. D014 and all integrated S06 criteria remain intact. T01 documentary closure and T02 contract tests are not musical acceptance evidence.
 
 This is the required explicit gate record, not a completed timed reference. No accepted manifest, reference hash, musical annotations, alignment anchors or calibration/holdout timestamps were invented. No task/slice/milestone completion is claimed.
 
@@ -50,14 +50,47 @@ No absent dimension receives a perfect score, a zero-error assumption or an infe
 
 The minimal proposal remains one compatible command-line Vamp host plus Chordino for a harmony baseline, subject to the outstanding checks. A temporal tool needs reference-based justification. No engine output may be used to create its own independent gold standard.
 
+## Code Monkey reference search and authoring route
+
+D016 retains this song. Bounded public research on 2026-11-01 used these exact queries:
+
+- `"Jonathan Coulton" "Code Monkey" "midi" score transcription` — API search unavailable without a credential; secure collection was offered and skipped.
+- `"Code Monkey" "Jonathan Coulton" MIDI score` — public search HTML supplied leads, not reference evidence. Its AI overview was not used as a source of musical facts.
+- `"Code Monkey" "Jonathan Coulton" "guitar pro"` — search snippets advertise third-party multi-instrument GP5 transcriptions, but no file, authoring method, reuse permission, recording match or full coverage was inspected/accepted.
+- `"Code Monkey" "Jonathan Coulton" "midi"` — public search returned an unusual-traffic challenge. Further requests to that search service were stopped; no CAPTCHA/login bypass was attempted.
+
+Direct source inspection:
+
+| Source | Observed evidence | Disposition |
+| --- | --- | --- |
+| [JoCopedia studio rhythm tab](https://joco.wiki.gg/wiki/Code_Monkey/Tabs?oldid=5409) | Names Suuuupaadave and Drug Crazed Dropkick as revisers but says original tabber unknown. Claims studio rhythm coverage, distinguishes harmonically different live parts and broadly describes eighth-note strumming. Lists verse/pre-chorus/chorus occurrences, bridge and riff instructions. Footer says CC BY-SA 4.0 unless otherwise noted. | Useful structural/interpretive lead, **not a performed timed reference**. Unknown original attribution, imported-content rights, exact recording, transcription method/review and errors remain unresolved. Footer license does not establish rights to the underlying song or every imported contribution. Do not copy it into the accepted reference, infer every attack/rest, or generate timestamps from the strumming description. |
+| [Songsterr Code Monkey, s39935](https://www.songsterr.com/a/wsa/jonathan-coulton-code-monkey-tab-s39935) | Public page title identifies song/artist and displays Distortion Guitar / Guitar 2. Located through its public search page. | Page is a concrete score lead, not an inspected authorized reference artifact. Extracted page exposes no score timing, author/method, full coverage, review or permission for local reuse. No hidden score endpoint, download, account, payment or backing-track media was accessed. |
+| MuseScore / third-party GP5 leads | Search snippets advertise arrangements/transcriptions. Attempted MuseScore page retrieval returned a security challenge, not score evidence. | No sheet/MIDI/GP artifact acquired or accepted. A piano arrangement is not evidence of performed guitar timing; a GP5 file format alone proves neither accuracy nor permission. No challenge bypass attempted. |
+| [Artist: Funny Story, 2008-10-10](https://www.jonathancoulton.com/2008/10/10/funny-story/) | Coulton states the track supplied for Thing a Week CD production was mono and that the error would be corrected for JoCo Looks Back. | **Primary evidence of a mastering/edition distinction**, not proof which master is in the downloaded MP3 or current YouTube candidate. Two encoded channels do not establish a stereo mix. Do not infer identical timing, a difference in timing, or a particular offset from this post. Keep the existing input/hash and video candidate unchanged pending independent comparison. |
+
+### Unscored reference-authoring checklist
+
+The studio tab supplies a *source-reported* sequence of three verse / pre-chorus / chorus groups, with a bridge between the second chorus and third verse and riff/repetition instructions. This is a candidate listening checklist only, not a verified full recording map. Intro/outro, transitions and repeated occurrences must be checked against the actual authorized recording. Do not fill timing by uniformly spacing this sequence or assuming a fixed BPM.
+
+For each independently observed occurrence, a legitimate reference must record:
+
+- Recording checksum/edition, source identity and permission/attribution basis; reference author, method, reviewer, date and revision.
+- Actual start/end seconds with uncertainty, musical bar/beat/meter where established, and the occurrence identity of its section.
+- Performed harmonic labels separately from simplified power-chord choices and instrument-specific note/attack/duration/rest evidence. Known no-chord, silence and unknown remain distinct.
+- Coverage/exclusions with reasons; ambiguous listening is not a confident label. A tab/arrangement proposal is not an audible observation.
+- Independent audio/official-video landmarks at beginning/middle/end/transitions; calibration landmarks separate from validation landmarks, with edition/cut/speed assessment.
+- Reference artifact/version/checksum and concrete calibration/holdout intervals frozen only after authoring/review, before candidate analysis.
+
+**No timestamps, BPM, bar count, full occurrence map, note/rest intervals or accepted reference hash were established in this search.** The new sources improve provenance/structure research but do not close T07. Completing the reference still needs actual independent musical annotation/review or an adequate legitimately reusable timed artifact. This agent cannot supply verified listening labels from these text pages; no analyzer may act as its own gold standard. No score/audio file was newly downloaded.
+
 ## Concrete route to unblock
 
-1. Retain Code Monkey only if a legitimate timed reference can be acquired or independently authored/reviewed from the permitted recording, with actual evidence for the required dimensions. This agent has no verified listening/annotation observations to supply those labels; inventing them or copying a detector is not an option.
+1. Retain Code Monkey under D016 and acquire or independently author/review its legitimate timed reference from the permitted recording, with actual evidence for required dimensions. The sources above are leads, not accepted labels. Inventing missing annotations or copying a detector is not an option.
 2. Establish permitted official-playback correspondence through independent musical landmarks and record uncertainty. Do not extract the YouTube stream or fit/test on the same landmarks.
 3. Freeze the reviewed reference and concrete calibration/holdout intervals before candidate analysis; review permissions, protocol and minimum compatible tool artifacts together.
-4. If a suitable reference cannot be established under the current no-contact restriction, propose a bounded search for another complete guitar/audio/reference/video pair with clear provenance. Candidate substitution requires review, not automatic adoption. Do not silently substitute short excerpts, synthetic music or piano-only material.
+4. If the missing annotations cannot be established under current permissions, stop for a concrete decision about independent musical authoring/review. D016 retains Code Monkey: do not resume song-substitution research or silently switch to excerpts, synthetic music or another recording. Any later scope change requires explicit approval.
 
-Third-party contact remains disallowed. No new reference was discovered or acquired in this bounded review; this is not an exhaustive search or a claim that none exists. T07 stays unchecked. T03 remains prohibited until the essential missing evidence is resolved and the gate is explicitly accepted.
+Third-party contact remains disallowed. New structural/score leads and primary mastering evidence were found, but **no accepted timed reference was acquired or authored**. The search is bounded, not proof that no reference exists. T07 stays unchecked. T03 remains prohibited until the essential missing evidence is resolved and the gate is explicitly accepted.
 
 ## Verification and handoff
 

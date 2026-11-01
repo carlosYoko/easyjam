@@ -7,6 +7,8 @@ T07 review, 2026-11-01: existing audio/chart/FAQ artifacts remain present and th
 
 ## Scope and authorization
 
+D016 (2026-11-01): the user explicitly retains **Code Monkey** and authorizes continuing the independent-reference step, not an unreferenced engine run or candidate substitution. [S06-reference.md](S06-reference.md) records new studio-tab/score leads and primary evidence of mono/stereo edition differences. None is an accepted timed reference; source audio/hash and YouTube candidate remain unchanged.
+
 The user authorized S06/T01 documentary research and explicitly approved separating its pending material/reference acceptance into mandatory T07 before analysis (D014). T01 closure covers documented findings and draft protocol only, not cleared material or musical quality. No installation, analyzer execution, paid service, product upload feature, T02, merge or push follows from this closure. The user explicitly declined third-party contact. D013 remains the product/architecture baseline. This report does not alter the historical technical video `M7lc1UVf-VE` or claim URL-only acquisition.
 
 ## Evidence inspected

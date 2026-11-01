@@ -6,6 +6,8 @@ Authorization: T01 research is complete and T02 contracts/CLI were separately au
 
 ## Purpose and gates
 
+D016 retains Code Monkey for continued independent-reference research. Studio-tab/score leads are not performed timing, and the artist's documented mono/stereo mastering distinction must be checked before claiming recording correspondence; details in [S06-reference.md](S06-reference.md). No engine run or change of candidate is authorized by this choice.
+
 Evaluate full-song usefulness for simplified rhythm guitar, not exact transcription of all instruments. Keep original engine output separate from reference and derived arrangement. The material review in [S06-material.md](S06-material.md) is a prerequisite. Missing permission, reference or recording identity blocks execution; a completed process or well-formed JSON is not acceptance.
 
 1. T01 closes as documented research/proposed protocol only (explicit user-approved D014 split). T02 contracts/diagnostics are separately completed and verified, using labelled test doubles and rejecting unapproved material; no analysis or acceptance of candidates.
